@@ -1,2 +1,5 @@
-_drafts/
-_site/
+.sass-cache
+_drafts
+_site
+bower_components
+node_modules
