@@ -34,6 +34,8 @@ module.exports = function(grunt) {
 				files: {
 					'assets/js/min.js': [
 						'bower_components/jquery/dist/jquery.min.js',
+						'bower_components/angular/angular.min.js',
+						'bower_components/angular-route/angular-route.min.js',
 						'assets/js/main.js'
 					]
 				}
