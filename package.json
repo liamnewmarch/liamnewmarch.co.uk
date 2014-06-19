@@ -1,0 +1,14 @@
+{
+  "name": "liamnewmarch.github.io",
+  "version": "6.0.0",
+  "description": "liamnewmarch.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liamnewmarch/liamnewmarch.github.io"
+  },
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/liamnewmarch/liamnewmarch.github.io/issues"
+  },
+  "homepage": "https://liamnewmarch.github.io"
+}

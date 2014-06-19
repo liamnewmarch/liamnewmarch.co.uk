@@ -1,0 +1,14 @@
+{
+  "name": "liamnewmarch.github.io",
+  "version": "6.0.0",
+  "description": "liamnewmarch.github.io",
+  "license": "GPLv2",
+  "homepage": "https://liamnewmarch.github.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
