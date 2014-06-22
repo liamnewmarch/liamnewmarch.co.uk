@@ -1,3 +1,18 @@
+@charset "utf-8";
+
+
+// Mixins
+
+@mixin button {
+	display: inline-block;
+	border: 2px solid;
+	padding: 1em;
+	border-radius: 2px;
+}
+
+
+// Base styles
+
 * {
 	box-sizing: border-box;
 }
@@ -9,4 +24,8 @@ html, input, textarea {
 
 body {
 	margin: 0;
+}
+
+button, .bookmarklet {
+	@include button;
 }
