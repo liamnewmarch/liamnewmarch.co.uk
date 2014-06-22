@@ -1,0 +1,7 @@
+permalink: /:title
+exclude:
+- bower.js
+- Gruntfile.js
+- node_modules
+- package.json
+- README.md
