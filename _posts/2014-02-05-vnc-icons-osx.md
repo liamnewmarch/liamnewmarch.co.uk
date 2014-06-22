@@ -40,4 +40,4 @@ First choose an icon from the folder above. These are `.icns` files, a wrapper f
 
 Next, with the `.vncloc` file we created above, right click and choose “Get info”. There is a small icon preview top-left; click to select it and hit ⌘V and it should paste the new icon. You can drag the location file to the right of your Dock for quick access.
 
-[vnc-icons-image]: "http://liamnewmarch.co.uk/wp-content/uploads/2014/02/Screen-Shot-2014-02-05-at-13.14.50.png
+[vnc-icons-image]: /assets/img/vnc-icons-screenshot.png
