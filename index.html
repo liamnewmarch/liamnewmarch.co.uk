@@ -3,4 +3,12 @@ title: Home
 layout: main
 ---
 
-<p> This is the index </p>
+<ul class="contents">
+{% for post in site.posts %}
+	<li>
+		<a href="{{ post.url }}" class="contents__post">
+			<h2>{{ post.title }}</h2>
+		</a>
+	</li>
+{% endfor %}
+</ul>
