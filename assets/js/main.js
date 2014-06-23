@@ -2,6 +2,10 @@
 
 	'use strict';
 
+	function age(date) {
+		return Math.floor((new Date() - new Date(date)) / 31536e6);
+	}
+
 	var bookmarklets = {
 		'carbon-date': '/assets/js/bookmarklet.carbon-date.js',
 		'resolution-test': '/assets/js/bookmarklet.resolution-test.js'
@@ -9,6 +13,9 @@
 
 	$(function() {
 
+		$('.insert-age').each(function() {
+			$(this).html(age('1987/12/01') + ' year old');
+		});
 
 		$('.bookmarklet').on('click', function() {
 
@@ -39,6 +46,6 @@
 					console.error('Bookmarklet not found, key: ' + key);
 				});
 			}
-		})
+		});
 	});
 }());
