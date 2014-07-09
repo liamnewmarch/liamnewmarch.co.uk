@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		},
 
 		sass: {
-			build:{
+			build: {
 				options: {
 					style: 'compressed'
 				},
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 		},
 
 		uglify: {
-			build:{
+			build: {
 				options: {
 					mangle: false
 				},
@@ -38,6 +38,24 @@ module.exports = function(grunt) {
 					]
 				}
 			}
+		},
+
+		watch: {
+			build: {
+				files: [
+					// Assets
+					'assets/css/*.scss',
+					'assets/js/*.js',
+					// Jekyll pages
+					'**/*.md',
+					'**/*.html',
+					// Not compiled JS
+					'!assets/js/min.js',
+					// Not compiled pages
+					'!_site/**'
+				],
+				tasks: [ 'default' ]
+			}
 		}
 	});
 
@@ -45,6 +63,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jekyll');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', [
 		'sass', 'uglify', 'autoprefixer', 'jekyll'
