@@ -9,9 +9,19 @@
 	</head>
 	<body>
 		<header>
-			<h1><a href="/"> Liam Newmarch </a></h1>
+			<a href="/" class="centre" rel="home">
+				<h1> Liam Newmarch </h1>
+				<p> Developer living in London </p>
+			</a>
 		</header>
-		<main>
+		<nav>
+			<ul class="centre">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about/">About</a></li>
+				<li><a href="/contact/">Contact</a></li>
+			</ul>
+		</nav>
+		<main class="container">
 			{{ content }}
 		</main>
 		<footer>

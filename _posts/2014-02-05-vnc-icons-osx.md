@@ -20,7 +20,6 @@ The folder can be located here; hit ⌘⇧G in Finder and paste to jump right to
 In order to access VNC locations from the Dock, we can create a `.vncloc` file. Use a text editor to paste the following into a file and save it with a name ending in `.vncloc`, e.g. `user-hostname.vncloc`:
 
 {% highlight XML %}
-<?xml version="1.0" encoding="UTF-8">
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <dict>

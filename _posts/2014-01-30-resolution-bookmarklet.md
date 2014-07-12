@@ -12,12 +12,12 @@ Say you want to quickly see how the page you’re currently on looks at a certai
 
 Here’s a the indented source for those who want to see how it works:
 
-```
+{% highlight JavaScript %}
 (function(s) {
     open(location, null, 'width=' + s[0] + ', height=' + s[1])
 })(
     prompt('Please enter a resolution in the form WWWWxYYYY', '1024x768').split('x')
 )
-```
+{% endhighlight %}
 
 Simple, eh? Even though `window.open` normally triggers a blocked popup warning, this isn’t the case for bookmarklets. Tested so far on OS X with Chrome, Firefox and Safari.
