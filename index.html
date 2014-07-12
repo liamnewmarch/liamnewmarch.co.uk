@@ -3,12 +3,13 @@ title: Home
 layout: main
 ---
 
-<ul class="contents">
+<section class="contents">
+	<h2> Recent blog posts </h2>
+	<ul>
 {% for post in site.posts %}
-	<li>
-		<a href="{{ post.url }}" class="contents__post">
-			<h2>{{ post.title }}</h2>
-		</a>
-	</li>
+		<li>
+			<a href="{{ post.url }}" class="contents__post"> {{ post.title }} </a>
+		</li>
 {% endfor %}
-</ul>
+	</ul>
+</section>

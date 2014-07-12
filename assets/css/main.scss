@@ -1,58 +1,82 @@
 @charset "utf-8";
 
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
-// Mixins
+// Variables
 
-@mixin button {
-	display: inline-block;
-	border: 2px solid;
-	padding: 1em;
-	border-radius: 5px;
-}
+$unit: 16px;
 
-@mixin bare-list {
-	list-style: none;
-	padding: 0 0 1em 0;
-
-	li {
-		display: block;
-	}
-}
-
-@mixin heading-main {
-	font: normal 60px/1 Lobster, sans-serif;
-	margin: 64px 0;
-}
-
-@mixin heading-post {
-	font: normal 48px/1 Lobster, sans-serif;
-	margin: 48px 0;
-}
-
-@mixin heading-post-sub {
-	font: bold 30px Roboto, sans-serif;
-	margin: 32px 0;
-}
+$dark: rgb(39, 40, 34);
+$middle: rgb(160, 160, 160);
+$light: rgb(240, 240, 240);
+$accent: rgb(192, 32, 32);
 
 
-// Base styles
+// Typography
 
-* {
-	box-sizing: border-box;
-}
-
-html, input, textarea {
-	font: normal 16px Roboto, sans-serif;
+html, button, input, textarea {
+	color: $dark;
+	font: normal $unit / #{ 1.5 * $unit } Roboto, sans-serif;
 	text-rendering: optimizeLegibility;
 }
 
-body {
-	margin: 0;
+%heading-logo {
+	font: 100 #{ 3.75 * $unit } / #{ 3.75 * $unit } Lobster, sans-serif;
+	margin: 0 0 $unit;
 }
 
-button, .bookmarklet {
-	@include button;
+%heading-sublogo {
+	font: 100 #{ 1.5 * $unit } / #{ 1.5 * $unit } Roboto, sans-serif;
+	font-style: italic;
+	margin: 0 0 2 * $unit;
+}
+
+%heading-title {
+	font: 100 #{ 3 * $unit } / #{ 3 * $unit } Lobster, sans-serif;
+	margin: 0 0 2 * $unit;
+}
+
+%heading-subtitle {
+	font: normal #{ 2 * $unit } / #{ 2.5 * $unit } Roboto, sans-serif;
+	margin: 4 * $unit 0 2 * $unit;
+}
+
+h1 {
+	@extend %heading-title;
+}
+
+h2 {
+	@extend %heading-subtitle;
+}
+
+p, ul, pre {
+	margin: 0 0 2 * $unit;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+
+	.article & {
+		list-style: circle outside;
+	}
+}
+
+
+// Colour
+
+header {
+	color: white;
+	background: $dark;
+	background: linear-gradient(to bottom, rgb(32, 32, 32), rgb(64, 64, 64));
+}
+
+nav {
+	background: $middle;
+
+	a:hover {
+		color: white;
+		background: $dark;
+	}
 }
 
 a {
@@ -61,47 +85,97 @@ a {
 }
 
 
+// Layout
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.centre {
+	display: block;
+	margin: 0 auto;
+	max-width: 1080px;
+}
+
+footer {
+	display: none;
+}
+
+
 // Header
 
 header {
-	padding: 0 32px;
-	background: black;
-	overflow: hidden;
+	padding: 3.5 * $unit 0 2.5 * $unit;
+
+
+	.centre {
+		position: relative;
+		padding: 0 0 0 120px;
+	}
 
 	h1 {
-		@include heading-main;
-		color: white;
+		@extend %heading-logo;
+
+		&:before {
+			position: absolute;
+			top: 7px;
+			left: 7px;
+			content: '';
+			display: inline;
+			border-radius: 50%;
+			width: 100px;
+			height: 100px;
+			background: url('http://liamnewmarch.co.uk/wp-content/uploads/2014/02/img.jpg') 50% 50% / cover no-repeat;
+			box-shadow: 0 0 5px black;
+		}
+	}
+
+	p {
+		@extend %heading-sublogo;
 	}
 }
 
-// Footer
 
-footer {
-	padding: 0 32px;
+// Navigation
+
+nav {
+	display: block;
+	margin-bottom: 2 * $unit;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: inline-block;
+		padding: $unit;
+	}
 }
 
+
+// Main
+
+main {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 0 $unit;
+
+	a {
+		color: $accent;
+	}
+}
 
 // Contents
 
 .contents {
-	@include bare-list;
-
-	h2 {
-		@include heading-post;
-	}
 
 	.contents__post {
 		display: block;
-		overflow: hidden;
-		padding: 0 32px 64px;
-	}
-
-	li {
-		background: silver;
-	}
-
-	li:nth-of-type(even) {
-		background: gray;
+		margin: 0 0 $unit 0;
 	}
 }
 
@@ -109,21 +183,38 @@ footer {
 // Post
 
 .post {
-	padding: 0 32px;
-	max-width: 640px;
-	@media (min-width: 640px) {
 
-	}
+	.post__title .date {
+		color: $accent;
 
-	h1 {
-		@include heading-post;
+		&::before {
+			content: "★ ";
+		}
 	}
+}
 
-	h2 {
-		@include heading-post-sub;
-	}
 
-	a:hover {
-		text-decoration: underline;
-	}
+// Components
+
+button,
+input[type="text"] {
+	border: 2px solid;
+	background: none;
+}
+
+.highlight {
+	background: $dark;
+	color: white;
+	padding: 0.5em 1em;
+	margin: 0 0 2em 0;
+	overflow: auto;
+
+	@import "monokai";
+}
+
+code:not([class]) {
+	display: inline-block;
+	padding: 0 $unit / 2;
+	background: $light;
+	border-radius: 3px;
 }

@@ -15,13 +15,13 @@ The first of these is called [Benchmark][benchmark-link] and is a JavaScript A
 
 For example you could supply these two snippets to find out which snippet runs more quickly:
 
-```
+{% highlight JavaScript %}
 var a = {};
-```
+{% endhighlight %}
 and
-```
+{% highlight JavaScript %}
 var b = new Object();
-```
+{% endhighlight %}
 
 I get 13046 runs/ms for the first instance, and 9099 runs/ms for that second. More runs means faster execution, so `var a = {};` is the winner here.
 
