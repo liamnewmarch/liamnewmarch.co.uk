@@ -7,7 +7,7 @@ I use VNC (aka Screen Share) a lot, so I keep a folder of frequently accessed ma
 
 The default VNC location file icon for OS X is a bit dull. Fortunately, OS X has a folder of system icons we can use instead. Even better, this folder contains icons for all recent Macbook, iMac and Mac Pro models.
 
-[![VNC Icons][vnc-icons-image]][vnc-icons-image]
+![VNC Icons][vnc-icons-image]
 
 The folder can be located here; hit ⌘⇧G in Finder and paste to jump right to it:
 
