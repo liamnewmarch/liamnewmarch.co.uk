@@ -117,6 +117,13 @@ a {
 	text-decoration: none;
 }
 
+.highlight {
+	color: white;
+	background: $dark;
+
+	@import "monokai";
+}
+
 
 // Layout
 
@@ -226,8 +233,9 @@ input[type="text"] {
 }
 
 .highlight {
-	background: $dark;
-	color: white;
+	tab-size: 4;
+	font-size: 12px;
+	line-height: 16px;
 	padding: $unit;
 	margin: 0 0 2 * $unit 0;
 	border-radius: 3px;
@@ -237,7 +245,9 @@ input[type="text"] {
 		margin: 0;
 	}
 
-	@import "monokai";
+	code {
+		font-family: Menlo, monospace;
+	}
 }
 
 code:not([class]) {
