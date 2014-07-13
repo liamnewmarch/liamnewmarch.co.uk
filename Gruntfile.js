@@ -12,6 +12,9 @@ module.exports = function(grunt) {
 
 		jekyll: {
 			build: {
+				options: {
+					drafts: true
+				},
 				src : '<%= app %>'
 			}
 		},
