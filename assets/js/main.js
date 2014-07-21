@@ -11,10 +11,6 @@
 		'resolution-test': '/assets/js/bookmarklet.resolution-test.js'
 	};
 
-	// Disqus global
-
-	window.disqus_shortname = 'liamnewmarch';
-
 	// Google Analytics globals
 
 	window.GoogleAnalyticsObject = 'ga';
