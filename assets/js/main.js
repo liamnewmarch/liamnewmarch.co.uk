@@ -11,6 +11,12 @@
 		'resolution-test': '/assets/js/bookmarklet.resolution-test.js'
 	};
 
+	// Disqus global
+
+	window.disqus_shortname = 'liamnewmarch';
+
+	// Google Analytics globals
+
 	window.GoogleAnalyticsObject = 'ga';
 	window.ga = function() {
 		window.ga.q.push(arguments);
@@ -18,6 +24,7 @@
 	};
 	window.ga.q = [];
 
+	// Push page track event
 	ga('create', 'UA-6676765-4', 'liamnewmarch.co.uk');
 	ga('send', 'pageview');
 
