@@ -11,6 +11,16 @@
 		'resolution-test': '/assets/js/bookmarklet.resolution-test.js'
 	};
 
+	window.GoogleAnalyticsObject = 'ga';
+	window.ga = function() {
+		window.ga.q.push(arguments);
+		window.ga.l = 1 * new Date();
+	};
+	window.ga.q = [];
+
+	ga('create', 'UA-6676765-4', 'liamnewmarch.co.uk');
+	ga('send', 'pageview');
+
 	$(function() {
 
 		$('.insert-age').each(function() {
@@ -28,7 +38,7 @@
 
 			// Get bookmarklet via ajax and add
 
-			var promise, key = $(this).data('bookmarklet');
+			var key = $(this).data('bookmarklet');
 
 			if (key in bookmarklets) {
 
@@ -45,7 +55,10 @@
 				bookmarklets[key].fail(function(data) {
 					console.error('Bookmarklet not found, key: ' + key);
 				});
+
 			}
 		});
+
 	});
+
 }());
