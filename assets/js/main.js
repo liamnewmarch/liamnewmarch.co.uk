@@ -62,6 +62,10 @@
 			}
 		});
 
+		if ($('#disqus_thread').length) {
+			$.getScript('https://liamnewmarch.disqus.com/embed.js');
+		};
+
 	});
 
 }());
