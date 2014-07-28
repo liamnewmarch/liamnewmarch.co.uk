@@ -221,6 +221,13 @@ main {
 			content: "★ ";
 		}
 	}
+
+	.post__body iframe {
+		display: block;
+		border: 1px solid black;
+		max-width: 100%;
+		margin: 0 auto 1em;
+	}
 }
 
 
