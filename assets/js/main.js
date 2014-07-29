@@ -63,7 +63,7 @@
 		});
 
 		if ($('#disqus_thread').length) {
-			window.disqus_url = 'liamnewmarch';
+			window.disqus_shortname = 'liamnewmarch';
 			$.getScript('https://liamnewmarch.disqus.com/embed.js');
 		}
 
