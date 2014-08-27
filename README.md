@@ -1,6 +1,6 @@
 # Source for liamnewmarch.co.uk
 
-This repo contains the source code for my website [liamnewmarch.co.uk][link].
+This repo contains the source code for my website [liamnewmarch.co.uk][site].
 
 
 ## Building
