@@ -9,11 +9,11 @@ This repo contains the source code for my website [liamnewmarch.co.uk][link].
 
 Make sure you have the following installed.
 
-- Jekyll
-- Sass
-- npm
-- Grunt
-- Bower
+- [Jekyll][jekyll]
+- [Sass][sass]
+- [Node/npm][node]
+- [Grunt][grunt]
+- [Bower][bower]
 
 Jekyll and Sass can both be installed as Ruby gems, npm is installed alongside Node.js, and Grunt and Bower can be installed via npm.
 
@@ -41,4 +41,9 @@ Watch the output and when it’s finished scrolling point your favourite web bro
 
 
 [site]: http://liamnewmarch.co.uk
+[jekyll]: http://jekyllrb.com/
+[sass]: http://sass-lang.com/install
+[node]: http://nodejs.org/
+[grunt]: http://gruntjs.com/getting-started
+[bower]: http://bower.io/#install-bower
 [local]: http://localhost:4000
