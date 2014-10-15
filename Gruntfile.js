@@ -10,15 +10,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		jekyll: {
-			build: {
-				options: {
-					drafts: true
-				},
-				src : '<%= app %>'
-			}
-		},
-
 		sass: {
 			build: {
 				options: {
@@ -42,33 +33,11 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
-		watch: {
-			build: {
-				files: [
-					// Assets
-					'assets/css/*.scss',
-					'assets/js/*.js',
-					// Jekyll pages
-					'**/*.md',
-					'**/*.html',
-					// Not compiled JS
-					'!assets/js/min.js',
-					// Not compiled pages
-					'!_site/**'
-				],
-				tasks: [ 'default' ]
-			}
-		}
 	});
 
 	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-jekyll');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', [
-		'sass', 'uglify', 'autoprefixer', 'jekyll'
-	]);
+	grunt.registerTask('default', ['sass', 'uglify', 'autoprefixer']);
 };
