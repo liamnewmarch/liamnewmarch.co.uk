@@ -5,8 +5,10 @@ layout: main
 
 # About
 
-My name is Liam, I’m a <span class="insert-age">twenty-something</span> web developer living and working in London. I work at [Potato][potato-link] as a front end developer, where I make things for Google. Previously I was lead developer at [WPA Pinfold][wpa-link] where I made things for National Grid, npower, and the University of Leeds.
+My name is Liam Newmarch and I’m a <span class="insert-age">twenty-something</span> web developer. I live in London and work for a company called [Potato](https://p.ota.to).
 
+I’m originally from Stockton-on-Tees in the North East of England but left in 2007 to study New Media at the University of Leeds.
 
-[wpa-link]: http://wpa-pinfold.co.uk
-[potato-link]: https://p.ota.to
+I joined [WPA Pinfold](http://wpa-pinfold.co.uk) as a PHP developer in 2010, a month before I graduated. I spent three years working for WPA, rising from an intern to lead developer.
+
+In 2014 I left Leeds and WPA for the bright lights of London and joined [Potato](https://p.ota.to), where I mostly work on front end things.
