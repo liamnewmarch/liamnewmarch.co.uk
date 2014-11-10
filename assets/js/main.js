@@ -6,6 +6,27 @@
 		return Math.floor((new Date() - new Date(date)) / 31536e6);
 	}
 
+	function each(iterable, callback) {
+		[].forEach.call(iterable, function(value, key) {
+			callback.call(value, key, value, iterable);
+		});
+	}
+
+	function loadScript(url) {
+		return new Promise(function(resolve, reject) {
+			var request = new XMLHttpRequest();
+			request.open('GET', url, true);
+			request.addEventListener('readystatechange', function() {
+				if (request.status == 200) {
+					resolve(request);
+				} else if (this.readyState === 4) {
+					reject(request);
+				}
+			}, false);
+			request.send();
+		});
+	}
+
 	var bookmarklets = {
 		'carbon-date': '/assets/js/bookmarklet.carbon-date.js',
 		'resolution-test': '/assets/js/bookmarklet.resolution-test.js'
@@ -24,49 +45,43 @@
 	ga('create', 'UA-6676765-4', 'liamnewmarch.co.uk');
 	ga('send', 'pageview');
 
-	$(function() {
+	document.addEventListener('DOMContentLoaded', function() {
 
-		$('.insert-age').each(function() {
-			$(this).html(age('1987/12/01') + ' year old');
+		var $insertAge = document.querySelectorAll('.insert-age'),
+			$bookmarklets = document.querySelectorAll('.bookmarklet');
+
+		function bookmarkletClick(e) {
+			e.preventDefault();
+			alert('Drag me to your bookmarks toolbar :)');
+		}
+
+		each($insertAge, function() {
+			this.innerHTML = age('1987/12/01') + ' year old';
 		});
 
-		$('.bookmarklet').on('click', function() {
+		each($bookmarklets, function() {
 
-			// Add usage instruction to bookmarklet
+			var key = this.dataset.bookmarklet;
 
-			alert('Drag me to your bookmarks toolbar :)');
-			return false;
-
-		}).each(function() {
-
-			// Get bookmarklet via ajax and add
-
-			var key = $(this).data('bookmarklet');
+			this.addEventListener('click', bookmarkletClick, false);
 
 			if (key in bookmarklets) {
 
 				if (typeof bookmarklets[key] === 'string') {
-					bookmarklets[key] = $.ajax(bookmarklets[key], {
-						dataType: 'text'
-					});
+					bookmarklets[key] = loadScript(bookmarklets[key]);
 				}
 
-				bookmarklets[key].done(function(data) {
-					this.href = data;
+				bookmarklets[key].then(function(data) {
+					this.href = data.responseText;
 				});
-
-				bookmarklets[key].fail(function(data) {
-					console.error('Bookmarklet not found, key: ' + key);
-				});
-
 			}
 		});
 
-		if ($('#disqus_thread').length) {
+		if (document.querySelectorAll('#disqus_thread').length) {
 			window.disqus_shortname = 'liamnewmarch';
-			$.getScript('https://liamnewmarch.disqus.com/embed.js');
+			loadScript('https://liamnewmarch.disqus.com/embed.js');
 		}
 
-	});
+	}, false);
 
 }());
