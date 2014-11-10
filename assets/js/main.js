@@ -14,8 +14,8 @@
 
 	function loadScript(url) {
 		return new Promise(function(resolve, reject) {
-			var request = new XMLHttpRequest();
-			request.open('GET', url, true);
+			var s = document.createElement('script');
+			s.src = url;
 			request.addEventListener('readystatechange', function() {
 				if (request.status == 200) {
 					resolve(request);
@@ -48,7 +48,8 @@
 	document.addEventListener('DOMContentLoaded', function() {
 
 		var $insertAge = document.querySelectorAll('.insert-age'),
-			$bookmarklets = document.querySelectorAll('.bookmarklet');
+			$bookmarklets = document.querySelectorAll('.bookmarklet'),
+			$disqus = document.createElement('script');
 
 		function bookmarkletClick(e) {
 			e.preventDefault();
@@ -79,7 +80,8 @@
 
 		if (document.querySelectorAll('#disqus_thread').length) {
 			window.disqus_shortname = 'liamnewmarch';
-			loadScript('https://liamnewmarch.disqus.com/embed.js');
+			$disqus.src = 'https://liamnewmarch.disqus.com/embed.js';
+			document.body.appendChild($disqus);
 		}
 
 	}, false);
