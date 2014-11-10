@@ -1,7 +1,7 @@
 ---
 title: Carbon Date for jQuery
 layout: post
-bookmarklet: <a href="bookmarklet" data-bookmarklet="carbon-date">Carbon date</a>
+bookmarklet: <a class="bookmarklet" data-bookmarklet="carbon-date">Carbon date</a>
 ---
 
 Occasionally when I’m browsing the web I want to know how old a website is.
