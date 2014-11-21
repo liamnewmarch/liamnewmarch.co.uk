@@ -78,12 +78,6 @@
 			}
 		});
 
-		if (document.querySelectorAll('#disqus_thread').length) {
-			window.disqus_shortname = 'liamnewmarch';
-			$disqus.src = 'https://liamnewmarch.disqus.com/embed.js';
-			document.body.appendChild($disqus);
-		}
-
 	}, false);
 
 }());
