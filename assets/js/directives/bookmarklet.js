@@ -3,9 +3,9 @@
 
     angular.module('app').directive('bookmarklet', bookmarklet);
 
-    bookmarklet.$inject = [ '$http', '$sce', '$log' ];
+    bookmarklet.$inject = [ '$http', '$log' ];
 
-    function bookmarklet($http, $sce, $log) {
+    function bookmarklet($http, $log) {
         return {
             restrict: 'E',
             transclude: true,
