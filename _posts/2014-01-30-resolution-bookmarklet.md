@@ -1,7 +1,7 @@
 ---
 title: A small bookmarklet for resolution testing
 layout: post
-bookmarklet: <a class="bookmarklet" data-bookmarklet="resolution-test">Resolution test</a>
+bookmarklet: <bookmarklet src="/assets/js/bookmarklet.resolution-test.js">Resolution test</bookmarklet>
 ---
 
 Here’s a quick bookmarklet I just cooked up.

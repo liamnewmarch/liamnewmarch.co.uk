@@ -5,7 +5,7 @@ layout: main
 
 # About
 
-My name is Liam Newmarch and I’m a <span class="insert-age">twenty-something</span> web developer. I live in London and work for a company called [Potato](https://p.ota.to).
+My name is Liam Newmarch and I’m a <insert-age date-of-birth="1987/12/01">twenty-odd</insert-age> year old web developer. I live in London and work for a company called [Potato](https://p.ota.to).
 
 I’m originally from Stockton-on-Tees in the North East of England but left in 2007 to study New Media at the University of Leeds.
 
