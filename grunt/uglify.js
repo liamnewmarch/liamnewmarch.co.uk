@@ -6,7 +6,9 @@ module.exports = {
 		},
 		files: {
 			'assets/js/min.js': [
-				'assets/js/main.js'
+				'assets/js/modules/*.js',
+				'assets/js/services/*.js',
+				'assets/js/directives/*.js'
 			]
 		}
 	}
