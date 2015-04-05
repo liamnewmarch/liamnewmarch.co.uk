@@ -6,7 +6,7 @@
     config.$inject = [ '$compileProvider' ];
 
     function config($compileProvider) {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|javascript):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|javascript):/);
     }
 
 }());
