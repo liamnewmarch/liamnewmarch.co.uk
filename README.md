@@ -33,6 +33,9 @@ cd liamnewmarch.co.uk/
 npm install
 bower install
 
+# Compile assets
+grunt
+
 # Start a Jekyll server
 jekyll serve 4000
 ```
