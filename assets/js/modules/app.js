@@ -1,12 +1,7 @@
-(function() {
-    'use strict';
+angular.module('app', []).config(config);
 
-    angular.module('app', []).config(config);
+config.$inject = [ '$compileProvider' ];
 
-    config.$inject = [ '$compileProvider' ];
-
-    function config($compileProvider) {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|javascript):/);
-    }
-
-}());
+function config($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|javascript):/);
+}
