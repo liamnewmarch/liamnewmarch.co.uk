@@ -3,15 +3,15 @@
 
     angular.module('app').directive('disqusComments', disqusComments);
 
-    disqusComments.$inject = [ '$window', 'Script' ];
+    disqusComments.$inject = [ '$window', 'script' ];
 
-    function disqusComments($window, Script) {
+    function disqusComments($window, script) {
         return {
             restrict: 'E',
             link: function(scope, element, attrs) {
                 element.attr('id', 'disqus_thread');
                 $window.disqus_shortname = attrs.shortname;
-                Script.load('https://' + attrs.shortname + '.disqus.com/embed.js');
+                script.load('https://' + attrs.shortname + '.disqus.com/embed.js');
             }
         };
     }

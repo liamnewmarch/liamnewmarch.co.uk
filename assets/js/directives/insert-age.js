@@ -3,8 +3,6 @@
 
     angular.module('app').directive('insertAge', insertAge);
 
-    insertAge.$inject = [  ];
-
     function insertAge() {
 
         function dateToAge(dateString) {
@@ -13,10 +11,13 @@
         }
 
         return {
+            scope: {
+                dateToAge: '@'
+            },
             restrict: 'E',
             template: '{{ age }}',
-            link: function(scope, element, attrs) {
-                scope.age = dateToAge(attrs.dateOfBirth);
+            link: function(scope) {
+                scope.age = dateToAge(scope.dateOfBirth);
             }
         };
     }

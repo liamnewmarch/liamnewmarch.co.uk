@@ -3,14 +3,18 @@
 
     angular.module('app').directive('googleAnalytics', googleAnalytics);
 
-    googleAnalytics.$inject = [ '$window', 'Script' ];
+    googleAnalytics.$inject = [ '$window', 'script' ];
 
-    function googleAnalytics($window, Script) {
+    function googleAnalytics($window, script) {
         return {
+            scope: {
+                trackingId: '@',
+                rename: '@?'
+            },
             restrict: 'E',
-            link: function(scope, element, attrs) {
+            link: function(scope) {
 
-                var objectName = 'rename' in attrs ? attrs.rename : 'ga';
+                var objectName = 'rename' in scope ? scope.rename : 'ga';
 
                 function ga() {
                     ga.q.push(arguments);
@@ -18,13 +22,13 @@
                 }
 
                 ga.q = [];
-                ga('create', attrs.trackingId, 'auto');
+                ga('create', scope.trackingId, 'auto');
                 ga('send', 'pageview');
 
                 $window.GoogleAnalyticsObject = objectName;
                 $window[objectName] = ga;
 
-                Script.load('https://www.google-analytics.com/analytics.js');
+                script.load('https://www.google-analytics.com/analytics.js');
             }
         };
     }

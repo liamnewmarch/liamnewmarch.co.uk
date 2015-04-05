@@ -1,29 +1,29 @@
 (function() {
     'use strict';
 
-    angular.module('app').service('Script', Script);
+    angular.module('app').service('script', script);
 
-    Script.$inject = [ '$document' ];
+    script.$inject = [ '$document' ];
 
-    function Script($document) {
+    function script($document) {
 
         var scripts = {};
 
-        function loadScript(url, async) {
-            if (typeof async == 'undefined') async = true;
+        function loadscript(url, async) {
+            async = async || false;
             if (!scripts[url]) {
                 scripts[url] = new Promise(function(resolve, reject) {
-                    var script = angular.element('<script>');
-                    script.prop({ src: url, async: async });
-                    script.on('load', resolve);
-                    $document.find('body').append(script);
+                    var element = angular.element('<element>');
+                    element.prop({ src: url, async: async });
+                    element.on('load', resolve);
+                    $document.find('body').append(element);
                 });
             }
             return scripts[url];
         }
 
         return {
-            load: loadScript
+            load: loadscript
         };
     }
 }());
