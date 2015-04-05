@@ -1,7 +1,7 @@
 module.exports = {
 	build: {
 		options: {
-			mangle: false,
+			wrap: true,
 			sourceMap: true
 		},
 		files: {
