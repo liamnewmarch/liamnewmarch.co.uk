@@ -10,7 +10,7 @@ function script($document) {
         async = async || false;
         if (!scripts[url]) {
             scripts[url] = new Promise(function(resolve, reject) {
-                var element = angular.element('<element>');
+                var element = angular.element('<script>');
                 element.prop({ src: url, async: async });
                 element.on('load', resolve);
                 $document.find('body').append(element);
