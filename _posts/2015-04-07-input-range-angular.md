@@ -16,17 +16,17 @@ Fortunately this is fairly easy to fix by using `ngModel.NgModelController` [(se
 Here’s a parser that coerces the value to a number:
 
 {% highlight JavaScript %}
-    yourApp.directive('input', function() {
-        return {
-            restrict: 'E',
-            require: '?ngModel',
-            link: function(scope, element, attrs, ngModel) {
-                if ('type' in attrs && attrs.type.toLowerCase() === 'range') {
-                    ngModel.$parsers.push(parseFloat);
-                }
+yourApp.directive('input', function() {
+    return {
+        restrict: 'E',
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModel) {
+            if ('type' in attrs && attrs.type.toLowerCase() === 'range') {
+                ngModel.$parsers.push(parseFloat);
             }
-        };
-    });
+        }
+    };
+});
 {% endhighlight %}
 
 Since `parseFloat` already takes a string and returns a number we don’t even need to wrap it in a function. Pretty neat!
