@@ -1,0 +1,61 @@
+application: liamnewmarch-blog
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /(.*\.css)
+  mime_type: text/css
+  static_files: _site/\1
+  upload: _site/(.*\.css)
+
+- url: /(.*\.html)
+  mime_type: text/html
+  static_files: _site/\1
+  upload: _site/(.*\.html)
+
+- url: /(.*\.js)
+  mime_type: text/javascript
+  static_files: _site/\1
+  upload: _site/(.*\.js)
+
+- url: /(.*\.txt)
+  mime_type: text/plain
+  static_files: _site/\1
+  upload: _site/(.*\.txt)
+
+# image files
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: _site/\1
+  upload: _site/(.*\.(bmp|gif|ico|jpeg|jpg|png))
+
+# index files
+- url: /(.+)/
+  static_files: _site/\1/index.html
+  upload: _site/(.+)/index.html
+
+# redirect to 'url + /index.html' url.
+- url: /(.+)
+  static_files: _site/redirector.html
+  upload: _site/redirector.html
+
+# site root
+- url: /
+  static_files: _site/index.html
+  upload: _site/index.html
+
+skip_files:
+  # folders
+- ^.git.*
+- ^_layouts.*
+- ^_posts.*
+- ^about.*
+- ^assets.*
+- ^contact.*
+- ^grunt.*
+  # files
+- ^CNAME
+- ^Gruntfile.js
+- ^package.json
+- ^.*\.md
