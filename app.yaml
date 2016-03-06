@@ -1,44 +1,44 @@
 application: liamnewmarch-blog
-version: 1
+version: dev
 runtime: python27
 api_version: 1
 threadsafe: true
 
 handlers:
-- url: /(.*\.css)
+- url: /(.+\.css)
   mime_type: text/css
   static_files: _site/\1
-  upload: _site/(.*\.css)
+  upload: _site/(.+\.css)
 
-- url: /(.*\.html)
+- url: /(.+\.html)
   mime_type: text/html
   static_files: _site/\1
-  upload: _site/(.*\.html)
+  upload: _site/(.+\.html)
 
-- url: /(.*\.js)
+- url: /(.+\.js)
   mime_type: text/javascript
   static_files: _site/\1
-  upload: _site/(.*\.js)
+  upload: _site/(.+\.js)
 
-- url: /(.*\.txt)
+- url: /(.+\.txt)
   mime_type: text/plain
   static_files: _site/\1
-  upload: _site/(.*\.txt)
+  upload: _site/(.+\.txt)
 
 # image files
-- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+- url: /(.+\.(bmp|gif|ico|jpeg|jpg|png))
   static_files: _site/\1
-  upload: _site/(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  upload: _site/(.+\.(bmp|gif|ico|jpeg|jpg|png))
 
-# index files
-- url: /(.+)/
+# pages
+- url: /(.+)/?
   static_files: _site/\1/index.html
   upload: _site/(.+)/index.html
 
-# redirect to 'url + /index.html' url.
+# old posts
 - url: /(.+)
-  static_files: _site/redirector.html
-  upload: _site/redirector.html
+  static_files: _site/posts/\1/index.html
+  upload: _site/posts/(.+)/index.html
 
 # site root
 - url: /
@@ -54,6 +54,7 @@ skip_files:
 - ^assets.*
 - ^contact.*
 - ^grunt.*
+- ^node_modules.*
   # files
 - ^CNAME
 - ^Gruntfile.js
