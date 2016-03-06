@@ -1,5 +1,5 @@
 markdown: kramdown
-permalink: /:title
+permalink: /posts/:title/index.html
 exclude:
 - bower.js
 - Gruntfile.js
