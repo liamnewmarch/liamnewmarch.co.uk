@@ -1,5 +1,5 @@
 application: liamnewmarch-blog
-version: dev
+version: live
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -30,15 +30,25 @@ handlers:
   static_files: _site/\1
   upload: _site/(.+\.(bmp|gif|ico|jpeg|jpg|png))
 
-# pages
-- url: /(.+)/?
-  static_files: _site/\1/index.html
-  upload: _site/(.+)/index.html
+# assets
+- url: /assets/(.+)
+  static_files: _site/assets/\1
+  upload: _site/assets/(.+)
 
-# old posts
-- url: /(.+)
+# pages
+- url: /(about|assets|contact)/?$
+  static_files: _site/\1/index.html
+  upload: _site/(.+)/index\.html
+
+# posts - new urls
+- url: /posts/(.+?)/?$
   static_files: _site/posts/\1/index.html
-  upload: _site/posts/(.+)/index.html
+  upload: _site/posts/(.+)/index\.html
+
+# posts - old urls
+- url: /(.+?)/?$
+  static_files: _site/posts/\1/index.html
+  upload: _site/posts/(.+)/index\.html
 
 # site root
 - url: /
