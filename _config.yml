@@ -1,7 +1,7 @@
 markdown: kramdown
 permalink: /posts/:title/index.html
 exclude:
-- bower.js
+- app.yaml
 - Gruntfile.js
 - node_modules
 - package.json

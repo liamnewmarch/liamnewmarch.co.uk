@@ -3,3 +3,6 @@ _drafts
 _site
 bower_components
 node_modules
+assets/**/*.map
+assets/css/min.css
+assets/js/min.js
