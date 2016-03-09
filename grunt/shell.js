@@ -13,6 +13,6 @@ module.exports = {
   },
 
   'jekyll-serve': {
-    command: 'jekyll serve'
+    command: 'jekyll serve --host=0.0.0.0'
   }
 };
