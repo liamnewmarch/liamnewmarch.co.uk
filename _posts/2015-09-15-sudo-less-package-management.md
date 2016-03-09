@@ -15,7 +15,7 @@ Homebrew doesn’t normally require sudo permissions, but installs to `/usr/loca
 Installing Homebrew for the current user is as easy as cloning the repository and adding it’s `bin` to your `$PATH`. I chose to install it in `~/homebrew`, to do the same fire up a new shell in your home directory (or type `cd`) and enter:
 
 {% highlight Bash %}
-    git clone https://github.com/Homebrew/homebrew
+git clone https://github.com/Homebrew/homebrew
 {% endhighlight %}
 
 Next you need to add `~/homebrew/bin` to your `$PATH` so you can use the `brew` command, as well as anything else you choose to install with `brew install`. The simplest way to do this is to add this line to the end of your `~/.bashrc` or `~/.zshrc` file:
