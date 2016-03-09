@@ -1,13 +1,13 @@
 .post {
-  .highlight {
-    margin: 0;
+  figure {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   pre {
     color: $color-white;
     background: $color-primary;
     padding: units(1);
-    margin: 0;
     max-width: 100%;
     overflow: auto;
   }
