@@ -1,0 +1,13 @@
+.main-content {
+  max-width: units(50);
+  margin: 0 auto;
+  padding: 0 units(2) units(2);
+
+  a {
+    color: $color-secondary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

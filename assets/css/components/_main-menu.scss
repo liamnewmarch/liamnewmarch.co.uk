@@ -1,0 +1,24 @@
+.main-menu {
+  background: map-get($color-blue-grey, '50');
+
+  &__items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: units(70);
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    display: block;
+    padding: units(1) units(2);
+
+    &:hover {
+      background: map-get($color-blue-grey, '100');
+    }
+  }
+}

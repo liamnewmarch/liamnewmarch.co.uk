@@ -1,0 +1,49 @@
+/**
+ * Base unit
+ */
+$base-unit: 16px;
+
+@function units($multiplier) {
+  @return $multiplier * $base-unit;
+}
+
+/**
+ * Colours
+ */
+
+$color-text: map-get($color-grey, '900');
+$color-primary: map-get($color-blue-grey, '700');
+$color-secondary: map-get($color-blue, '500');
+
+
+/**
+ * Fonts
+ */
+
+$font-sans-serif: Helvetica Neue, sans-serif;
+
+
+/**
+ * Media queries
+ */
+$media-small: 425px;
+$media-medium: 768px;
+$media-large: 1024px;
+
+@mixin media-small {
+  @media (min-width: $media-small) {
+    @content;
+  }
+}
+
+@mixin media-medium {
+  @media (min-width: $media-medium) {
+    @content;
+  }
+}
+
+@mixin media-large {
+  @media (min-width: $media-large) {
+    @content;
+  }
+}
