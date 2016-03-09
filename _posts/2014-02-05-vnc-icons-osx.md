@@ -22,10 +22,10 @@ In order to access VNC locations from the Dock, we can create a `.vncloc` file. 
 {% highlight XML %}
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
+  <dict>
     <key>URL</key>
     <string>vnc://user@hostname.lan</string>
-    </dict>
+  </dict>
 </plist>
 {% endhighlight %}
 

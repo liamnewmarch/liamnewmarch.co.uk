@@ -17,15 +17,15 @@ Here’s a parser that coerces the value to a number:
 
 {% highlight JavaScript %}
 yourApp.directive('input', function() {
-    return {
-        restrict: 'E',
-        require: '?ngModel',
-        link: function(scope, element, attrs, ngModel) {
-            if ('type' in attrs && attrs.type.toLowerCase() === 'range') {
-                ngModel.$parsers.push(parseFloat);
-            }
-        }
-    };
+  return {
+    restrict: 'E',
+    require: '?ngModel',
+    link: function(scope, element, attrs, ngModel) {
+      if ('type' in attrs && attrs.type.toLowerCase() === 'range') {
+        ngModel.$parsers.push(parseFloat);
+      }
+    }
+  };
 });
 {% endhighlight %}
 
