@@ -1,0 +1,37 @@
+.header {
+  color: $color-white;
+  background: $color-primary;
+  overflow: hidden;
+
+  &__content {
+    display: block;
+    padding: units(2);
+    margin: 0 auto;
+    max-width: units(70);
+
+    @include media-medium {
+      padding: units(7) units(2) units(2);
+    }
+  }
+
+  &__title {
+    font-size: units(2);
+    font-weight: 300;
+    margin: 0;
+
+    @include media-medium {
+      font-size: units(3);
+    }
+  }
+
+  &__subtitle {
+    font-size: units(1);
+    font-style: italic;
+    font-weight: 300;
+    margin: 0;
+
+    @include media-medium {
+      font-size: units(1.5);
+    }
+  }
+}

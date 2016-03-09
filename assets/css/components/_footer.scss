@@ -1,0 +1,16 @@
+.footer {
+  color: map-get($color-blue-grey, '500');
+  background: map-get($color-blue-grey, '50');
+  overflow: hidden;
+
+  &__content {
+    display: block;
+    padding: units(2);
+    margin: 0 auto;
+    max-width: units(70);
+
+    @include media-medium {
+      padding: units(5) units(2);
+    }
+  }
+}
