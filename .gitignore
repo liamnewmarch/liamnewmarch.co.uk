@@ -52,10 +52,8 @@ docs/_build/
 
 # Other
 .sass-cache
-_drafts
-_site
 bower_components
 node_modules
-assets/**/*.map
-assets/css/min.css
-assets/js/min.js
+static/**/*.map
+static/css/min.css
+static/js/min.js

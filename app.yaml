@@ -27,11 +27,6 @@ handlers:
 skip_files:
   # folders
 - ^\.git.*
-- ^_layouts.*
-- ^_posts.*
-- ^about.*
-- ^assets.*
-- ^contact.*
 - ^grunt.*
 - ^node_modules.*
 - ^sitepackages/google_appengine.*
