@@ -12,7 +12,7 @@ module.exports = {
     command: 'jekyll build'
   },
 
-  'jekyll-serve': {
-    command: 'jekyll serve --host=0.0.0.0'
+  'app-engine-serve': {
+    command: 'dev_appserver.py . --host=0.0.0.0 --port=4000'
   }
 };
