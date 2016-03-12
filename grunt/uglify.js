@@ -5,10 +5,10 @@ module.exports = {
       sourceMap: true
     },
     files: {
-      'assets/js/min.js': [
-        'assets/js/modules/*.js',
-        'assets/js/services/*.js',
-        'assets/js/directives/*.js'
+      'static/js/min.js': [
+        'static/js/modules/*.js',
+        'static/js/services/*.js',
+        'static/js/directives/*.js'
       ]
     }
   }
