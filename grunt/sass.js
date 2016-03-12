@@ -3,7 +3,7 @@ module.exports = {
     options: {
       style: 'compressed'
     },
-    src: 'assets/css/main.scss',
-    dest: 'assets/css/min.css'
+    src: 'static/css/main.scss',
+    dest: 'static/css/min.css'
   }
 };

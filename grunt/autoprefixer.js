@@ -3,7 +3,7 @@ module.exports = {
     map: true
   },
   build: {
-    src: 'assets/css/min.css',
-    dest: 'assets/css/min.css'
+    src: 'static/css/min.css',
+    dest: 'static/css/min.css'
   }
 };

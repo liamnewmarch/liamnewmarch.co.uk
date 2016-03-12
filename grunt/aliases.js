@@ -2,7 +2,7 @@ module.exports = {
 
   'build': {
     description: 'Build static assets',
-    tasks: ['sass', 'uglify', 'autoprefixer', 'shell:jekyll-build']
+    tasks: ['sass', 'uglify', 'autoprefixer']
   },
 
   'default': {
@@ -22,6 +22,6 @@ module.exports = {
 
   'serve': {
     description: 'Build static assets and serve locally',
-    tasks: ['build', 'shell:app-engine-serve']
+    tasks: ['build', 'shell:serve']
   },
 };
