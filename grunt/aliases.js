@@ -22,6 +22,6 @@ module.exports = {
 
   'serve': {
     description: 'Build static assets and serve locally',
-    tasks: ['build', 'shell:jekyll-serve']
+    tasks: ['build', 'shell:app-engine-serve']
   },
 };
