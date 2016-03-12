@@ -5,59 +5,28 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /(.+\.css)
-  mime_type: text/css
-  static_files: _site/\1
-  upload: _site/(.+\.css)
 
-- url: /(.+\.html)
-  mime_type: text/html
-  static_files: _site/\1
-  upload: _site/(.+\.html)
+- url: /_ah/(mapreduce|queue|warmup|internalupload).*
+  script: blog.wsgi.application
+  login: admin
+  secure: always
 
-- url: /(.+\.js)
-  mime_type: text/javascript
-  static_files: _site/\1
-  upload: _site/(.+\.js)
+- url: /static/admin/
+  static_dir: sitepackages/django/contrib/admin/static/admin/
+  secure: always
 
-- url: /(.+\.txt)
-  mime_type: text/plain
-  static_files: _site/\1
-  upload: _site/(.+\.txt)
+- url: /admin.*
+  script: blog.wsgi.application
+  secure: always
+  login: admin
 
-# image files
-- url: /(.+\.(bmp|gif|ico|jpeg|jpg|png))
-  static_files: _site/\1
-  upload: _site/(.+\.(bmp|gif|ico|jpeg|jpg|png))
-
-# assets
-- url: /assets/(.+)
-  static_files: _site/assets/\1
-  upload: _site/assets/(.+)
-
-# pages
-- url: /(about|assets|contact)/?$
-  static_files: _site/\1/index.html
-  upload: _site/(.+)/index\.html
-
-# posts - new urls
-- url: /posts/(.+?)/?$
-  static_files: _site/posts/\1/index.html
-  upload: _site/posts/(.+)/index\.html
-
-# posts - old urls
-- url: /(.+?)/?$
-  static_files: _site/posts/\1/index.html
-  upload: _site/posts/(.+)/index\.html
-
-# site root
-- url: /
-  static_files: _site/index.html
-  upload: _site/index.html
+- url: /.*
+  script: blog.wsgi.application
+  secure: always
 
 skip_files:
   # folders
-- ^.git.*
+- ^\.git.*
 - ^_layouts.*
 - ^_posts.*
 - ^about.*
@@ -65,8 +34,14 @@ skip_files:
 - ^contact.*
 - ^grunt.*
 - ^node_modules.*
+- ^sitepackages/google_appengine.*
   # files
+- (.*)\.pyc
 - ^CNAME
 - ^Gruntfile.js
+- ^install_deps
+- ^manage.py
 - ^package.json
-- ^.*\.md
+- ^README.md
+- ^requirements.txt
+- \.storage.*
