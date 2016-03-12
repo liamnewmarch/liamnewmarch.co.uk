@@ -1,9 +1,0 @@
-markdown: kramdown
-permalink: /posts/:title/
-exclude:
-- app.yaml
-- Gruntfile.js
-- grunt
-- node_modules
-- package.json
-- README.md
