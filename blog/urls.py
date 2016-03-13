@@ -6,12 +6,7 @@ session_csrf.monkeypatch()
 from django.contrib import admin
 admin.autodiscover()
 
-from blog.views import (
-    home_view,
-    about_view,
-    contact_view,
-    post_view,
-)
+from blog import views
 
 urlpatterns = patterns(
     '',
@@ -21,12 +16,11 @@ urlpatterns = patterns(
     url(r'^auth/', include('djangae.contrib.gauth.urls')),
 
     # pages
-    url(r'^$', home_view, name='home'),
-    url(r'^about/', about_view, name='about'),
-    url(r'^contact/', contact_view, name='contact'),
+    url(r'^$', views.home_view, name='home'),
+    url(r'^about/', views.about_view, name='about'),
+    url(r'^contact/', views.contact_view, name='contact'),
     # posts
-    url(r'^posts/(?P<post_slug>[\w-]+)', post_view, name='post'),
+    url(r'^posts/(?P<post_slug>[\w-]+)/', views.post_view, name='post'),
     # posts (old url style)
-    # url(r'^(?P<username>\w+)', post_view),
-
+    url(r'^(?P<post_slug>[\w-]+)', views.old_post_view, name='old_post'),
 )

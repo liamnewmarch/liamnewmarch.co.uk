@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponsePermanentRedirect, Http404
 from django.shortcuts import render
 from blog.models import blog_posts
 
@@ -20,3 +20,9 @@ def post_view(request, post_slug):
     post = blog_posts.get_by_slug(post_slug)
     context = {'post': post}
     return render(request, 'post.html', context)
+
+def old_post_view(request, post_slug):
+    post = blog_posts.get_by_slug(post_slug)
+    if not post:
+        raise Http404
+    return HttpResponsePermanentRedirect('/posts/' + post_slug + '/')
