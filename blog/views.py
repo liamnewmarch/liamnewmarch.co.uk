@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from blog.models import blog_posts
 
 
 def home_view(request):
-    return render(request, 'index.html')
+    context = {'recent_posts': blog_posts.most_recent(10)}
+    return render(request, 'index.html', context)
 
 
 def about_view(request):
@@ -15,4 +17,6 @@ def contact_view(request):
 
 
 def post_view(request, post_slug):
-    return render(request, 'post.html')
+    post = blog_posts.get_by_slug(post_slug)
+    context = {'post': post}
+    return render(request, 'post.html', context)
