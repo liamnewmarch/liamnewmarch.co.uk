@@ -1,5 +1,8 @@
 {% extends 'index.html' %}
 
+{% block page_title %}{{ post.title }}{% endblock %}
+{% block canonical_url %}{% url 'post' post.slug %}{% endblock %}
+
 {% block main_content %}
 <article class="post">
 	<div class="post__title">
