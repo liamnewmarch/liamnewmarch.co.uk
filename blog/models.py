@@ -16,8 +16,6 @@ class BlogPost:
         self.file_name = data['markdown']
         self.markdown = self.get_markdown()
         self.html = self.get_html()
-        print len(self.markdown)
-        print len(self.html)
 
     def get_markdown(self):
         file_path = 'static/posts/' + self.file_name
