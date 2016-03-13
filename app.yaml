@@ -20,6 +20,10 @@ handlers:
   secure: always
   login: admin
 
+- url: /assets/
+  static_dir: static/
+  secure: always
+
 - url: /.*
   script: blog.wsgi.application
   secure: always
