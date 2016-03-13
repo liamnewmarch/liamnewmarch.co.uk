@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "slug": "npm",
+      "title": "Updating npm packages",
+      "markdown": "2014-08-18-npm.md",
+      "published": "2014-08-18"
+    },
+    {
+      "slug": "input-range-angular",
+      "title": "Using range inputs with Angular",
+      "markdown": "2015-04-07-input-range-angular.md",
+      "published": "2015-04-07"
+    }
+  ]
+}

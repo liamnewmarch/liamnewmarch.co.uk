@@ -21,11 +21,11 @@ urlpatterns = patterns(
     url(r'^auth/', include('djangae.contrib.gauth.urls')),
 
     # pages
-    url(r'^$', home_view),
-    url(r'^about/', about_view),
-    url(r'^contact/', contact_view),
+    url(r'^$', home_view, name='home'),
+    url(r'^about/', about_view, name='about'),
+    url(r'^contact/', contact_view, name='contact'),
     # posts
-    url(r'^posts/(?P<post_slug>\w+)', post_view),
+    url(r'^posts/(?P<post_slug>[\w-]+)', post_view, name='post'),
     # posts (old url style)
     # url(r'^(?P<username>\w+)', post_view),
 

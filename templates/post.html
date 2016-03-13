@@ -1,18 +1,18 @@
----
-layout: main
----
+{% extends 'index.html' %}
 
+{% block main_content %}
 <article class="post">
 	<div class="post__title">
-		<h1> {{ page.title }} </h1>
+		<h1> {{ post.title }} </h1>
 		<p class="date">
-			<time datetime="{{ page.date | date: %Y-%m-%d}}">
-				{{ page.date| date: "%B %-d, %Y" }}
+			<time datetime="{{ page.published }}">
+				{{ post.published }}
 			</time>
 		</p>
 	</div>
 	<div class="post__body">
-{{ content }}
+		{{ post.html }}
 	</div>
 	<disqus-comments shortname="liamnewmarch" class="post__comments"></disqus-comments>
 </article>
+{% endblock %}
