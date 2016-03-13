@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'cspreports',
     'djangae.contrib.gauth.datastore',
     'djangae.contrib.security',
-    # 'djangae.contrib.uniquetool',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,6 +77,16 @@ SECURE_CHECKS = [
     "blog.checks.check_session_csrf_enabled",
     "blog.checks.check_csp_is_not_report_only"
 ]
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
+CACHES.update({
+    'blog_cache': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+    }
+})
 
 CSP_REPORT_URI = reverse_lazy('report_csp')
 CSP_REPORTS_LOG = True

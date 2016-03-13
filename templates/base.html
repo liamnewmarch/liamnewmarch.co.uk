@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-		<title> {{ page.title }} | Liam Newmarch </title>
+		<title> {% block page_title %}Home{% endblock %} | Liam Newmarch </title>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,400|Lobster:400">
 		<link rel="stylesheet" href="/assets/css/min.css">
-		<link rel="canonical" href="https://liamnewmarch.co.uk{{ page.url | replace:'index.html','' }}" />
+		<link rel="canonical" href="{% block canonical_url %}{% endblock %}" />
 	</head>
 	<body>
 		<header class="header">
@@ -29,11 +29,12 @@
 			</ul>
 		</nav>
 		<main class="main-content">
-			{{ content }}
+			{% block main_content %}
+			{% endblock %}
 		</main>
 		<footer class="footer">
 			<div class="footer__content">
-				<p> Handcoded with ♡ by Liam Newmarch, 2016. </p>
+				<p> Handcoded with ♡ by Liam Newmarch, {% now 'Y' %}. </p>
 				<p> Source available under <a href="http://www.gnu.org/copyleft/gpl.html">GPLv3</a> on <a href="https://github.com/liamnewmarch/liamnewmarch.co.uk">GitHub</a>. </p>
 			</div>
 		</footer>
