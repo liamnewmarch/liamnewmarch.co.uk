@@ -1,8 +1,3 @@
----
-title: Pimp your VNC (Screen Share) shortcuts with OS X system icons
-layout: post
----
-
 I use VNC (aka Screen Share) a lot, so I keep a folder of frequently accessed machines on my Dock.
 
 The default VNC location file icon for OS X is a bit dull. Fortunately, OS X has a folder of system icons we can use instead. Even better, this folder contains icons for all recent Macbook, iMac and Mac Pro models.
@@ -11,15 +6,15 @@ The default VNC location file icon for OS X is a bit dull. Fortunately, OS X has
 
 The folder can be located here; hit ⌘⇧G in Finder and paste to jump right to it:
 
-{% highlight XML %}
+```
 /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources
-{% endhighlight %}
+```
 
 ## Creating a VNC shortcut file
 
 In order to access VNC locations from the Dock, we can create a `.vncloc` file. Use a text editor to paste the following into a file and save it with a name ending in `.vncloc`, e.g. `user-hostname.vncloc`:
 
-{% highlight XML %}
+```
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
@@ -27,7 +22,7 @@ In order to access VNC locations from the Dock, we can create a `.vncloc` file. 
     <string>vnc://user@hostname.lan</string>
   </dict>
 </plist>
-{% endhighlight %}
+```
 
 _Note: you’ll need to change the `vnc://user@hostname.lan` to the remote host’s details._
 

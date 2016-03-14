@@ -1,8 +1,3 @@
----
-title: Website Daydream
-layout: post
----
-
 This is a bit of a late announcement, but I have an app on Google Play. _Website Daydream_ is a simple app that allows a chosen website to be displayed when your device is docked or charging.
 
 Building on the Android 4.2 “Daydream” mode, _Website Daydream_ offers a couple of options:
