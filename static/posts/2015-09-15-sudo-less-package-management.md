@@ -1,8 +1,3 @@
----
-title: sudo-less package management on OS X
-layout: post
----
-
 Recently, I had to use a shared company MacBook for a web dev project. Knowing this shared device would only be mine for a few weeks, I wanted to be able to delete everything when I was done.
 
 I created a new OS X user and started looking into how I could install Homebrew and npm for that user. In doing this I found that both package managers could now be used without `sudo`. Here’s how.
@@ -66,6 +61,6 @@ export PATH="${HOME}/.gem/ruby/2.0.0/bin"
 {% endhighlight %}
 
 
-# Desktop Applications
+## Desktop Applications
 
 Finally, you can also install OS X apps per-user if you wish. By default, if you’re installing from a `.dmg` the app will ask you to drag the program to `/Applications`. Each OS X user also has a `~/Applications` folder in their home directory, simply dragging new apps there will install them for the current user only.
