@@ -24,17 +24,17 @@ handlers:
   static_files: static/\1
   upload: static/(.+\.(map|md|scss))
   mime_type: text/plain
-  secure: always
+  secure: optional
   application_readable: true
 
 - url: /assets/
   static_dir: static/
-  secure: always
+  secure: optional
   application_readable: true
 
 - url: /.*
   script: blog.wsgi.application
-  secure: always
+  secure: optional
 
 skip_files:
   # folders
