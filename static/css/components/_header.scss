@@ -6,22 +6,38 @@
 
   &__content {
     display: block;
-    padding: units(2);
     margin: 0 auto;
     max-width: units(70);
+    padding: units(2);
 
     @include media-medium {
       padding: units(7) units(2) units(2);
+
+      &::before {
+        background: $color-white url('../img/header.jpg') 0 0 / cover no-repeat;
+        border: 2px solid $color-white;
+        border-radius: 100%;
+        box-shadow: 0 0 units(0.3) units(0.1) $color-black;
+        content: '';
+        display: block;
+        float: left;
+        height: units(6.5);
+        margin-right: units(1);
+        width: units(6.5);
+      }
     }
   }
 
   &__title {
     font-size: units(2);
     font-weight: 500;
+    line-height: 1;
     margin: 0;
+    text-shadow: 0 0 units(0.5) $color-black;
 
     @include media-medium {
       font-size: units(3);
+      margin-top: units(1);
     }
   }
 
