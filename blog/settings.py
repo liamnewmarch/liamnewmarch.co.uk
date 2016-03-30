@@ -127,7 +127,7 @@ CSP_DEFAULT_SRC = ("'self'", "*.gstatic.com")
 CSP_STYLE_SRC = ("'self'", "*.googleapis.com", "*.gstatic.com")
 CSP_FONT_SRC = ("'self'", "*.gstatic.com")
 CSP_FRAME_SRC = ("'self'", "*.google.com", "disqus.com")
-CSP_SCRIPT_SRC = ("'self'", "*.googleanalytics.com", "*.google-analytics.com", "ajax.googleapis.com", "*.disqus.com")
+CSP_SCRIPT_SRC = ("'self'", "data:", "*.googleanalytics.com", "*.google-analytics.com", "ajax.googleapis.com", "*.disqus.com")
 CSP_IMG_SRC = ("'self'", "*.google-analytics.com", "*.disqus.com")
 CSP_CONNECT_SRC = ("'self'", "*.google-analytics.com")
 
