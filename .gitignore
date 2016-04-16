@@ -51,6 +51,7 @@ coverage.xml
 docs/_build/
 
 # Other
+.challenge
 .sass-cache
 bower_components
 node_modules
