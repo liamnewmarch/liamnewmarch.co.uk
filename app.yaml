@@ -20,6 +20,12 @@ handlers:
   secure: always
   login: admin
 
+- url: /.well-known/acme-challenge/(.+)
+  static_files: .challenge/\1
+  upload: .challenge/(.+)
+  mime_type: text/plain
+  secure: optional
+
 - url: /assets/(.+\.(map|md|scss))
   static_files: static/\1
   upload: static/(.+\.(map|md|scss))
