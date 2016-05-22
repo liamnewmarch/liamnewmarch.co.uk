@@ -12,12 +12,12 @@ module.exports = {
 
   'deploy-dev': {
     description: 'Build static assets and deploy a dev version',
-    tasks: ['build', 'shell:deploy-dev']
+    tasks: ['build', 'shell:grow-build', 'shell:deploy-dev']
   },
 
   'deploy-live': {
     description: 'Build static assets and deploy a live version',
-    tasks: ['build', 'shell:deploy-live']
+    tasks: ['build', 'shell:grow-build', 'shell:deploy-live']
   },
 
   'serve': {
