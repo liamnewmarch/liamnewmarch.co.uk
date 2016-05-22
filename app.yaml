@@ -5,31 +5,33 @@ api_version: 1
 threadsafe: true
 
 handlers:
-
 - url: /.well-known/acme-challenge/(.+)
   static_files: .challenge/\1
   upload: .challenge/(.+)
   mime_type: text/plain
   secure: optional
 
-- url: /assets/(.+\.(map|md|scss))
+- url: /(.+\.(map|md|scss))
   static_files: static/\1
-  upload: static/(.+\.(map|md|scss))
+  upload: build/(.+\.(map|md|scss))
   mime_type: text/plain
   secure: always
-  application_readable: true
 
-- url: /assets/
-  static_dir: static/
+- url: /(.+)/
+  static_files: build/\1/index.html
+  upload: build/(.+)/index.html
   secure: always
-  application_readable: true
 
-- url: /.*
+- url: /
+  static_files: build/index.html
+  upload: build/index.html
+  secure: always
+
+- url: /
   static_dir: build
   secure: always
 
 skip_files:
-  # folders
 - ^\.git
 - ^\.sass-cache
 - ^content
@@ -37,7 +39,6 @@ skip_files:
 - ^node_modules
 - ^static
 - ^views
-  # files
 - .*\.pyc
 - \.gitignore
 - ^Gruntfile.js
