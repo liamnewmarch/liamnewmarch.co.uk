@@ -1,21 +1,18 @@
-{% extends 'base.html' %}
-
-{% block page_title %}Home{% endblock %}
-{% block canonical_url %}https://liamnewmarch.co.uk{% endblock %}
+{% extends '/views/base.html' %}
 
 {% block main_content %}
-  <h2> About </h2>
-  <p> My name is Liam Newmarch and I’m a <insert-age date-of-birth="1987/12/01">twenty-odd</insert-age> year old web developer. I live in London and work for a company called <a href="https://p.ota.to">Potato</a> where I make things for Google. <a href="{% url 'about' %}">Read more</a>
+  <h2> {{ doc.title }} </h2>
+  <p> My name is Liam Newmarch and I’m a <insert-age date-of-birth="1987/12/01">twenty-odd</insert-age> year old web developer. I live in London and work for a company called <a href="https://p.ota.to">Potato</a> where I make things for Google. <a href="{{ g.url('/content/pages/about.yaml').path }}">Read more</a>
   <h2> Development </h2>
   <p> I’m primarily a front end developer but have plenty of experience with back end development too. I’m big on AngularJS, build processes and styling. On the server side I’m used to working with Django (at Potato we pair Django with Google App Engine) but am also familiar with io.js (formerly Node.js) and PHP frameworks. </p>
   <p> I host most of my projects on <a href="https://github.com/liamnewmarch">GitHub</a> and use a combination of GitHub Pages, Google App Engine and my <a href="http://www.raspberrypi.org">Raspberry Pi</a> for hosting. </p>
   <h2> Recent blog posts </h2>
   <ul>
-  {% for post in recent_posts %}
+  {% for post in g.docs('posts', order_by='published') | reverse %}
     <li>
-      <a href="{% url 'post' post.slug %}"> {{ post.title }} </a>
+      <a href="{{ post.url.path }}"> {{ post.title }} </a>
       <time datetime="{{ post.published }}">{{ post.published }}</time>
     </li>
   {% endfor %}
-  </ul>
+</ul>
 {% endblock %}

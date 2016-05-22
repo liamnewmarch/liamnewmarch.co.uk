@@ -1,0 +1,5 @@
+path: /posts/{base}/
+view: /views/posts/post.html
+
+localization:
+  path: /intl/{locale}/posts/{base}/

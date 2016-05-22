@@ -1,20 +1,17 @@
-{% extends 'index.html' %}
-
-{% block page_title %}{{ post.title }}{% endblock %}
-{% block canonical_url %}{% url 'post' post.slug %}{% endblock %}
+{% extends '/views/base.html' %}
 
 {% block main_content %}
 <article class="post">
 	<div class="post__title">
-		<h1> {{ post.title }} </h1>
+		<h1> {{ doc.title }} </h1>
 		<p class="date">
-			<time datetime="{{ page.published }}">
-				{{ post.published }}
+			<time datetime="{{ doc.published }}">
+				{{ g.date(doc.published, from='%Y-%m-%d') | date(format='full') }}
 			</time>
 		</p>
 	</div>
 	<div class="post__body">
-		{{ post.html }}
+		{{ doc.html | safe }}
 	</div>
 	<disqus-comments shortname="liamnewmarch" class="post__comments"></disqus-comments>
 </article>

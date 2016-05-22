@@ -1,3 +1,8 @@
+---
+$title: Coast to Coast Walk
+published: 2014-07-24
+---
+
 This year is my father’s 50th birthday. To celebrate we’re attempting the
 [Coast to Coast Walk][coast-to-coast] which will take us across the England,
 from Whitehaven in Cumbria to Robin Hood’s Bay in North Yorkshire.

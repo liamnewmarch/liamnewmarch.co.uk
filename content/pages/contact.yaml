@@ -1,0 +1,5 @@
+$title@: Contact
+$view: /views/pages/contact.html
+
+$localization:
+  path: /intl/{locale}/contact/

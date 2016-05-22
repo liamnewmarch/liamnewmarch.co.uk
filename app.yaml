@@ -6,20 +6,6 @@ threadsafe: true
 
 handlers:
 
-- url: /_ah/(mapreduce|queue|warmup|internalupload).*
-  script: blog.wsgi.application
-  login: admin
-  secure: always
-
-- url: /static/admin/
-  static_dir: sitepackages/django/contrib/admin/static/admin/
-  secure: always
-
-- url: /admin.*
-  script: blog.wsgi.application
-  secure: always
-  login: admin
-
 - url: /.well-known/acme-challenge/(.+)
   static_files: .challenge/\1
   upload: .challenge/(.+)
@@ -39,22 +25,22 @@ handlers:
   application_readable: true
 
 - url: /.*
-  script: blog.wsgi.application
+  static_dir: build
   secure: always
 
 skip_files:
   # folders
-- ^\.git.*
-- ^grunt.*
-- ^node_modules.*
-- ^sitepackages/google_appengine.*
+- ^\.git
+- ^\.sass-cache
+- ^content
+- ^grunt
+- ^node_modules
+- ^static
+- ^views
   # files
-- (.*)\.pyc
-- ^CNAME
+- .*\.pyc
+- \.gitignore
 - ^Gruntfile.js
-- ^install_deps
-- ^manage.py
 - ^package.json
+- ^podspec.yaml
 - ^README.md
-- ^requirements.txt
-- \.storage.*
