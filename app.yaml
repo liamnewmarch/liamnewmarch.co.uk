@@ -5,30 +5,41 @@ api_version: 1
 threadsafe: true
 
 handlers:
+# Let’s Encrypt verification.
 - url: /.well-known/acme-challenge/(.+)
   static_files: .challenge/\1
   upload: .challenge/(.+)
   mime_type: text/plain
   secure: optional
 
-- url: /(.+\.(map|md|scss))
-  static_files: static/\1
-  upload: build/(.+\.(map|md|scss))
+# Unknown mime types.
+- url: /assets/(.+\.(map|md|scss))
+  static_files: build/assets/\1
+  upload: build/assets/(.+\.(map|md|scss))
   mime_type: text/plain
   secure: always
 
+# Static assets.
+- url: /assets
+  static_dir: build/assets/
+  secure: always
+
+# Append index.html to folders.
 - url: /(.+)/
   static_files: build/\1/index.html
   upload: build/(.+)/index.html
   secure: always
 
+# Handle root index.html.
 - url: /
   static_files: build/index.html
   upload: build/index.html
   secure: always
 
-- url: /
-  static_dir: build
+# 404 for unmatched urls.
+- url: /.*
+  static_files: build/404/index.html
+  upload: build/404/index.html
   secure: always
 
 skip_files:
