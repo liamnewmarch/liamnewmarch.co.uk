@@ -1,50 +1,32 @@
-# Source for liamnewmarch.co.uk
+# liamnewmarch.co.uk
 
-This repo contains the source code for my website [liamnewmarch.co.uk][site].
-
-
-## Building
-
-### Prerequisites
-
-Make sure you have the following installed.
-
-- [Jekyll][jekyll]
-- [Sass][sass]
-- [Node/npm][node]
-- [Grunt][grunt]
-
-Jekyll and Sass can both be installed as Ruby gems, npm is installed alongside Node.js and Grunt can be installed via npm.
+This repo contains the source for [liamnewmarch.co.uk][site].
 
 
-### Setup
+## Development
 
-With the dependancies above met, run the following via the command line:
+The site is statically built using [Grow][grow] and deployed to [Google App Engine][gae]. Development happens locally using Grow’s development server. Other than initial setup, most common tasks (build, serve, deploy) are controlled by [Grunt][grunt].
 
-```
-# Check out this repo
-git checkout https://github.com/liamnewmarch/liamnewmarch.co.uk
 
-# Change directory
-cd liamnewmarch.co.uk/
+## Running locally
 
-# Fetch dependancies
-npm install
+First install the following: [Grow][grow], [Node/npm][node], [Sass][sass], and [Grunt][grunt].
 
-# Compile assets
-grunt build
+Next install npm dependencies:
 
-# Start a local server
-grunt serve
-```
+    grow install
+
+Now start a local development server:
+
+    grunt serve
 
 Watch the output and when it’s finished scrolling point your favourite web browser to [localhost:4000][local].
 
 
 [site]: https://liamnewmarch.co.uk
-[jekyll]: https://jekyllrb.com/
+[grow]: https://grow.io/
+[gae]: https://cloud.google.com/appengine/
 [sass]: http://sass-lang.com/install
 [node]: https://nodejs.org/en/
 [grunt]: http://gruntjs.com/getting-started
-[bower]: http://bower.io/#install-bower
 [local]: http://localhost:4000
