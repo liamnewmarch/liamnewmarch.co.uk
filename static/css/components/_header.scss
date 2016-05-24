@@ -1,7 +1,7 @@
 .header {
   color: $color-white;
-  background: #272822;
-  background: linear-gradient(to bottom, map-get($color-grey, '900'), map-get($color-grey, '800'));
+  background-color: #272822;
+  background-image: linear-gradient(to bottom, map-get($color-grey, '900'), map-get($color-grey, '800'));
   overflow: hidden;
 
   @include media-medium {
