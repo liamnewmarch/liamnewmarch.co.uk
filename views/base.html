@@ -1,3 +1,8 @@
+{% if doc.collection.title == 'page' %}
+	{% set page_class = 'page--' + doc.slug %}
+{% else %}
+	{% set page_class = 'page--' + doc.collection.title %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="{{ doc.locale | replace('_', '-') }}" dir="ltr">
 	<head>
@@ -8,7 +13,7 @@
 		<link rel="stylesheet" href="/assets/css/min.css">
 		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}" />
 	</head>
-	<body class="page">
+	<body class="page {{ page_class }}">
 		<div class="hamburger">
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>

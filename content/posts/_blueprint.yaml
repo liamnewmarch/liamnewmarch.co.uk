@@ -1,3 +1,4 @@
+title: post
 path: /posts/{base}/
 view: /views/posts/post.html
 
