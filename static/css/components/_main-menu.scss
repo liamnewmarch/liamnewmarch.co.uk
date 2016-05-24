@@ -1,7 +1,7 @@
 .main-menu {
   background-color: map-get($color-grey, '900');
   bottom: 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+  box-shadow: units(.125) units(.125) units(.32) rgba(0, 0, 0, .1);
   color: map-get($color-blue-grey, '50');
   left: 0;
   max-width: units(20);
@@ -24,10 +24,6 @@
     list-style: none;
     padding: 0;
     margin: units(5) units(1) units(2);
-  }
-
-  &__item {
-
   }
 
   &__link {
