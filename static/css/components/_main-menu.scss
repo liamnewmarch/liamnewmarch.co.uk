@@ -3,16 +3,19 @@
   bottom: 0;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
   color: map-get($color-blue-grey, '50');
-  left: -80%;
+  left: 0;
+  max-width: units(20);
+  min-width: units(16);
   position: fixed;
-  right: 100%;
+  right: 20%;
   top: 0;
   transition: transform .3s $ease-swift-out;
+  transform: translateX(-110%);
   will-change: transform;
   z-index: 2;
 
   .page--menu-open & {
-    transform: translate(100%);
+    transform: translateX(0);
   }
 
   &__items {

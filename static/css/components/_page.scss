@@ -1,4 +1,6 @@
 .page {
+  min-width: units(20);
+
   &::after {
     bottom: 0;
     content: '';
@@ -19,15 +21,5 @@
       opacity: 1;
       pointer-events: all;
     }
-  }
-
-  &__toggle-menu {
-    border: 1px solid red;
-    height: units(2);
-    left: units(2);
-    position: fixed;
-    top: units(2);
-    width: units(2);
-    z-index: 3;
   }
 }

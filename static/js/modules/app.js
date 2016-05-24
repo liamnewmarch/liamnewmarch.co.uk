@@ -13,7 +13,7 @@ angular.bootstrap(document, ['app']);
  * TODO move to component
  */
 var page = document.querySelector('.page')
-var toggle = document.querySelector('.page__toggle-menu');
+var toggle = document.querySelector('.hamburger');
 
 page.addEventListener('click', function(event) {
   if (event.target === event.currentTarget) {

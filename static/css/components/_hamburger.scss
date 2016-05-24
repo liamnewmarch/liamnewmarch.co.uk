@@ -1,0 +1,49 @@
+.hamburger {
+  height: units(3.5);
+  left: units(1);
+  margin-top: 4px;
+  padding: units(1);
+  position: absolute;
+  top: units(1);
+  transition: transform .3s $ease-swift-out;
+  width: units(3.5);
+  will-change: transform;
+  z-index: 3;
+
+  .page--menu-open & {
+    transform: rotate(180deg);
+  }
+
+  &__line {
+    background-color: $color-white;
+    height: 2px;
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      transition: transform .3s $ease-swift-out;
+      will-change: transform;
+    }
+
+    &:nth-child(1) {
+      transform-origin: 38% 610%;
+    }
+
+    &:nth-child(2) {
+      margin: units(.5) 0;
+    }
+
+    &:nth-child(3) {
+      transform-origin: 38% -510%;
+    }
+
+    .page--menu-open & {
+      &:nth-child(1) {
+        transform: rotate(45deg) scaleX(.7);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) scaleX(.7);
+      }
+    }
+  }
+}

@@ -5,15 +5,16 @@
  */
 @import 'base/colors';
 @import 'base/vars';
-@import 'base/page';
+@import 'base/global';
 
 
 /**
  * Components
  */
-@import 'components/page';
-@import 'components/header';
-@import 'components/main-menu';
-@import 'components/main-content';
-@import 'components/post';
 @import 'components/footer';
+@import 'components/hamburger';
+@import 'components/header';
+@import 'components/main-content';
+@import 'components/main-menu';
+@import 'components/page';
+@import 'components/post';

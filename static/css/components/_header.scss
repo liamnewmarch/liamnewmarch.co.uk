@@ -8,10 +8,14 @@
     display: block;
     margin: 0 auto;
     max-width: units(70);
-    padding: units(2);
+    padding: units(2) units(2) units(2) units(5);
+
+    @include media-small {
+      padding-left: units(6);
+    }
 
     @include media-medium {
-      padding: units(7) units(2) units(2);
+      padding: units(7) units(2);
 
       &::before {
         background: $color-white url('../img/avatar.jpg') 0 0 / cover no-repeat;
@@ -29,11 +33,15 @@
   }
 
   &__title {
-    font-size: units(2);
+    font-size: units(1.5);
     font-weight: 500;
     line-height: 1;
     margin: 0;
     text-shadow: 0 0 units(0.5) $color-black;
+
+    @include media-small {
+      font-size: units(2);
+    }
 
     @include media-medium {
       font-size: units(3);
