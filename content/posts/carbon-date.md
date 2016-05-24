@@ -19,7 +19,7 @@ See, web developers generally grab the latest jQuery version and don’t update 
 
 Carbon date is a bookmarklet – to use it drag the following link to your bookmark toolbar:
 
-<bookmarklet src="/assets/js/bookmarklet.carbon-date.js">Carbon date</bookmarklet>
+<bookmarklet src="/assets/js/bookmarklets/carbon-date.js">Carbon date</bookmarklet>
 
 If you'd like to see the (tiny) unminified source or would like to report have a bug, you can find the project [on GitHub.][github-link]
 

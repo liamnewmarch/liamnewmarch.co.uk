@@ -2,7 +2,17 @@ module.exports = {
 
   'build': {
     description: 'Build static assets',
-    tasks: ['sass', 'uglify', 'autoprefixer']
+    tasks: ['build-css', 'build-js']
+  },
+
+  'build-css': {
+    description: 'Build CSS',
+    tasks: ['sass', 'autoprefixer']
+  },
+
+  'build-js': {
+    description: 'Build JavaScript',
+    tasks: ['browserify']
   },
 
   'default': {
