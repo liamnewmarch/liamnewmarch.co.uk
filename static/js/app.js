@@ -1,10 +1,10 @@
-angular.module('app', []).config(config);
+import './modules/app';
+import './directives/bookmarklet';
+import './directives/disqus-comments';
+import './directives/google-analytics';
+import './directives/insert-age';
+import './services/script';
 
-config.$inject = [ '$compileProvider' ];
-
-function config($compileProvider) {
-  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|javascript):/);
-}
 
 document.addEventListener('DOMContentLoaded', function() {
   angular.bootstrap(document, ['app']);
