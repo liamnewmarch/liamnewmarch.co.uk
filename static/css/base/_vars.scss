@@ -33,9 +33,9 @@ $font-sans-serif: Helvetica Neue, sans-serif;
 /**
  * Media queries
  */
-$media-small: 425px;
-$media-medium: 768px;
-$media-large: 1024px;
+$media-small: units(26);
+$media-medium: units(48);
+$media-large: units(64);
 
 @mixin media-small {
   @media (min-width: $media-small) {
