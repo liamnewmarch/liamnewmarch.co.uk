@@ -1,3 +1,4 @@
+title: page
 path: /{base}/
 view: /views/base.html
 
