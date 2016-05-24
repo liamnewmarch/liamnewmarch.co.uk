@@ -1,11 +1,18 @@
 /**
- * Base unit
+ * Base units
  */
 $base-unit: 16px;
 
-@function units($multiplier) {
+@function units($multiplier: 1) {
   @return $multiplier * $base-unit;
 }
+
+
+/**
+ * Easing functions
+ */
+$ease-swift-out: cubic-bezier(.55, 0, .1, 1);
+
 
 /**
  * Colours
