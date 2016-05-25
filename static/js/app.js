@@ -1,30 +1,14 @@
-import './modules/app';
-import './directives/bookmarklet';
-import './directives/disqus-comments';
-import './directives/google-analytics';
-import './directives/insert-age';
-import './services/script';
+import { Bookmarklet } from './components/bookmarklet';
+import { DisqusComments } from './components/disqus-comments';
+import { GoogleAnalytics } from './components/google-analytics';
+import { InsertAge } from './components/insert-age';
+import { MainMenu } from './components/main-menu';
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  angular.bootstrap(document, ['app']);
+  Bookmarklet.register('.bookmarklet');
+  DisqusComments.register('.disqus-comments');
+  GoogleAnalytics.register('.google-analytics');
+  InsertAge.register('.insert-age');
+  MainMenu.register('.hamburger');
 }, false);
-
-
-/**
- * TODO move to component
- */
-var page = document.querySelector('.page')
-var toggle = document.querySelector('.hamburger');
-
-page.addEventListener('click', function(event) {
-  if (event.target === event.currentTarget) {
-    event.stopPropagation();
-    page.classList.remove('page--menu-open');
-  }
-});
-
-toggle.addEventListener('click', function(event) {
-  event.stopPropagation();
-  page.classList.toggle('page--menu-open');
-});
