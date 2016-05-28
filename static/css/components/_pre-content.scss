@@ -27,7 +27,20 @@
     }
   }
 
+  &:nth-child(1) {
+    @include fade-in-slide-up(0.5s);
+  }
+
+  &:nth-child(2) {
+    @include fade-in-slide-up(1.0s);
+  }
+
+  &:nth-child(3) {
+    @include fade-in-slide-up(1.5s);
+  }
+
   &__icon {
+    display: block;
     float: left;
     margin: units(.25) units(1) 0 0;
 
