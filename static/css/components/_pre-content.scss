@@ -16,10 +16,10 @@
 
 .panel {
   flex-grow: 1;
-  margin: units(2) 0;
+  margin: units(1) 0;
 
   @include media-medium() {
-    margin-right: units(2);
+    margin-right: units(2) units(2) units(2) 0;
     text-align: center;
 
     &:last-child {
@@ -28,11 +28,21 @@
   }
 
   &__icon {
-    font-size: units(4);
+    float: left;
+    margin: units(.25) units(1) 0 0;
+
+    @include media-medium() {
+      float: none;
+      font-size: units(4);
+      margin: 0;
+    }
   }
 
   &__heading {
-    font-size: units(1.25);
     margin: 0;
+
+    @include media-medium() {
+      font-size: units(1.25);
+    }
   }
 }
