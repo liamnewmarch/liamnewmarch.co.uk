@@ -9,7 +9,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 		<title> {{ doc.title }} | Liam Newmarch </title>
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,400">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons|Roboto:100,400">
 		<link rel="stylesheet" href="/assets/css/min.css">
 		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}" />
 	</head>
@@ -25,6 +25,13 @@
 				<p class="header__subtitle"> Developer living in London </p>
 			</a>
 		</header>
+		{% if self.pre_content() %}
+		<aside class="pre-content">
+	    <div class="pre-content__content">
+				{% block pre_content %}{% endblock %}
+			</div>
+		</aside>
+		{% endif %}
 		<nav class="main-menu">
 			<ul class="main-menu__items">
 				<li class="main-menu__item">
