@@ -1,0 +1,41 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(units(-2));
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(units(2));
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@mixin fade-in-slide-down($delay: 0s) {
+  animation: fade-in .3s linear $delay 1 normal both,
+    slide-down .3s $ease-swift-out $delay 1 normal both;
+  will-change: opacity, transform;
+}
+
+@mixin fade-in-slide-up($delay: 0s) {
+  animation: fade-in .3s linear $delay 1 normal both,
+    slide-up .3s $ease-swift-out $delay 1 normal both;
+  will-change: opacity, transform;
+}
