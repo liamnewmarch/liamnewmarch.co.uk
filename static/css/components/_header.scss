@@ -1,7 +1,8 @@
 .header {
-  color: $color-white;
-  background-color: #272822;
+  background-color: map-get($color-grey, '900');
   background-image: linear-gradient(to bottom, map-get($color-grey, '900'), map-get($color-grey, '800'));
+  color: $color-white;
+  display: flex;
   overflow: hidden;
 
   @include media-medium {
@@ -9,35 +10,45 @@
   }
 
   &__content {
-    display: block;
     margin: 0 auto;
     max-width: units(70);
-    padding: units(1.5) units(1) units(1) units(3);
+    padding: units(1.5) 0 units(1);
     text-align: center;
 
-    @include media-small {
-      padding-left: units(3);
+    @include media-medium {
+      flex-basis: 100%;
+      margin: 0 auto;
+      max-width: units(32);
+      text-align: left;
+      text-shadow: 0 0 units(.5) $color-black;
+
+      .page--home & {
+        padding-bottom: units(7);
+        padding-top: units(16);
+      }
     }
 
-    .page--home & {
-      @include media-medium {
-        margin: 0 auto;
-        max-width: units(35);
-        padding: units(16) units(2) units(7);
-        text-shadow: 0 0 units(.5) $color-black;
+    &::before {
+      background: $color-white url('../img/avatar.jpg') 0 0 / cover no-repeat;
+      border: units(.125) solid $color-white;
+      border-radius: 100%;
+      box-shadow: 0 0 units(.3) units(.1) $color-black;
+      content: '';
+      display: block;
+      margin: 0 auto units(1);
+      height: units(3);
+      width: units(3);
 
-        &::before {
-          background: $color-white url('../img/avatar.jpg') 0 0 / cover no-repeat;
-          border: units(.125) solid $color-white;
-          border-radius: 100%;
-          box-shadow: 0 0 units(.3) units(.1) $color-black;
-          content: '';
-          display: block;
-          float: left;
-          height: units(6.5);
-          margin-right: units(1);
-          width: units(6.5);
-        }
+      @include media-small {
+        height: units(5);
+        width: units(5);
+      }
+
+      @include media-medium {
+        float: left;
+        margin-right: units(1);
+        height: units(6.5);
+        width: units(6.5);
       }
     }
   }
@@ -54,7 +65,7 @@
 
     @include media-medium {
       font-size: units(3);
-      margin-top: units(1);
+      margin-top: units(.5);
     }
   }
 
