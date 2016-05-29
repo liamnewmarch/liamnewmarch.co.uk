@@ -1,5 +1,5 @@
 ---
-$title: Updating npm packages
+$title@: Updating npm packages
 published: 2014-08-18
 ---
 

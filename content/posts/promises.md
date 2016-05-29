@@ -1,5 +1,5 @@
 ---
-$title: Making Promises – Building a script loader with ES6 Promises
+$title@: Making Promises – Building a script loader with ES6 Promises
 published: 2014-07-14
 ---
 

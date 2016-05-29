@@ -1,5 +1,5 @@
 ---
-$title: Using range inputs with Angular
+$title@: Using range inputs with Angular
 published: 2015-04-07
 ---
 

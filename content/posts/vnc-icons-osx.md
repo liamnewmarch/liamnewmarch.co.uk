@@ -1,5 +1,5 @@
 ---
-$title: Pimp your VNC (Screen Share) shortcuts with OS X system icons
+$title@: Pimp your VNC (Screen Share) shortcuts with OS X system icons
 published: 2014-02-05
 ---
 

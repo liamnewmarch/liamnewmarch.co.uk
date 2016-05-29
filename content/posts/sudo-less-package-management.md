@@ -1,5 +1,5 @@
 ---
-$title: OS X package management, without sudo
+$title@: OS X package management, without sudo
 published: 2015-09-15
 ---
 
