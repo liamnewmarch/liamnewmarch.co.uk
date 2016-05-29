@@ -1,5 +1,5 @@
 ---
-$title: Coast to Coast Walk
+$title@: Coast to Coast Walk
 published: 2014-07-24
 ---
 

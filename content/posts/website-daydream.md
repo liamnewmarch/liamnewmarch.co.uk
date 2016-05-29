@@ -1,5 +1,5 @@
 ---
-$title: Website Daydream
+$title@: Website Daydream
 published: 2013-05-06
 ---
 

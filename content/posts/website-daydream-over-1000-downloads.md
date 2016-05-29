@@ -1,5 +1,5 @@
 ---
-$title: Website Daydream – over 1,000 downloads
+$title@: Website Daydream – over 1,000 downloads
 published: 2013-06-09
 ---
 

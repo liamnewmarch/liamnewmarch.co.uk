@@ -1,6 +1,5 @@
 ---
-$slug: carbon-date
-$title: Carbon Date for jQuery
+$title@: Carbon Date for jQuery
 published: 2013-05-08
 ---
 
