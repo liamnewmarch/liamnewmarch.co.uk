@@ -1,8 +1,4 @@
 $title@: 404
-$view: /views/pages/404.html
-
-$localization:
-  path: /intl/{locale}/404/
 
 error_title@: 404, page not found
 error_description@: Unfortunately the requested page could not be found.

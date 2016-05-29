@@ -1,5 +1,1 @@
 $title@: About
-$view: /views/pages/about.html
-
-$localization:
-  path: /intl/{locale}/about/
