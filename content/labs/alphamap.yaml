@@ -2,6 +2,6 @@ $title@: Alphamap
 
 description@: Generate abstract bitmaps with canvas.
 icon: visibility
-iframe_url: http://localhost:4000/
+iframe_url: https://liamnewmarch.github.io/alphamap
 tags@:
   - Canvas
