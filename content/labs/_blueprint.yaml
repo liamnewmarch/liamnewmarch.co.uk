@@ -1,0 +1,6 @@
+title: lab
+path: /labs/{base}/
+view: /views/labs/labs.html
+
+localization:
+  path: /intl/{locale}/labs/{base}/
