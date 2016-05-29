@@ -1,0 +1,14 @@
+{% extends '/views/base.html' %}
+
+{% block main_content %}
+<h2> {{ doc.title }} </h2>
+<ul>
+  {% for item in g.docs('labs') %}
+  <li>
+    <a href="{{ item.url }}">
+      {{ item.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

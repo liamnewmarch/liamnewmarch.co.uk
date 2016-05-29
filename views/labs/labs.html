@@ -1,0 +1,13 @@
+{% extends "/views/base.html" %}
+
+{% set labs = g.doc('/content/pages/labs.yaml') %}
+
+{% block body %}
+	<main class="labs">
+		<a href="{{ g.doc('/content/pages/labs.yaml').url.path }}" class="labs__back">
+			<i class="labs__icon material-icons">arrow_back</i>
+			{{ labs.iframe_back }}
+		</a>
+		<iframe src="{{ doc.iframe_url }}" class="labs__iframe"></iframe>
+	</main>
+{% endblock %}
