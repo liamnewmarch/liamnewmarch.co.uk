@@ -45,6 +45,7 @@
 				</li>
 			</ul>
 		</nav>
+		{% if self.main_content() %}
 		<main class="main-content">
 			{% block main_content %}
 				{% if doc.html %}
@@ -54,6 +55,7 @@
 				{% endif %}
 			{% endblock %}
 		</main>
+		{% endif %}
 		<footer class="footer">
 			<div class="footer__content">
 				<p> Handcoded with ♡ by Liam Newmarch, 2016. </p>
