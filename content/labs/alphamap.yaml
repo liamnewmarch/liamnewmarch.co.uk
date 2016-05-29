@@ -1,0 +1,7 @@
+$title@: Alphamap
+
+description@: Generate abstract bitmaps with canvas.
+icon: visibility
+iframe_url: http://localhost:4000/
+tags@:
+  - Canvas

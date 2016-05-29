@@ -1,0 +1,7 @@
+$title@: Sequencer
+
+description@: Piano roll sequencer, built with Web Audio.
+icon: musical_note
+iframe_url: https://liamnewmarch.github.io/sequencer
+tags@:
+  - Web Audio
