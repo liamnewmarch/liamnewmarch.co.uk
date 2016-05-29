@@ -1,6 +1,6 @@
 .footer {
+  background-color: map-get($color-blue-grey, '50');
   color: map-get($color-blue-grey, '500');
-  background: map-get($color-blue-grey, '50');
   overflow: hidden;
 
   &__content {
