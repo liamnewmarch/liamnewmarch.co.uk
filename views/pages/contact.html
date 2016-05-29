@@ -2,6 +2,21 @@
 
 {% block main_content %}
 <h2> {{ doc.title }} </h2>
-<p> If you want to get in touch, it’s probably best to <a href="https://twitter.com/liamnewmarch">send me a tweet</a>. If you have any questions about one of my projects, most are hosted on <a href="https://github.com/liamnewmarch">GitHub</a> – tickets and pull requests are most welcome. I’m also available on <a href="https://plus.google.com/liamnewmarch">Google+</a> if you want to chat on hangouts.</p>
-<p> Due to overwhelming volume, I don’t respond to unsolicited recruitment agency emails; please don’t contact me.</p>
+<form action="https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8/formResponse" method="post" class="form">
+  <div class="form__row">
+    <label class="form__label"> Your name </label>
+    <input type="text" name="entry.1902041900" required class="form__input">
+  </div>
+  <div class="form__row">
+    <label class="form__label"> Your email </label>
+    <input type="email" name="entry.1617169055" required class="form__input">
+  </div>
+  <div class="form__row">
+    <label class="form__label"> How can I help? </label>
+    <textarea name="entry.339356626" required class="form__input form__input--multi"></textarea>
+  </div>
+  <div class="form__row">
+    <button type="submit" class="form__button"> Send </button>
+  </div>
+</form>
 {% endblock %}

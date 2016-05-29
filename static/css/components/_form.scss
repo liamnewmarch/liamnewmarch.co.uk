@@ -1,0 +1,44 @@
+.form {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    margin: units(2) 0;
+
+    @include media-medium {
+      flex-direction: row;
+    }
+  }
+
+  @include media-medium {
+    &__label {
+      flex: 0 1 33%;
+      margin: units(.5) 0;
+    }
+
+    &__input {
+      flex: 0 1 66%;
+      padding: units(.5) units(1);
+    }
+  }
+
+  &__input {
+    border: 1px solid map-get($color-grey, '50');
+    border-bottom-color: $color-secondary;
+    border: 0;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  &__button {
+    background-color: map-get($color-blue-grey, '50');
+    border: 0;
+    color: map-get($color-blue-grey, '500');
+    font-size: units(1);
+    padding: units(1) units(2);
+    transition: background-color .1s;
+
+    &:active,
+    &:focus {
+      background-color: map-get($color-blue-grey, '100');
+    }
+  }
+}
