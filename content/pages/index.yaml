@@ -1,6 +1,9 @@
 $title@: Home
 $path: /
 $view: /views/pages/index.html
+$order: 1
 
 $localization:
   path: /intl/{locale}/
+
+icon: home
