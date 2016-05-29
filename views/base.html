@@ -28,15 +28,14 @@
 		</header>
 		<nav class="main-menu" role="navigation">
 			<ul class="main-menu__items">
+				{% for page in g.docs('pages') %}
 				<li class="main-menu__item">
-					<a href="{{ g.doc('/content/pages/index.yaml').url.path }}" class="main-menu__link">Home</a>
+					<a href="{{ page.url.path }}" class="main-menu__link">
+						<i class="main-menu__icon material-icons">{{ page.icon }}</i>
+						{{ page.title }}
+					</a>
 				</li>
-				<li class="main-menu__item">
-					<a href="{{ g.doc('/content/pages/about.yaml').url.path }}" class="main-menu__link">About</a>
-				</li>
-				<li class="main-menu__item">
-					<a href="{{ g.doc('/content/pages/contact.yaml').url.path }}" class="main-menu__link">Contact</a>
-				</li>
+				{% endfor %}
 			</ul>
 		</nav>
 		{% if self.pre_content() %}

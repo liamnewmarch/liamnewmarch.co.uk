@@ -1,4 +1,5 @@
 $title@: 404
+$hidden: true
 
 error_title@: 404, page not found
 error_description@: Unfortunately the requested page could not be found.

@@ -33,4 +33,9 @@
     transition: transform .1s $ease-swift-out;
     will-change: transform;
   }
+
+  &__icon {
+    margin-right: units(1);
+    vertical-align: units(-.4);
+  }
 }
