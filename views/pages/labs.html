@@ -5,7 +5,7 @@
 <ul>
   {% for item in g.docs('labs') %}
   <li>
-    <a href="{{ item.url }}">
+    <a href="{{ item.url.path }}">
       {{ item.title }}
     </a>
   </li>
