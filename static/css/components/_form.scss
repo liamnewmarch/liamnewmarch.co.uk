@@ -41,4 +41,25 @@
       background-color: map-get($color-blue-grey, '100');
     }
   }
+
+  &__error,
+  &__sent {
+    display: none;
+  }
+
+  &--error {
+    .form__error {
+      display: block;
+    }
+  }
+
+  &--sent {
+    .form__row {
+      display: none;
+    }
+
+    .form__sent {
+      display: block;
+    }
+  }
 }
