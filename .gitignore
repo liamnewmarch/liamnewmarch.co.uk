@@ -56,4 +56,4 @@ node_modules
 static/**/*.map
 static/css/min.css
 static/js/min.js
-static/js/libs
+static/libs
