@@ -2,7 +2,7 @@
 
 {% block main_content %}
 <h2> {{ doc.title }} </h2>
-<form action="https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8/formResponse" method="post" class="form">
+<form action="https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8/formResponse" method="post" class="form form--contact">
   <div class="form__row">
     <label class="form__label"> {{ doc.form_name }} </label>
     <input type="text" name="entry.1902041900" required class="form__input">
@@ -17,6 +17,12 @@
   </div>
   <div class="form__row">
     <button type="submit" class="form__button"> {{ doc.form_send }} </button>
+  </div>
+  <div class="form__sent">
+    <p> {{ doc.form_sent}} </p>
+  </div>
+  <div class="form__error">
+    <p> {{ doc.form_error }} </p>
   </div>
 </form>
 {% endblock %}
