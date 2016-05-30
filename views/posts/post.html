@@ -2,14 +2,12 @@
 
 {% block main_content %}
 <article class="post">
-	<div class="post__title">
-		<h2> {{ doc.title }} </h2>
-		<p class="date">
-			<time datetime="{{ doc.published }}">
-				{{ g.date(doc.published, from='%Y-%m-%d') | date(format='full') }}
-			</time>
-		</p>
-	</div>
+	<header>
+		<h2 class="post__title"> {{ doc.title }} </h2>
+		<time class="post__date" datetime="{{ doc.published }}">
+			{{ g.date(doc.published, from='%Y-%m-%d') | date(format='full') }}
+		</time>
+	</header>
 	<div class="post__body">
 		{{ doc.html | safe }}
 	</div>
