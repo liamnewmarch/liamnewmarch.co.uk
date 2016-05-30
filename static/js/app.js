@@ -5,7 +5,7 @@ import { InsertAge } from './components/insert-age';
 import { MainMenu } from './components/main-menu';
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   Bookmarklet.register('.bookmarklet');
   DisqusComments.register('.disqus-comments');
   GoogleAnalytics.register('.google-analytics');

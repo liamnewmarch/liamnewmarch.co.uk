@@ -12,7 +12,7 @@ module.exports = {
 
   'build-js': {
     description: 'Build JavaScript',
-    tasks: ['browserify']
+    tasks: ['browserify', 'exorcise']
   },
 
   'default': {
