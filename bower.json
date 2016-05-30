@@ -1,0 +1,12 @@
+{
+  "name": "liamnewmarch.co.uk",
+  "description": "Liam Newmarch",
+  "main": "Gruntfile.js",
+  "license": "GPL-3.0",
+  "homepage": "https://liamnewmarch.co.uk",
+  "private": true,
+  "dependencies": {
+    "fetch": "^1.0.0",
+    "es6-promise": "^3.2.2"
+  }
+}
