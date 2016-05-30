@@ -1,15 +1,15 @@
 {% extends '/views/base.html' %}
 
 {% block main_content %}
-  <h2> {{ doc.title }} </h2>
-  <ul>
+<h2> {{ doc.title }} </h2>
+<ul>
   {% for post in g.docs('posts', order_by='published') | reverse %}
-    <li>
-      <a href="{{ post.url.path }}"> {{ post.title }} </a>
-      <time datetime="{{ post.published }}">
-        {{ g.date(post.published, from='%Y-%m-%d') | date(format='long') }}
-      </time>
-    </li>
+  <li>
+    <a href="{{ post.url.path }}"> {{ post.title }} </a>
+    <time datetime="{{ post.published }}">
+      {{ g.date(post.published, from='%Y-%m-%d') | date(format='long') }}
+    </time>
+  </li>
   {% endfor %}
 </ul>
 {% endblock %}
