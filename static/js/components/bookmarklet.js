@@ -1,11 +1,12 @@
-import { Component } from '../utils/component';
+export class Bookmarklet {
+  static get selector() {
+    return '.bookmarklet';
+  }
 
-
-export class Bookmarklet extends Component {
-  constructor(...args) {
-    super(...args);
-
+  constructor(element) {
     this.clickHandler = this.clickHandler.bind(this);
+
+    this.element = element;
 
     this.fetchBookmarklet().then(code => {
       this.element.href = `javascript:${code}`;
@@ -18,7 +19,7 @@ export class Bookmarklet extends Component {
   }
 
   fetchBookmarklet() {
-    return fetch(this.element.dataset.src).then(res => res.text());
+    return fetch(this.element.getAttribute('data-src')).then(res => res.text());
   }
 
   clickHandler(event) {

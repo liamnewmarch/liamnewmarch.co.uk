@@ -1,13 +1,14 @@
-import { Component } from '../utils/component';
+export class ContactForm {
+  static get selector() {
+    return '.form--contact';
+  }
 
-
-export class ContactForm extends Component {
-  constructor(...args) {
-    super(...args);
-
+  constructor(element) {
     this.submitHandler = this.submitHandler.bind(this);
 
+    this.element = element;
     this.button = this.element.querySelector('.form__button');
+
     this.addEventListeners();
   }
 

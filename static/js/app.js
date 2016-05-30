@@ -5,12 +5,14 @@ import { GoogleAnalytics } from './components/google-analytics';
 import { InsertAge } from './components/insert-age';
 import { MainMenu } from './components/main-menu';
 
+import { registerComponents } from './utils/register-components';
 
-document.addEventListener('DOMContentLoaded', () => {
-  Bookmarklet.register('.bookmarklet');
-  ContactForm.register('.form--contact');
-  DisqusComments.register('.disqus-comments');
-  GoogleAnalytics.register('.google-analytics');
-  InsertAge.register('.insert-age');
-  MainMenu.register('.hamburger');
-}, false);
+
+registerComponents([
+  Bookmarklet,
+  ContactForm,
+  DisqusComments,
+  GoogleAnalytics,
+  InsertAge,
+  MainMenu,
+]);
