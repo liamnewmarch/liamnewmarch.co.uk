@@ -1,15 +1,14 @@
-import { Component } from '../utils/component';
+export class MainMenu {
+  static get selector() {
+    return '.hamburger';
+  }
 
-
-export class MainMenu extends Component {
-  constructor(...args) {
-    super(...args);
-
+  constructor(element) {
     this.pageClickHandler = this.pageClickHandler.bind(this);
     this.toggleClickHandler = this.toggleClickHandler.bind(this);
 
+    this.toggle = element;
     this.page = document.querySelector('.page')
-    this.toggle = document.querySelector('.hamburger');
 
     this.addEventListeners();
   }
@@ -28,6 +27,10 @@ export class MainMenu extends Component {
 
   toggleClickHandler(event) {
     event.stopPropagation();
-    this.page.classList.toggle('page--menu-open');
+    if (this.page.classList.contains('page--menu-open')) {
+      this.page.classList.remove('page--menu-open');
+    } else {
+      this.page.classList.add('page--menu-open');
+    }
   }
 }

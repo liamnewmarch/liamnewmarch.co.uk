@@ -1,12 +1,11 @@
-import { Component } from '../utils/component';
+export class InsertAge {
+  static get selector() {
+    return '.insert-age';
+  }
 
-
-export class InsertAge extends Component {
-  constructor(...args) {
-    super(...args);
-
-    const dateOfBirth = this.element.dataset.dateOfBirth;
-    this.element.innerHTML = this.dateToAge(dateOfBirth);
+  constructor(element) {
+    const dateOfBirth = element.getAttribute('data-date-of-birth');
+    element.innerHTML = this.dateToAge(dateOfBirth);
   }
 
   dateToAge(dateString) {

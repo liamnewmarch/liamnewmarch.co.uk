@@ -1,13 +1,14 @@
-import { Component } from '../utils/component';
 import { loadScript } from '../utils/loadScript'
 
 
-export class GoogleAnalytics extends Component {
-  constructor(...args) {
-    super(...args);
+export class GoogleAnalytics {
+  static get selector() {
+    return '.google-analytics';
+  }
 
-    const objectName = this.element.dataset.rename || 'ga';
-    const trackingId = this.element.dataset.trackingId;
+  constructor(element) {
+    const objectName = 'ga';
+    const trackingId = element.getAttribute('data-tracking-id');
 
     function ga() {
       ga.q.push(arguments);
