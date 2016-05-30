@@ -9,5 +9,9 @@ In celebration of this milestone I’ve started planning out version 2.0. There
 
 What I’d like to know is – are there any features you'd like to see added to Website Daydream? Let me know in the comments.
 
+<a href=" https://play.google.com/store/apps/details?id=uk.co.liamnewmarch.daydream">
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="210" alt="Website Daydream on Google Play">
+</a>
+
 
 [play-link]: https://play.google.com/store/apps/details?id=uk.co.liamnewmarch.daydream
