@@ -13,9 +13,9 @@
 		<link rel="stylesheet" href="{{ g.static('/static/css/min.css').url.path }}">
 		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}" />
 	</head>
-	<body class="page {{ page_class }}" aria-hidden>
+	<body class="page {{ page_class }}">
 	{% block body %}
-		<div class="hamburger">
+		<div class="hamburger" aria-hidden>
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
