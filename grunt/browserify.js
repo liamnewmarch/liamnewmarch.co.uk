@@ -4,7 +4,9 @@ module.exports = {
       debug: true,
       extensions: ['.js']
     },
-    transform: ['babelify']
+    transform: [['babelify', {
+      presets: 'es2015'
+    }]]
   },
   app: {
     files: {
