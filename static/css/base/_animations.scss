@@ -28,14 +28,24 @@
   }
 }
 
-@mixin fade-in-slide-down($delay: 0s) {
-  animation: fade-in .3s linear $delay 1 normal both,
-    slide-down .3s $ease-swift-out $delay 1 normal both;
+@mixin fade-in($delay: 0s, $duration: .3s) {
+  animation: fade-in $duration linear $delay 1 normal both;
+  will-change: opacity;
+}
+
+@mixin fade-out($delay: 0s, $duration: .3s) {
+  animation: fade-out $duration linear $delay 1 normal both;
+  will-change: opacity;
+}
+
+@mixin fade-in-slide-down($delay: 0s, $duration: .3s) {
+  animation: fade-in $duration linear $delay 1 normal both,
+    slide-down $duration $ease-swift-out $delay 1 normal both;
   will-change: opacity, transform;
 }
 
-@mixin fade-in-slide-up($delay: 0s) {
-  animation: fade-in .3s linear $delay 1 normal both,
-    slide-up .3s $ease-swift-out $delay 1 normal both;
+@mixin fade-in-slide-up($delay: 0s, $duration: .3s) {
+  animation: fade-in $duration linear $delay 1 normal both,
+    slide-up $duration $ease-swift-out $delay 1 normal both;
   will-change: opacity, transform;
 }
