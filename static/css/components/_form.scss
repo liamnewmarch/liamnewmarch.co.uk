@@ -11,11 +11,13 @@
 
   @include media-medium {
     &__label {
+      display: block;
       flex: 1 0 33%;
       margin: units(.5) 0;
     }
 
     &__input {
+      display: block;
       flex: 1 0 66%;
       padding: units(.5) units(1);
     }
