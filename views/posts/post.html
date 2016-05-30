@@ -3,7 +3,7 @@
 {% block main_content %}
 <article class="post">
 	<div class="post__title">
-		<h1> {{ doc.title }} </h1>
+		<h2> {{ doc.title }} </h2>
 		<p class="date">
 			<time datetime="{{ doc.published }}">
 				{{ g.date(doc.published, from='%Y-%m-%d') | date(format='full') }}
