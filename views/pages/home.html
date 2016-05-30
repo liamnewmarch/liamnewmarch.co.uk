@@ -16,9 +16,17 @@
 {% endblock %}
 
 {% block main_content %}
-  <h2> {{ doc.title }} </h2>
-  <p> My name is Liam Newmarch and I’m a <span class="insert-age" data-date-of-birth="1987/12/01">twenty-odd</span> year old web developer. I live in London and work for a company called <a href="https://p.ota.to">Potato</a> where I make things for Google. <a href="{{ g.url('/content/pages/about.yaml').path }}">Read more</a>
-  <h2> Development </h2>
-  <p> I’m primarily a front end developer but have plenty of experience with back end development too. I’m big on AngularJS, build processes and styling. On the server side I’m used to working with Django (at Potato we pair Django with Google App Engine) but am also familiar with io.js (formerly Node.js) and PHP frameworks. </p>
-  <p> I host most of my projects on <a href="https://github.com/liamnewmarch">GitHub</a> and use a combination of GitHub Pages, Google App Engine and my <a href="http://www.raspberrypi.org">Raspberry Pi</a> for hosting. </p>
+  <div class="cards">
+    {% for card in g.collection('labs') %}
+    <div class="card">
+      <a href="{{ card.url.path }}" class="card__inner">
+        <h2 class="card__title"> {{ card.title }} </h2>
+        <i class="card__icon material-icons"> {{ card.icon }} </i>
+        <p class="card__body">
+          {{ card.description }}
+        </p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 {% endblock %}

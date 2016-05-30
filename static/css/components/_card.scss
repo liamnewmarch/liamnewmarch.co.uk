@@ -1,0 +1,43 @@
+.cards {
+  display: flex;
+  flex-flow: colum;
+  justify-content: space-between;
+
+  @include media-medium {
+    flex-flow: row wrap;
+  }
+}
+
+.card {
+  display: block;
+  flex: 1 0 5%;
+  margin: units(2) 0;
+
+  @include media-medium {
+    flex: 0 0 50%;
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+
+  &__inner {
+    box-shadow: units(.1) units(.1) units(.3) rgba(0, 0, 0, .1);
+    display: block;
+    height: 100%;
+    padding: units(1) units(2);
+    position: relative;
+  }
+
+  &__title {
+    margin: units(.5) 0;
+  }
+
+  &__icon {
+    color: map-get($color-blue-grey, '50');
+    font-size: units(4);
+    position: absolute;
+    right: units(1);
+    top: units(1);
+  }
+}
