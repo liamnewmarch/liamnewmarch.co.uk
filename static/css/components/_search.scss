@@ -1,0 +1,31 @@
+.search {
+  background-color: $color-white;
+  bottom: 0;
+  box-shadow: 0 0 units(.5) rgba(0, 0, 0, .3);
+  display: flex;
+  flex-flow: column nowrap;
+  left: 0;
+  margin: auto;
+  max-height: 420px;
+  max-width: 520px;
+  padding: units(2);
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &__inner {
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    max-height: 100%;
+  }
+
+  &__input {
+    flex: 0 0 auto;
+  }
+
+  &__list {
+    flex: 0 1 auto;
+    overflow: auto;
+  }
+}
