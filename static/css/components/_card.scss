@@ -11,7 +11,7 @@
 .card {
   display: block;
   flex: 1 0 5%;
-  margin: units(2) 0;
+  margin: units(1) 0;
 
   @include media-medium {
     flex: 0 0 50%;
@@ -26,6 +26,7 @@
     display: block;
     height: 100%;
     padding: units(1) units(2);
+    margin: units(1);
     position: relative;
   }
 
