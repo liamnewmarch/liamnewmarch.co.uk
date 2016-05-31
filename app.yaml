@@ -13,15 +13,15 @@ handlers:
   secure: optional
 
 # Unknown mime types.
-- url: /assets/(.+\.(map|md|scss))
-  static_files: build/assets/\1
-  upload: build/assets/(.+\.(map|md|scss))
+- url: /static/(.+\.(map|md|scss))
+  static_files: build/static/\1
+  upload: build/static/(.+\.(map|md|scss))
   mime_type: text/plain
   secure: always
 
 # Static assets.
-- url: /assets
-  static_dir: build/assets/
+- url: /static
+  static_dir: build/static/
   secure: always
 
 # Append index.html to folders.
