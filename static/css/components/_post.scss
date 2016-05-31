@@ -1,9 +1,11 @@
 .post {
   &__title {
-    margin: units(1) 0 0;
+    margin: units(1) 0;
 
     @include media-medium {
       font-size: units(2);
+      line-height: units(3);
+      margin-top: units(2);
     }
   }
 
