@@ -1,6 +1,6 @@
 .cards {
   display: flex;
-  flex-flow: colum;
+  flex-flow: column nowrap;
   justify-content: space-between;
 
   @include media-medium {
@@ -10,7 +10,7 @@
 
 .card {
   display: block;
-  flex: 1 0 5%;
+  flex: 0 0 50%;
   margin: units(1) 0;
 
   @include media-medium {
@@ -26,19 +26,34 @@
     display: block;
     height: 100%;
     padding: units(1) units(2);
-    margin: units(1);
+    margin: 0 auto;
+    max-width: units(30);
     position: relative;
+
+    @include media-medium {
+      margin: units(1);
+    }
   }
 
   &__title {
-    margin: units(.5) 0;
+    font-size: units(1.2);
+    margin: units(.25) 0;
+
+    @include media-small {
+      font-size: units(1.5);
+      margin: units(.5) 0;
+    }
   }
 
   &__icon {
     color: map-get($color-blue-grey, '50');
-    font-size: units(4);
+    font-size: units(3);
     position: absolute;
     right: units(1);
     top: units(1);
+
+    @include media-small {
+      font-size: units(4);
+    }
   }
 }
