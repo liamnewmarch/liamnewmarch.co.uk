@@ -29,4 +29,9 @@
       width: units(1.2);
     }
   }
+
+  time {
+    color: map-get($color-grey, '500');
+    font-style: italic;
+  }
 }
