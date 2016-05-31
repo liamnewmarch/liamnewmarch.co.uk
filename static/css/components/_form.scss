@@ -24,10 +24,9 @@
   }
 
   &__input {
-    border: 1px solid map-get($color-grey, '50');
-    border-bottom-color: $color-secondary;
     border: 0;
     border-bottom: 1px solid $color-secondary;
+    border-radius: 0;
   }
 
   &__button {
