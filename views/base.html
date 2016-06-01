@@ -20,6 +20,9 @@
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
 		</div>
+		<div class="search__button js-modal-trigger" data-modal="search" aria-hidden>
+			<i class="material-icons">search</i>
+		</div>
 		<header class="header">
 			<a href="/" rel="home" class="header__content">
 				<h1 class="header__title"> Liam Newmarch </h1>
@@ -47,7 +50,6 @@
 		{% endif %}
 		{% if self.main_content() %}
 		<main class="main-content">
-			<p><a href="#" class="js-modal-trigger" data-modal="search"> Click me! </a></p>
 			{% block main_content %}
 				{% if doc.html %}
 				{{ doc.html | safe }}
@@ -66,7 +68,7 @@
 				{% for collection in g.collections(['pages', 'posts']) %}
 					{% for doc in collection %}
 					<p class="search__item js-filter-item" data-filter="search">
-						<a href="{{ doc.url.path }}">{{ doc.title }}</a>
+						<a href="{{ doc.url.path }}" class="search__link">{{ doc.title }}</a>
 					</p>
 					{% endfor %}
 				{% endfor %}
