@@ -3,7 +3,7 @@ import { loadScript } from '../utils/loadScript'
 
 export class GoogleAnalytics {
   static get selector() {
-    return '.google-analytics';
+    return '.js-google-analytics';
   }
 
   constructor(element) {

@@ -1,21 +1,22 @@
-export class SearchForm {
+export class Filter {
   static get selector() {
-    return '.search';
+    return '.js-filter';
   }
 
   constructor(element) {
     this.keyUpHandler = this.keyUpHandler.bind(this);
 
+    const name = element.getAttribute('data-filter');
+
     this.element = element;
-    this.input = element.querySelector(`${SearchForm.selector}__input`);
-    this.items = element.querySelectorAll(`${SearchForm.selector}__item`);
+    this.items = document.querySelectorAll(`.js-filter-item[data-filter="${name}"]`);
 
     this.addEventListeners();
     this.keyUpHandler();
   }
 
   addEventListeners(event) {
-    this.input.addEventListener('keyup', this.keyUpHandler, false);
+    this.element.addEventListener('keyup', this.keyUpHandler, false);
   }
 
   fuzzyMatch(keyword, items, callback) {
@@ -29,9 +30,14 @@ export class SearchForm {
   }
 
   keyUpHandler() {
-    const keyword = this.input.value || '';
+    const keyword = this.element.value || '';
     const items = [].map.call(this.items, (item) => item.textContent);
-    const callback = (item, match) => item.hidden = !match;
-    this.fuzzyMatch(keyword, items, callback);
+    this.fuzzyMatch(keyword, items, (item, match) => {
+      if (!match) {
+        item.classList.add('is-hidden');
+      } else {
+        item.classList.remove('is-hidden');
+      }
+    });
   }
 }

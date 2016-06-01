@@ -1,20 +1,18 @@
+import { AsyncForm } from './components/async-form';
 import { Bookmarklet } from './components/bookmarklet';
-import { ContactForm } from './components/contact-form';
 import { DisqusComments } from './components/disqus-comments';
+import { Filter } from './components/filter';
 import { GoogleAnalytics } from './components/google-analytics';
 import { InsertAge } from './components/insert-age';
-import { MainMenu } from './components/main-menu';
-import { SearchForm } from './components/search-form';
+import { Modal } from './components/modal';
 
-import { registerComponents } from './utils/register-components';
+import { registerComponent } from './utils/register-component';
 
 
-registerComponents([
-  Bookmarklet,
-  ContactForm,
-  DisqusComments,
-  GoogleAnalytics,
-  InsertAge,
-  MainMenu,
-  SearchForm,
-]);
+registerComponent(AsyncForm);
+registerComponent(Bookmarklet);
+registerComponent(DisqusComments);
+registerComponent(Filter);
+registerComponent(GoogleAnalytics);
+registerComponent(InsertAge);
+registerComponent(Modal);
