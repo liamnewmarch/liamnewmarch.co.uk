@@ -9,7 +9,7 @@
   transition: transform .3s $ease-swift-out;
   will-change: transform;
 
-  .page--menu-open & {
+  .page--disabled & {
     transform: rotate(180deg);
   }
 
@@ -36,7 +36,7 @@
       transform-origin: 38% -510%;
     }
 
-    .page--menu-open & {
+    .page--disabled & {
       &:nth-child(1) {
         transform: rotate(45deg) scaleX(.7);
       }
