@@ -64,6 +64,10 @@
     top: units(1);
     width: units(3.5);
 
+    .page--disabled & {
+      @include animation-fade-out;
+    }
+
     .material-icons {
       font-size: units(2);
       line-height: units(1.5);
