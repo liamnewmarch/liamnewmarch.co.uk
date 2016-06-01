@@ -56,18 +56,20 @@
 			{% endblock %}
 		</main>
 		{% endif %}
-		<nav class="search" role="navigation">
-			<div class="search__inner">
-			<input type="search" placeholder="Search pages and posts" class="search__input">
-			<div class="search__list">
-				{% for collection in g.collections(['pages', 'posts']) %}
-					{% for doc in collection %}
-					<p class="search__item">
-						<em> {{ collection.title }}: </em>
-						<a href="{{ doc.url.path }}">{{ doc.title }}</a>
-					</p>
+		<nav class="search" role="navigation" aria-hidden>
+			<div class="search__inner form">
+				<h2> Search </h2>
+				<input type="search" placeholder="Search pages and posts" class="search__input form__input">
+				<div class="search__list">
+					{% for collection in g.collections(['pages', 'posts']) %}
+						{% for doc in collection %}
+						<p class="search__item">
+							<em> {{ collection.title }}: </em>
+							<a href="{{ doc.url.path }}">{{ doc.title }}</a>
+						</p>
+						{% endfor %}
 					{% endfor %}
-				{% endfor %}
+				</div>
 			</div>
 		</nav>
 		<footer class="footer">
