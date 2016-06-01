@@ -4,6 +4,7 @@ import { DisqusComments } from './components/disqus-comments';
 import { GoogleAnalytics } from './components/google-analytics';
 import { InsertAge } from './components/insert-age';
 import { MainMenu } from './components/main-menu';
+import { SearchForm } from './components/search-form';
 
 import { registerComponents } from './utils/register-components';
 
@@ -15,4 +16,5 @@ registerComponents([
   GoogleAnalytics,
   InsertAge,
   MainMenu,
+  SearchForm,
 ]);
