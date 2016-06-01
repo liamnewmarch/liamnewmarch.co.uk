@@ -35,6 +35,7 @@
 
   &__input {
     flex: 0 0 auto;
+    padding-right: units(.5);
   }
 
   &__list {
@@ -42,7 +43,31 @@
     overflow: auto;
   }
 
+  &__link {
+    color: $color-secondary;
+    display: block;
+  }
+
   &__item.is-hidden {
     display: none;
+  }
+
+  &__button {
+    @include z-index('search');
+    color: $color-white;
+    cursor: pointer;
+    height: units(3.5);
+    margin-top: units(.25);
+    padding: units(1);
+    position: absolute;
+    right: units(1);
+    top: units(1);
+    width: units(3.5);
+
+    .material-icons {
+      font-size: units(2);
+      line-height: units(1.5);
+      margin-left: units(-.25);
+    }
   }
 }

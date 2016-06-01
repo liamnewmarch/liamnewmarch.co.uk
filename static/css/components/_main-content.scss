@@ -15,14 +15,14 @@
 
   ul {
     list-style: none;
-    padding-left: units(0);
+    padding-left: 0;
 
     @include media-small {
       padding-left: units(1.8);
     }
 
     li::before {
-      color: map-get($color-pink, '800');
+      color: $color-tertiary;
       content: '▪';
       display: inline-block;
       margin-left: units(-1.2);

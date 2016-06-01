@@ -1,5 +1,6 @@
 .hamburger {
   @include z-index('hamburger');
+  cursor: pointer;
   left: units(1);
   margin-top: units(.25);
   padding: units(1);

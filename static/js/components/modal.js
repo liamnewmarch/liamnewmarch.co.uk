@@ -42,14 +42,12 @@ export class Modal {
   }
 
   triggerClickHandler(event) {
-    if (event.target === event.currentTarget) {
-      event.preventDefault();
-      event.stopPropagation();
-      if (this.page.classList.contains('page--disabled')) {
-        this.hide();
-      } else {
-        this.show();
-      }
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.page.classList.contains('page--disabled')) {
+      this.hide();
+    } else {
+      this.show();
     }
   }
 }
