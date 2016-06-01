@@ -1,12 +1,14 @@
 const registered = [];
 
-export function registerComponents(_components) {
-  registered.push(..._components);
+export function registerComponent(component) {
+  registered.push(component);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   registered.forEach(Component => {
     const elements = document.querySelectorAll(Component.selector);
-    [].forEach.call(elements, element => new Component(element));
+    [].forEach.call(elements, (element) => {
+      new Component(element);
+    });
   });
 });

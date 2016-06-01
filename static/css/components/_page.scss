@@ -2,6 +2,7 @@
   min-width: units(20);
 
   &::after {
+    @include z-index('page-shield');
     background-color: rgba(0, 0, 0, .5);
     bottom: 0;
     content: '';
@@ -12,7 +13,7 @@
     top: 0;
   }
 
-  &--menu-open {
+  &--disabled {
     bottom: 0;
     left: 0;
     overflow: hidden;
@@ -21,7 +22,7 @@
     top: 0;
 
     &::after {
-      @include fade-in;
+      @include animation-fade-in;
       display: block;
     }
   }

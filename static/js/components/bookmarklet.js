@@ -1,6 +1,6 @@
 export class Bookmarklet {
   static get selector() {
-    return '.bookmarklet';
+    return '.js-bookmarklet';
   }
 
   constructor(element) {

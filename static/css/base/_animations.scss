@@ -1,4 +1,4 @@
-@keyframes fade-in {
+@keyframes animation-fade-in {
   0% {
     opacity: 0;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes slide-down {
+@keyframes animation-slide-down {
   0% {
     transform: translateY(units(-2));
   }
@@ -18,7 +18,7 @@
   }
 }
 
-@keyframes slide-up {
+@keyframes animation-slide-up {
   0% {
     transform: translateY(units(2));
   }
@@ -28,24 +28,24 @@
   }
 }
 
-@mixin fade-in($delay: 0s, $duration: .3s) {
-  animation: fade-in $duration linear $delay 1 normal both;
+@mixin animation-fade-in($delay: 0s, $duration: .3s) {
+  animation: animation-fade-in $duration linear $delay 1 normal both;
   will-change: opacity;
 }
 
-@mixin fade-out($delay: 0s, $duration: .3s) {
-  animation: fade-out $duration linear $delay 1 normal both;
+@mixin animation-fade-out($delay: 0s, $duration: .3s) {
+  animation: animation-fade-out $duration linear $delay 1 normal both;
   will-change: opacity;
 }
 
-@mixin fade-in-slide-down($delay: 0s, $duration: .3s) {
-  animation: fade-in $duration linear $delay 1 normal both,
-    slide-down $duration $ease-swift-out $delay 1 normal both;
+@mixin animation-fade-in-slide-down($delay: 0s, $duration: .3s) {
+  animation: animation-fade-in $duration linear $delay 1 normal both,
+    animation-slide-down $duration $ease-swift-out $delay 1 normal both;
   will-change: opacity, transform;
 }
 
-@mixin fade-in-slide-up($delay: 0s, $duration: .3s) {
-  animation: fade-in $duration linear $delay 1 normal both,
-    slide-up $duration $ease-swift-out $delay 1 normal both;
+@mixin animation-fade-in-slide-up($delay: 0s, $duration: .3s) {
+  animation: animation-fade-in $duration linear $delay 1 normal both,
+    animation-slide-up $duration $ease-swift-out $delay 1 normal both;
   will-change: opacity, transform;
 }

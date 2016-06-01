@@ -1,13 +1,13 @@
-export class ContactForm {
+export class AsyncForm {
   static get selector() {
-    return '.form--contact';
+    return '.js-async-form';
   }
 
   constructor(element) {
     this.submitHandler = this.submitHandler.bind(this);
 
     this.element = element;
-    this.button = this.element.querySelector('.form__button');
+    this.button = this.element.querySelector('.js-async-form-submit');
 
     this.addEventListeners();
   }

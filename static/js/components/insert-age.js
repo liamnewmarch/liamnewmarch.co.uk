@@ -1,6 +1,6 @@
 export class InsertAge {
   static get selector() {
-    return '.insert-age';
+    return '.js-insert-age';
   }
 
   constructor(element) {

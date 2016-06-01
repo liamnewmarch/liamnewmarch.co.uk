@@ -1,4 +1,5 @@
 .main-menu {
+  @include z-index('main-menu');
   background-color: map-get($color-grey, '900');
   bottom: 0;
   box-shadow: units(.125) units(.125) units(.32) rgba(0, 0, 0, .1);
@@ -12,9 +13,8 @@
   transition: transform .3s $ease-swift-out;
   transform: translateX(-110%);
   will-change: transform;
-  z-index: 2;
 
-  .page--menu-open & {
+  &.is-active {
     transform: translateX(0);
   }
 

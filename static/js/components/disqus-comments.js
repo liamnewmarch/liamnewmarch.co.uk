@@ -3,7 +3,7 @@ import { loadScript } from '../utils/loadScript';
 
 export class DisqusComments {
   static get selector() {
-    return '.disqus-comments';
+    return '.js-disqus-comments';
   }
 
   constructor(element) {

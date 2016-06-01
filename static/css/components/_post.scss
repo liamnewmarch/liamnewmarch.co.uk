@@ -9,22 +9,24 @@
     }
   }
 
-  figure {
-    margin-left: 0;
-    margin-right: 0;
-  }
+  &__content {
+    figure {
+      margin-left: 0;
+      margin-right: 0;
+    }
 
-  pre {
-    color: $color-white;
-    background: $color-primary;
-    padding: units(1);
-    max-width: 100%;
-    overflow: auto;
-  }
+    pre {
+      color: $color-white;
+      background: $color-primary;
+      padding: units(1);
+      max-width: 100%;
+      overflow: auto;
+    }
 
-  p code {
-    display: inline-block;
-    background: map-get($color-blue-grey, '50');
-    padding: 0 units(.5);
+    p code {
+      display: inline-block;
+      background: map-get($color-blue-grey, '50');
+      padding: 0 units(.5);
+    }
   }
 }
