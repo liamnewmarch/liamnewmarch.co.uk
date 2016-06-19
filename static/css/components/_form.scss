@@ -16,15 +16,17 @@
   }
 
   &__input {
-    display: block;
-    flex: 1 0 66%;
-    padding: units(.5) units(1);
-  }
-
-  &__input {
     border: 0;
     border-bottom: 1px solid $color-secondary;
     border-radius: 0;
+    display: block;
+    flex: 1 0 66%;
+    padding: units(.5) units(3) units(.5) units(1);
+
+    &:valid {
+      background: url('../img/ic_check_circle.svg') calc(100% - 12px) 12px / 24px 24px no-repeat;
+      outline-color: map-get($color-green, '500');
+    }
   }
 
   &__button {
@@ -42,23 +44,13 @@
   }
 
   &__error,
-  &__sent {
+  &__sent,
+  &--sent &__row {
     display: none;
   }
 
-  &--error {
-    .form__error {
-      display: block;
-    }
-  }
-
-  &--sent {
-    .form__row {
-      display: none;
-    }
-
-    .form__sent {
-      display: block;
-    }
+  &--error &__error,
+  &--sent &__sent {
+    display: block;
   }
 }
