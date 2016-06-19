@@ -1,4 +1,5 @@
 $title@: Alphamap
+$order: 4
 
 description@: Random, abstract RGB bitmaps.
 icon: visibility

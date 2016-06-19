@@ -1,4 +1,5 @@
 $title@: Sequencer
+$order: 1
 
 description@: Piano roll sequencer.
 icon: music_note
