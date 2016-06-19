@@ -1,6 +1,6 @@
 $title@: Generative trees
 
-description@: Drawing trees with HTML5 canvas
+description@: Randomly generated trees.
 icon: code
 iframe_url: https://liamnewmarch.github.io/tree
 tags@:
