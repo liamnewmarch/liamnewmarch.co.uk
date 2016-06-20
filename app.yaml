@@ -19,6 +19,14 @@ handlers:
   mime_type: text/plain
   secure: always
 
+# Service worker.
+- url: /static/js/service-worker\.js
+  static_files: build/static/js/service-worker.js
+  upload: build/static/js/service-worker\.js
+  secure: always
+  http_headers:
+    Service-Worker-Allowed: /
+
 # Static assets.
 - url: /static
   static_dir: build/static/

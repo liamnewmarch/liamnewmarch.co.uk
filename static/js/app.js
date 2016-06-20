@@ -7,6 +7,7 @@ import { InsertAge } from './components/insert-age';
 import { Modal } from './components/modal';
 
 import { registerComponent } from './utils/register-component';
+import { serviceWorker } from './utils/service-worker';
 
 
 registerComponent(AsyncForm);
@@ -16,3 +17,5 @@ registerComponent(Filter);
 registerComponent(GoogleAnalytics);
 registerComponent(InsertAge);
 registerComponent(Modal);
+
+serviceWorker.register();
