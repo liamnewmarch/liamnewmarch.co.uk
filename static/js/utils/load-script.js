@@ -5,7 +5,6 @@ export function loadScript(src, async=false) {
     return scripts[src];
   }
 
-
   const script = new Promise(resolve => {
     var element = document.createElement('script');
     element.src = src;
