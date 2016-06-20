@@ -1,4 +1,4 @@
-import { loadScript } from '../utils/loadScript'
+import { loadScript } from '../utils/load-script'
 
 
 export class GoogleAnalytics {
