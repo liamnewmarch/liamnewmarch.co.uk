@@ -8,9 +8,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta name="theme-color" content="#212121">
 		<title> {{ doc.title }} | Liam Newmarch </title>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons|Roboto:100,400">
 		<link rel="stylesheet" href="{{ g.static('/static/css/min.css').url.path }}">
+		<link rel="serviceworker" href="{{ g.static('/static/js/service-worker.js').url.path }}" scope="/">
+		<link rel="manifest" href="{{ g.static('/static/json/manifest.json').url.path }}">
 		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}" />
 	</head>
 	<body class="page {{ page_class }}">
