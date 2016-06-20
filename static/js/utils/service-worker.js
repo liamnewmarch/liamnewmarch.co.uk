@@ -4,7 +4,6 @@ const scope = element.getAttribute('scope');
 
 function register() {
   if ('serviceWorker' in navigator) {
-    console.log(path, scope);
     navigator.serviceWorker.register(path, { scope });
   }
 }
