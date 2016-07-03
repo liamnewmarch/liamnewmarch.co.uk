@@ -53,7 +53,7 @@
     font-size: units(3);
     position: absolute;
     right: units(1);
-    top: units(1);
+    top: units(.5);
 
     @include media-small {
       font-size: units(4);
