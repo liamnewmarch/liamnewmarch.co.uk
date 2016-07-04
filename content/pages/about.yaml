@@ -2,3 +2,116 @@ $title@: About
 $order: 2
 
 icon: person
+
+timeline:
+  start_year: 1987
+  start_label@: Born
+  now_label@: Now
+  layers:
+    - label@: Education
+      key: education
+      enabled: true
+    - label@: Employment
+      key: work
+      enabled: true
+    - label@: Programming Languages
+      key: language
+    - label@: Mobile phones
+      key: phone
+  years:
+    - year: 1999
+      events:
+        - label@: Mitsubishi Trium
+          layer: phone
+    - year: 2001
+      events:
+        - label@: Nokia 3330
+          layer: phone
+    - year: 2002
+      events:
+        - label@: Nokia 5510
+          layer: phone
+    - year: 2003
+      events:
+        - label@: HTML
+          layer: language
+        - label@: CSS
+          layer: language
+        - label@: Sony Ericsson p800
+          layer: phone
+    - year: 2004
+      events:
+        - label@: Delphi (Object Pascal)
+          layer: language
+    - year: 2005
+      events:
+        - label@: Egglescliffe Sixth Form College
+          layer: education
+        - label@: Sony Ericsson p900
+          layer: phone
+    - year: 2006
+      events:
+        - label@: Scheme
+          layer: language
+    - year: 2007
+      events:
+        - label@: University of Leeds
+          layer: education
+        - label@: Python
+          layer: language
+        - label@: Shell
+          layer: language
+        - label@: Sony Ericsson p990
+          layer: phone
+    - year: 2008
+      events:
+        - label@: ActionScript
+          layer: language
+        - label@: ColdFusion
+          layer: language
+        - label@: PHP
+          layer: language
+        - label@: SQL
+          layer: language
+        - label@: Sony w810
+          layer: phone
+    - year: 2009
+      events:
+        - label@: JavaScript
+          layer: language
+        - label@: Sony w880
+          layer: phone
+    - year: 2010
+      events:
+        - label@: WPA Pinfold (intern)
+          layer: work
+        - label@: Objective-C
+          layer: language
+        - label@: Java
+          layer: language
+        - label@: WPA Pinfold (digital developer)
+          layer: work
+        - label@: Blackberry 8520
+          layer: phone
+    - year: 2011
+      events:
+        - label@: Samsung Galaxy Nexus
+          layer: phone
+    - year: 2012
+      events:
+        - label@: WPA Pinfold (lead developer)
+          layer: work
+    - year: 2013
+      events:
+        - label@: Google Nexus 5
+          layer: phone
+    - year: 2014
+      events:
+        - label@: Potato (freelance)
+          layer: work
+    - year: 2015
+      events:
+        - label@: Potato (full-time developer)
+          layer: work
+        - label@: Google Nexus 6P
+          layer: phone
