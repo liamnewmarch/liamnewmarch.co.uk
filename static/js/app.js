@@ -5,6 +5,7 @@ import { Filter } from './components/filter';
 import { GoogleAnalytics } from './components/google-analytics';
 import { InsertAge } from './components/insert-age';
 import { Modal } from './components/modal';
+import { TimelineLayers } from './components/timeline-layers';
 
 import { registerComponent } from './utils/register-component';
 import { serviceWorker } from './utils/service-worker';
@@ -17,5 +18,6 @@ registerComponent(Filter);
 registerComponent(GoogleAnalytics);
 registerComponent(InsertAge);
 registerComponent(Modal);
+registerComponent(TimelineLayers);
 
 serviceWorker.register();
