@@ -11,11 +11,11 @@
   &__label {
     color: map-get($color-pink, '800');
     font-size: units(2);
+    flex: 0 0 33%;
     padding: 0 units(2) 0 0;
     position: relative;
     text-align: right;
     transition: transform .2s $ease-swift-out;
-    width: 33%;
 
     &::before {
       content: '';
@@ -97,7 +97,7 @@
 
 .timeline-layers {
   list-style: none;
-  margin: units(1) 0;
+  margin: units(1) 0 0;
   padding: 0;
 
   &__layer {
@@ -107,7 +107,7 @@
     border-radius: units(.2);
     display: inline-block;
     font: inherit;
-    margin: 0 units(.5);
+    margin: units(.5) units(.5);
     padding: 0 units(.5);
   }
 
