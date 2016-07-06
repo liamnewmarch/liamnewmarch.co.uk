@@ -12,13 +12,14 @@ self.addEventListener('fetch', event => {
   if (url.protocol === 'data:') {
     return fetch(event.request);
   }
-  event.respondWith(caches.match(event.request).then(response => {
-    return response || fetch(event.request).then(response => {
+  event.respondWith(caches.match(event.request).then(cached => {
+    return network = fetch(event.request).then(response => {
       const clone = response.clone();
       caches.open(version).then(cache => {
         cache.put(event.request, clone);
       });
       return response;
     });
+    return cached || network;
   }));
 });
