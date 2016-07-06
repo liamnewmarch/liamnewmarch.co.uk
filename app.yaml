@@ -1,5 +1,3 @@
-application: liamnewmarch-blog
-version: live
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -51,8 +49,12 @@ handlers:
   secure: always
 
 skip_files:
+- ^\.babelrc
+- ^\.bowerrc
+- ^\.eslintrc
 - ^\.git
 - ^\.sass-cache
+- ^bower.json
 - ^content
 - ^grunt
 - ^node_modules

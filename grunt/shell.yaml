@@ -1,8 +1,8 @@
 deploy-dev:
-  command: appcfg.py update . --version=dev
+  command: gcloud app deploy --no-promote --version=dev
 
 deploy-live:
-  command: appcfg.py update . --version=live
+  command: gcloud app deploy --no-promote --version=live
 
 grow-build:
   command: grow build
