@@ -1,3 +1,6 @@
+import '../libs/es6-promise/promise.js';
+import '../libs/fetch/fetch.js';
+
 import { AsyncForm } from './components/async-form';
 import { Bookmarklet } from './components/bookmarklet';
 import { DisqusComments } from './components/disqus-comments';
@@ -7,9 +10,12 @@ import { InsertAge } from './components/insert-age';
 import { Modal } from './components/modal';
 import { TimelineLayers } from './components/timeline-layers';
 
+import { canonicalRedirect } from './utils/canonical-redirect';
 import { registerComponent } from './utils/register-component';
-import { serviceWorker } from './utils/service-worker';
+import { registerServiceWorker } from './utils/service-worker';
 
+
+canonicalRedirect();
 
 registerComponent(AsyncForm);
 registerComponent(Bookmarklet);
@@ -20,4 +26,4 @@ registerComponent(InsertAge);
 registerComponent(Modal);
 registerComponent(TimelineLayers);
 
-serviceWorker.register();
+registerServiceWorker();

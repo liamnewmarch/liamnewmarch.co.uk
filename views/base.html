@@ -4,7 +4,7 @@
 	{% set page_class = 'page--' + doc.collection.title %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="{{ doc.locale | replace('_', '-') }}" dir="ltr">
+<html lang="{{ doc.locale | replace('_', '-') }}" dir="ltr" data-env="{{ env.name }}">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -15,7 +15,7 @@
 		<link rel="serviceworker" href="{{ g.static('/static/js/service-worker.js').url.path }}" scope="/">
 		<link rel="manifest" href="{{ g.static('/static/json/manifest.json').url.path }}">
 		<link rel="icon" href="{{ g.static('/static/img/ln-icon-32.png').url.path }}">
-		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}" />
+		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}">
 	</head>
 	<body class="page {{ page_class }}">
 	{% block body %}
@@ -85,9 +85,9 @@
 			</div>
 		</footer>
 	{% endblock %}
-		<script src="{{ g.static('/static/libs/es6-promise/promise.min.js').url.path }}"></script>
-		<script src="{{ g.static('/static/libs/fetch/fetch.js').url.path }}"></script>
-		<script src="{{ g.static('/static/js/min.js').url.path }}"></script>
+		{# <script defer src="{{ g.static('/static/libs/es6-promise/promise.min.js').url.path }}"></script>#}
+		{# <script defer src="{{ g.static('/static/libs/fetch/fetch.js').url.path }}"></script>#}
+		<script async src="{{ g.static('/static/js/min.js').url.path }}"></script>
 		<div class="js-google-analytics" data-tracking-id="UA-6676765-4"></div>
 	</body>
 </html>

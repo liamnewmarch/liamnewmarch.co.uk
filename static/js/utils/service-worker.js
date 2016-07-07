@@ -1,11 +1,12 @@
+import { DEBUG } from './environment';
+
+
 const element = document.querySelector('link[rel="serviceworker"]');
 const path = element.getAttribute('href');
 const scope = element.getAttribute('scope');
 
-function register() {
-  if ('serviceWorker' in navigator) {
+export function registerServiceWorker() {
+  if (!DEBUG && 'serviceWorker' in navigator) {
     navigator.serviceWorker.register(path, { scope });
   }
 }
-
-export const serviceWorker = { register };
