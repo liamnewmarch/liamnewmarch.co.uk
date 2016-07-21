@@ -12,7 +12,6 @@ import { TimelineLayers } from './components/timeline-layers';
 
 import { canonicalRedirect } from './utils/canonical-redirect';
 import { registerComponent } from './utils/register-component';
-import { registerServiceWorker } from './utils/service-worker';
 
 
 canonicalRedirect();
@@ -25,5 +24,3 @@ registerComponent(GoogleAnalytics);
 registerComponent(InsertAge);
 registerComponent(Modal);
 registerComponent(TimelineLayers);
-
-registerServiceWorker();

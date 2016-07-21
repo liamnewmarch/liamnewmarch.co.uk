@@ -12,7 +12,9 @@
 		<title> {{ doc.title }} | Liam Newmarch </title>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons|Roboto:100,400">
 		<link rel="stylesheet" href="{{ g.static('/static/css/min.css').url.path }}">
+		{% if env.name != 'dev' %}
 		<link rel="serviceworker" href="{{ g.static('/static/js/service-worker.js').url.path }}" scope="/">
+		{% endif %}
 		<link rel="manifest" href="{{ g.static('/static/json/manifest.json').url.path }}">
 		<link rel="icon" href="{{ g.static('/static/img/ln-icon-32.png').url.path }}">
 		<link rel="canonical" href="https://liamnewmarch.co.uk{{ doc.url.path }}">
