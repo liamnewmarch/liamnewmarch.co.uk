@@ -1,8 +1,8 @@
 $title@: Alphamap
-$order: 4
+$order: 8
 
 description@: Random, abstract RGB bitmaps.
 icon: visibility
-iframe_url: https://liamnewmarch.github.io/alphamap
+iframe_url: https://liamnewmarch.github.io/alphamap/
 tags@:
   - Canvas

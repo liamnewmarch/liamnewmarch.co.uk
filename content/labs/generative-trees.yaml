@@ -1,8 +1,8 @@
 $title@: Generative trees
-$order: 3
+$order: 7
 
 description@: Randomly generated trees.
-icon: code
-iframe_url: https://liamnewmarch.github.io/tree
+icon: call_split
+iframe_url: https://liamnewmarch.github.io/tree/
 tags@:
   - Canvas
