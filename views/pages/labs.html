@@ -5,9 +5,10 @@
 <ul>
   {% for item in g.docs('labs') %}
   <li>
-    <a href="{{ item.url.path }}">
+    <a href="{{ item.iframe_url }}">
       {{ item.title }}
     </a>
+    – {{ item.description }}
   </li>
   {% endfor %}
 </ul>

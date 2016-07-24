@@ -13,7 +13,7 @@
   <div class="cards">
     {% for card in g.collection('labs') %}
     <div class="card">
-      <a href="{{ card.url.path }}" class="card__inner">
+      <a href="{{ card.iframe_url }}" class="card__inner">
         <h2 class="card__title"> {{ card.title }} </h2>
         <i class="card__icon material-icons"> {{ card.icon }} </i>
         <p class="card__body">
