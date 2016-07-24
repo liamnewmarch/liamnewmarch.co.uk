@@ -28,6 +28,16 @@
   }
 }
 
+@keyframes animation-slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
 @keyframes animation-slide-up {
   0% {
     transform: translateY(units(2));
@@ -58,4 +68,9 @@
   animation: animation-fade-in $duration linear $delay 1 normal both,
     animation-slide-up $duration $ease-swift-out $delay 1 normal both;
   will-change: opacity, transform;
+}
+
+@mixin animation-slide-right($delay: 0s, $duration: .3s) {
+  animation: animation-slide-right $duration $ease-swift-out $delay 1 normal both;
+  will-change: transform;
 }
