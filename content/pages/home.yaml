@@ -6,3 +6,13 @@ $localization:
   path: /intl/{locale}/
 
 icon: home
+
+panels:
+  - icon: place
+    label@: Londoner
+  - icon: web
+    label@: Front-end
+  - icon: code
+    label@: JavaScript
+
+cards_more: More from the labs…

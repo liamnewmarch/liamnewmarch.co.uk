@@ -1,18 +1,12 @@
 {% extends '/views/base.html' %}
 
 {% block pre_content %}
+  {% for panel in doc.panels %}
   <div class="panel">
-    <i class="panel__icon material-icons">web</i>
-    <p class="panel__title"> Front-end </p>
+    <i class="panel__icon material-icons">{{ panel.icon }}</i>
+    <p class="panel__title"> {{ panel.label }} </p>
   </div>
-  <div class="panel">
-    <i class="panel__icon material-icons">code</i>
-    <p class="panel__title"> ES2016+ </p>
-  </div>
-  <div class="panel">
-    <i class="panel__icon material-icons">place</i>
-    <p class="panel__title"> London based </p>
-  </div>
+  {% endfor %}
 {% endblock %}
 
 {% block main_content %}
@@ -28,5 +22,6 @@
       </a>
     </div>
     {% endfor %}
+    <a href="{{ g.doc('/content/pages/labs.yaml').url.path }}" class="cards__more"> {{ doc.cards_more }} </a>
   </div>
 {% endblock %}
