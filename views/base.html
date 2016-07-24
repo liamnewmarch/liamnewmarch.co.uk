@@ -1,3 +1,5 @@
+{% set global = g.doc('/content/global.yaml') %}
+
 {% if doc.collection.title == 'page' %}
 	{% set page_class = 'page--' + doc.slug %}
 {% else %}
@@ -9,7 +11,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 		<meta name="theme-color" content="#212121">
-		<title> {{ doc.title }} | Liam Newmarch </title>
+		<title> {{ doc.title }} | {{ global.site_title }} </title>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Material+Icons|Roboto:100,400">
 		<link rel="stylesheet" href="{{ g.static('/static/css/min.css').url.path }}">
 		{% if env.name != 'dev' %}
@@ -21,24 +23,24 @@
 	</head>
 	<body class="page {{ page_class }}">
 	{% block body %}
-		<button class="hamburger js-focus-hinting js-modal-trigger" data-modal="main-menu">
+		<button class="hamburger js-focus-hinting js-modal-trigger" data-modal="main-menu" aria-label="Open main menu" aria-controls="main-menu">
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
 		</button>
-		<button class="search__button js-focus-hinting js-modal-trigger" data-modal="search">
+		<button class="search__button js-focus-hinting js-modal-trigger" data-modal="search" aria-label="Open search" aria-controls="search">
 			<i class="material-icons">search</i>
 		</button>
 		<header class="header">
 			<a href="{{ g.doc('/content/pages/home.yaml').url.path }}" rel="home" class="header__content">
-				<h1 class="header__title"> Liam Newmarch </h1>
-				<p class="header__subtitle"> Web developer </p>
+				<h1 class="header__title"> {{ global.site_title }} </h1>
+				<p class="header__subtitle"> {{ global.site_subtitle }} </p>
 			</a>
 		</header>
-		<nav class="main-menu js-modal" role="navigation" data-modal="main-menu" aria-hidden="true">
-			<ul class="main-menu__items">
+		<nav id="main-menu" class="main-menu js-modal" role="menubar" data-modal="main-menu" aria-hidden="true">
+			<ul class="main-menu__items" role="menubar">
 				{% for page in g.docs('pages') %}
-				<li class="main-menu__item">
+				<li class="main-menu__item" role="menuitem">
 					<a href="{{ page.url.path }}" class="main-menu__link">
 						<i class="main-menu__icon material-icons">{{ page.icon }}</i>
 						{{ page.title }}
@@ -55,7 +57,7 @@
 		</aside>
 		{% endif %}
 		{% if self.main_content() %}
-		<main class="main-content">
+		<main class="main-content" role="main">
 			{% block main_content %}
 				{% if doc.html %}
 				{{ doc.html | safe }}
@@ -65,9 +67,9 @@
 			{% endblock %}
 		</main>
 		{% endif %}
-		<nav class="search js-modal" role="navigation" data-modal="search" aria-hidden="true">
+		<nav id="search" class="search js-modal" role="navigation" data-modal="search" aria-hidden="true">
 			<header class="search__header form">
-				<h2 class="search__title"> Search </h2>
+				<h2 class="search__title"> {{ global.search_title }} </h2>
 				<input type="search" placeholder="Search pages and posts" class="search__input form__input js-filter" data-filter="search">
 			</header>
 			<div class="search__list">
@@ -82,12 +84,11 @@
 		</nav>
 		<footer class="footer">
 			<div class="footer__content">
-				<p> Handcoded with ♡ by Liam Newmarch, 2016. </p>
-				<p> Source available under <a href="http://www.gnu.org/copyleft/gpl.html">GPLv3</a> on <a href="https://github.com/liamnewmarch/liamnewmarch.co.uk">GitHub</a>. </p>
+				{{ global.site_footer | markdown | safe }}
 			</div>
 		</footer>
 	{% endblock %}
 		<script async src="{{ g.static('/static/js/min.js').url.path }}"></script>
-		<div class="js-google-analytics" data-tracking-id="UA-6676765-4"></div>
+		<div class="js-google-analytics" data-tracking-id="{{ global.ga_tracking_id }}"></div>
 	</body>
 </html>

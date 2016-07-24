@@ -1,0 +1,14 @@
+site_title@: Liam Newmarch
+site_subtitle@: Web developer
+site_footer@: |-
+  Handcoded with ♡ by Liam Newmarch, 2016.
+
+  Source available under [GPLv3][1] on [GitHub][2].
+
+  [1]: http://www.gnu.org/copyleft/gpl.html
+  [2]: https://github.com/liamnewmarch/liamnewmarch.co.uk
+
+search_title@: Search
+
+disqus_shortname: liamnewmarch
+ga_tracking_id: UA-6676765-4

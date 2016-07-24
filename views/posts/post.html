@@ -11,6 +11,6 @@
 	<div class="post__content">
 		{{ doc.html | safe }}
 	</div>
-	<div class="post__comments js-disqus-comments" data-shortname="liamnewmarch"></div>
+	<div class="post__comments js-disqus-comments" data-shortname="{{ global.disqus_shortname }}"></div>
 </article>
 {% endblock %}
