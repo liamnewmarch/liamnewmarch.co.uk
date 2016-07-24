@@ -5,8 +5,8 @@
 {% block body %}
 	<main class="labs">
 		<a href="javascript:history.back()" class="labs__back">
-			<i class="labs__icon material-icons">arrow_back</i>
-			{{ labs.iframe_back }}
+			<i class="labs__icon material-icons">{{ labs.back_icon }}</i>
+			{{ labs.back_label }}
 		</a>
 		<iframe src="{{ doc.iframe_url }}" class="labs__iframe"></iframe>
 	</main>

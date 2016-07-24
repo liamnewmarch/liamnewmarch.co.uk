@@ -8,11 +8,11 @@ $localization:
 icon: home
 
 panels:
-  - icon: place
-    label@: Londoner
   - icon: web
     label@: Front-end
   - icon: code
     label@: JavaScript
+  - icon: place
+    label@: London
 
 cards_more: More from the labs…
