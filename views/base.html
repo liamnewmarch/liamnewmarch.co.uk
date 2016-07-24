@@ -21,21 +21,21 @@
 	</head>
 	<body class="page {{ page_class }}">
 	{% block body %}
-		<div class="hamburger js-modal-trigger" data-modal="main-menu" aria-hidden>
+		<button class="hamburger js-focus-hinting js-modal-trigger" data-modal="main-menu">
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
 			<div class="hamburger__line"></div>
-		</div>
-		<div class="search__button js-modal-trigger" data-modal="search" aria-hidden>
+		</button>
+		<button class="search__button js-focus-hinting js-modal-trigger" data-modal="search">
 			<i class="material-icons">search</i>
-		</div>
+		</button>
 		<header class="header">
 			<a href="/" rel="home" class="header__content">
 				<h1 class="header__title"> Liam Newmarch </h1>
 				<p class="header__subtitle"> Web developer </p>
 			</a>
 		</header>
-		<nav class="main-menu js-modal" role="navigation" data-modal="main-menu">
+		<nav class="main-menu js-modal" role="navigation" data-modal="main-menu" aria-hidden="true">
 			<ul class="main-menu__items">
 				{% for page in g.docs('pages') %}
 				<li class="main-menu__item">
@@ -65,7 +65,7 @@
 			{% endblock %}
 		</main>
 		{% endif %}
-		<nav class="search js-modal" role="navigation" data-modal="search" aria-hidden>
+		<nav class="search js-modal" role="navigation" data-modal="search" aria-hidden="true">
 			<header class="search__header form">
 				<h2 class="search__title"> Search </h2>
 				<input type="search" placeholder="Search pages and posts" class="search__input form__input js-filter" data-filter="search">
@@ -87,8 +87,6 @@
 			</div>
 		</footer>
 	{% endblock %}
-		{# <script defer src="{{ g.static('/static/libs/es6-promise/promise.min.js').url.path }}"></script>#}
-		{# <script defer src="{{ g.static('/static/libs/fetch/fetch.js').url.path }}"></script>#}
 		<script async src="{{ g.static('/static/js/min.js').url.path }}"></script>
 		<div class="js-google-analytics" data-tracking-id="UA-6676765-4"></div>
 	</body>

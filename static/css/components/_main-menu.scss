@@ -11,11 +11,10 @@
   right: 20%;
   top: 0;
   transition: transform .3s $ease-swift-out;
-  transform: translateX(-110%);
   will-change: transform;
 
-  &.is-active {
-    transform: translateX(0);
+  &[aria-hidden="true"] {
+    transform: translateX(-110%);
   }
 
   &__items {

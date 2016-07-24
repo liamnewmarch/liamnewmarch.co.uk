@@ -23,7 +23,7 @@
     flex: 1 0 66%;
     padding: units(.5) units(3) units(.5) units(1);
 
-    &:valid {
+    &[required]:valid {
       background: url('../img/ic_check_circle.svg') calc(100% - 12px) 12px / 24px 24px no-repeat;
       outline-color: map-get($color-green, '500');
     }

@@ -1,4 +1,5 @@
 .hamburger {
+  @include button-reset;
   @include z-index('hamburger');
   cursor: pointer;
   left: units(1);

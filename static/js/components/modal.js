@@ -5,6 +5,7 @@ export class Modal {
 
   constructor(element) {
     this.pageClickHandler = this.pageClickHandler.bind(this);
+    this.pageKeyDownHandler = this.pageKeyDownHandler.bind(this);
     this.triggerClickHandler = this.triggerClickHandler.bind(this);
 
     const name = element.getAttribute('data-modal');
@@ -22,28 +23,33 @@ export class Modal {
     [].forEach.call(this.triggers, (trigger) => {
       trigger.addEventListener('click', this.triggerClickHandler, false);
     });
+    window.addEventListener('keyup', this.pageKeyDownHandler, false);
   }
 
   hide() {
-    [].forEach.call(this.modals, (modal) => modal.classList.remove('is-active'));
+    [].forEach.call(this.modals, (modal) => modal.setAttribute('aria-hidden', true));
     this.page.classList.remove('page--disabled');
   }
 
   show() {
-    this.element.classList.add('is-active');
+    this.element.removeAttribute('aria-hidden');
     this.page.classList.add('page--disabled');
   }
 
   pageClickHandler(event) {
     if (event.target === event.currentTarget) {
-      event.stopPropagation();
+      this.hide();
+    }
+  }
+
+  pageKeyDownHandler(event) {
+    if (event.keyCode === 27) {
       this.hide();
     }
   }
 
   triggerClickHandler(event) {
     event.preventDefault();
-    event.stopPropagation();
     if (this.page.classList.contains('page--disabled')) {
       this.hide();
     } else {

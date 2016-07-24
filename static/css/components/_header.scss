@@ -13,7 +13,7 @@
     display: block;
     margin: 0 auto;
     max-width: units(70);
-    padding: units(1.5) 0 units(1);
+    padding: units(1.5) 0 units(1.5);
     text-align: center;
 
     @include media-medium {
@@ -24,8 +24,9 @@
       text-shadow: 0 0 units(.5) $color-black;
 
       .page--home & {
-        padding-bottom: units(7);
-        padding-top: units(16);
+        margin-bottom: units(7);
+        margin-top: units(16);
+        padding: 0;
       }
     }
 
