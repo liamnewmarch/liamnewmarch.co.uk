@@ -1,7 +1,4 @@
 .page {
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 100%;
   min-width: units(20);
 
   &::after {
