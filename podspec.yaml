@@ -1,4 +1,4 @@
-grow_version: ">=0.0.50"
+grow_version: ">=0.0.64"
 
 localization:
   default_locale: en_gb
