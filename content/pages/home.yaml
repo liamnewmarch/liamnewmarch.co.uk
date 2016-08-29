@@ -15,4 +15,14 @@ panels:
   - icon: place
     label@: London
 
+labs:
+  - sequencer
+  - particles
+  - repl
+  - fiddle
+  - live-buses
+  - cells
+  - generative-trees
+  - alphamap
+
 cards_more: More from the labs…

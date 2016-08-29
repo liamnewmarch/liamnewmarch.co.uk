@@ -1,5 +1,4 @@
 $title@: Live buses
-$order: 4
 
 description@: TfL API demo using Service Worker.
 icon: schedule

@@ -1,5 +1,4 @@
 $title@: Cellular automata
-$order: 5
 
 description@: Conway’s game of life.
 icon: grid_on

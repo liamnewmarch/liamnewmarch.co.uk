@@ -1,5 +1,4 @@
 $title@: Console shim
-$order: 6
 
 description@: Web scratchpad that works offline.
 icon: compare_arrows

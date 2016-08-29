@@ -11,7 +11,8 @@
 
 {% block main_content %}
   <div class="cards">
-    {% for card in g.collection('labs') %}
+    {% for key in doc.labs %}
+    {% set card = g.doc('/content/labs/' + key + '.yaml')%}
     <div class="card">
       <a href="{{ card.iframe_url }}" class="card__inner">
         <h2 class="card__title"> {{ card.title }} </h2>
