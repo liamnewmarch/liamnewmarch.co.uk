@@ -48,12 +48,20 @@ export class TimelineLayers {
     [].forEach.call(layers, layer => {
       if (this.layers[layer]) active = true;
     });
-    container.hidden = !active;
+    if (active) {
+      container.removeAttribute('aria-hidden');
+    } else {
+      container.setAttribute('aria-hidden', 'true');
+    }
   }
 
   updateItem(item) {
     const layer = item.getAttribute('data-layer');
-    item.hidden = !this.layers[layer];
+    if (this.layers[layer]) {
+      item.removeAttribute('aria-hidden');
+    } else {
+      item.setAttribute('aria-hidden', 'true');
+    }
   }
 
   updateTrigger(item) {
