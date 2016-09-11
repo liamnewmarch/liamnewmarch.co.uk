@@ -13,7 +13,7 @@ self.addEventListener('fetch', event => {
     return fetch(event.request);
   }
   event.respondWith(caches.match(event.request).then(cached => {
-    return network = fetch(event.request).then(response => {
+    const network = fetch(event.request).then(response => {
       const clone = response.clone();
       caches.open(version).then(cache => {
         cache.put(event.request, clone);
