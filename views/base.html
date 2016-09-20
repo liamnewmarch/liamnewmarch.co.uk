@@ -6,7 +6,7 @@
 	{% set page_class = 'page--' + doc.collection.title %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="{{ doc.locale | replace('_', '-') }}" dir="ltr" data-env="{{ env.name }}">
+<html lang="{{ doc.locale | replace('_', '-') }}" dir="ltr" {% if env.name == 'dev' %}data-is-dev{% endif %}>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">

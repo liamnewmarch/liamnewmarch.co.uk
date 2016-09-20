@@ -1,5 +1,5 @@
 function isDebugEnvironment() {
-  return document.documentElement.getAttribute('data-env') === 'dev';
+  return document.documentElement.hasAttribute('data-is-dev');
 }
 
-export const DEBUG = isDebugEnvironment();
+export const DEV = isDebugEnvironment();
