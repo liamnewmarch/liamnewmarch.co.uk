@@ -3,7 +3,7 @@
 {% block pre_content %}
   {% for panel in doc.panels %}
   <div class="panel">
-    <i class="panel__icon material-icons">{{ panel.icon }}</i>
+    <i class="panel__icon material-icons" data-icon="{{ panel.icon }}"></i>
     <p class="panel__title"> {{ panel.label }} </p>
   </div>
   {% endfor %}
@@ -16,7 +16,7 @@
     <div class="card">
       <a href="{{ card.iframe_url }}" class="card__inner">
         <h2 class="card__title"> {{ card.title }} </h2>
-        <i class="card__icon material-icons"> {{ card.icon }} </i>
+        <i class="card__icon material-icons" data-icon="{{ card.icon }}"></i>
         <p class="card__body">
           {{ card.description }}
         </p>

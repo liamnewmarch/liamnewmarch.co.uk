@@ -11,9 +11,9 @@ panels:
   - icon: web
     label@: Front-end
   - icon: code
-    label@: JavaScript
+    label@: Web Developer
   - icon: place
-    label@: London
+    label@: based in London
 
 labs:
   - sequencer
