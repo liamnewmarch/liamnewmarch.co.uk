@@ -1,5 +1,6 @@
 site_title@: Liam Newmarch
-site_subtitle@: Front-end web developer
+site_description@: Front-end Web Developer living in London, working at Potato.
+site_subtitle@: Front-end Web Developer
 site_footer@: |-
   Handcoded with ♡ by Liam Newmarch, 2016.
 
@@ -7,9 +8,6 @@ site_footer@: |-
 
   [1]: http://www.gnu.org/copyleft/gpl.html
   [2]: https://github.com/liamnewmarch/liamnewmarch.co.uk
-
-search_title@: Search
-search_icon: search
 
 disqus_shortname: liamnewmarch
 ga_tracking_id: UA-6676765-4
