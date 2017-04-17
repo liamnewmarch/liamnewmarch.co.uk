@@ -2,7 +2,6 @@ import '../libs/es6-promise/promise.js';
 import '../libs/fetch/fetch.js';
 
 import { AsyncForm } from './components/async-form';
-import { Bookmarklet } from './components/bookmarklet';
 import { DisqusComments } from './components/disqus-comments';
 import { Filter } from './components/filter';
 import { FocusHinting } from './components/focus-hinting';
@@ -20,7 +19,6 @@ canonicalRedirect();
 registerServiceWorker();
 
 registerComponent(AsyncForm);
-registerComponent(Bookmarklet);
 registerComponent(DisqusComments);
 registerComponent(Filter);
 registerComponent(FocusHinting);
