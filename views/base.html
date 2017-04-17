@@ -37,24 +37,6 @@
 				{% endfor %}
 			</ul>
 		</nav>
-		<button class="search__button js-focus-hinting js-modal-trigger" data-modal="search" aria-label="Open search" aria-controls="search">
-			<i class="material-icons">{{ global.search_icon }}</i>
-		</button>
-		<nav id="search" class="search js-modal" role="navigation" data-modal="search" aria-hidden="true">
-			<header class="search__header form">
-				<h2 class="search__title"> {{ global.search_title }} </h2>
-				<input type="search" placeholder="Search pages and posts" class="search__input form__input js-filter" data-filter="search">
-			</header>
-			<div class="search__list">
-				{% for collection in g.collections(['pages', 'posts']) %}
-					{% for doc in collection %}
-					<p class="search__item js-filter-item" data-filter="search">
-						<a href="{{ doc.url.path }}" class="search__link">{{ doc.title }}</a>
-					</p>
-					{% endfor %}
-				{% endfor %}
-			</div>
-		</nav>
 		<header class="header">
 			<a href="{{ g.doc('/content/pages/home.yaml').url.path }}" rel="home" class="header__content">
 				<h1 class="header__title"> {{ global.site_title }} </h1>
