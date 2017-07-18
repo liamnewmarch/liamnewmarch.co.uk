@@ -69,7 +69,8 @@
 			</div>
 		</footer>
 	{% endblock %}
-		<script async src="{{ g.static('/static/js/min.js').url.path }}"></script>
+		<script type="module" src="{{ g.static('/static/js/app.js').url.path }}"></script>
+		<script async nomodule src="{{ g.static('/static/js/min.js').url.path }}"></script>
 		<div class="js-google-analytics" data-tracking-id="{{ global.ga_tracking_id }}"></div>
 	</body>
 </html>

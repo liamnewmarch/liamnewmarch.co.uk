@@ -1,4 +1,4 @@
-import { loadScript } from '../utils/load-script';
+import { loadScript } from '../utils/load-script.js';
 
 
 export class DisqusComments {

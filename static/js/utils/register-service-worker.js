@@ -1,4 +1,4 @@
-import { DEV } from './environment';
+import { DEV } from './environment.js';
 
 
 export function registerServiceWorker() {
