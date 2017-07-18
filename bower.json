@@ -6,7 +6,7 @@
   "homepage": "https://liamnewmarch.co.uk",
   "private": true,
   "dependencies": {
-    "fetch": "^1.0.0",
-    "es6-promise": "^3.2.2"
+    "fetch": "2.0.3",
+    "webcomponentsjs": "1.0.2"
   }
 }

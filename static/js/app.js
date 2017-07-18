@@ -1,4 +1,4 @@
-import '../libs/es6-promise/promise.js';
+import '../libs/webcomponentsjs/webcomponents-loader.js';
 import '../libs/fetch/fetch.js';
 
 import { AsyncForm } from './components/async-form.js';
