@@ -1,5 +1,0 @@
-options:
-  map: true
-build:
-  files:
-    static/css/min.css: static/css/min.css

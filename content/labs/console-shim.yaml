@@ -1,7 +1,0 @@
-$title@: Console shim
-
-description@: Web scratchpad that works offline.
-icon: compare_arrows
-iframe_url: https://github.com/liamnewmarch/console-shim/
-tags@:
-  - Polyfill

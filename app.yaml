@@ -10,59 +10,33 @@ handlers:
   mime_type: text/plain
   secure: optional
 
-# Unknown mime types.
-- url: /static/(.+\.(map|md|scss))
-  static_files: build/static/\1
-  upload: build/static/(.+\.(map|md|scss))
-  mime_type: text/plain
-  secure: always
-
 # Service worker.
-- url: /static/js/service-worker\.js
-  static_files: build/static/js/service-worker.js
-  upload: build/static/js/service-worker\.js
+- url: /js/service-worker\.js
+  static_files: public/js/service-worker.js
+  upload: public/js/service-worker\.js
   secure: always
   http_headers:
     Service-Worker-Allowed: /
 
-# Static assets.
-- url: /static
-  static_dir: build/static/
+# Handle folder indexes.
+- url: /(.*)/
+  static_files: public/\1/index.html
+  upload: public/(.*)/index\.html
   secure: always
 
-# Append index.html to folders.
-- url: /(.+)/
-  static_files: build/\1/index.html
-  upload: build/(.+)/index.html
-  secure: always
-
-# Handle root index.html.
+# Handle root index.
 - url: /
-  static_files: build/index.html
-  upload: build/index.html
+  static_files: public/index.html
+  upload: public/index\.html
   secure: always
 
-# 404 for unmatched urls.
-- url: /.*
-  static_files: build/404/index.html
-  upload: build/404/index.html
+# Serve public folder.
+- url: /
+  static_dir: public/
   secure: always
 
 skip_files:
-- ^\.babelrc
-- ^\.bowerrc
-- ^\.eslintrc
-- ^\.git
-- ^\.sass-cache
-- ^bower.json
-- ^content
-- ^grunt
-- ^node_modules
-- ^static
-- ^views
-- .*\.pyc
-- \.gitignore
-- ^Gruntfile.js
-- ^package.json
-- ^podspec.yaml
-- ^README.md
+- ^\.git$
+- ^\.gitignore$
+- ^package.json$
+- ^README.md$

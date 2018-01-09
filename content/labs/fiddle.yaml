@@ -1,7 +1,0 @@
-$title@: Fiddle
-
-description@: Web scratchpad that works offline.
-icon: tab
-iframe_url: https://liamnewmarch.github.io/fiddle/
-tags@:
-  - Service Worker

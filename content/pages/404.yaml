@@ -1,6 +1,0 @@
-$title@: 404
-$hidden: true
-
-error_title@: 404, page not found
-error_description@: Unfortunately the requested page could not be found.
-error_help@: It may have been moved or deleted, but please double check the URL.

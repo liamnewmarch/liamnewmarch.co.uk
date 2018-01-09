@@ -1,7 +1,0 @@
-$title@: REPL
-
-description@: Mobile-friendly JavaScript REPL.
-icon: loop
-iframe_url: https://liamnewmarch.github.io/repl/
-tags@:
-  - Service Worker

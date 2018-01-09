@@ -1,5 +1,0 @@
-build:
-  options:
-    style: compressed
-  files:
-    static/css/min.css: static/css/main.scss
