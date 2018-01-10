@@ -13,6 +13,6 @@
   "homepage": "https://liamnewmarch.co.uk",
   "scripts": {
     "start": "dev_appserver.py . --port 4000",
-    "deploy": "gcloud app deploy --quiet --version=live"
+    "deploy": "gcloud app deploy --version=live"
   }
 }
