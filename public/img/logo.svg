@@ -5,13 +5,13 @@
       @import url(https://fonts.googleapis.com/css?family=Roboto:400);
     </style>
   </defs>
-  <circle cx="256" cy="256" r="248" stroke="#333" stroke-width="16" fill="none" />
-  <g fill="#333" font-family="Roboto, sans-serif" font-size="128px">
+  <circle cx="256" cy="256" r="248" stroke="#fff" stroke-width="4" fill="none" />
+  <g fill="#fff" font-family="Roboto, sans-serif" font-size="128px">
     <text alignment-baseline="middle" text-anchor="middle" x="256px" y="256px">
       LN
     </text>
   </g>
-  <g fill="#333" font-family="Roboto, sans-serif" font-size="40px" letter-spacing=".5em">
+  <g fill="#fff" font-family="Roboto, sans-serif" font-size="40px" letter-spacing=".5em">
     <path d="M 128 128 C 128 128, 256 0, 384 128" fill="transparent" id="curveTop" />
     <text>
       <textPath alignment-baseline="middle" text-anchor="middle" startOffset="50%" xlink:href="#curveTop">
@@ -19,7 +19,7 @@
       </textPath>
     </text>
   </g>
-  <g fill="#333" font-family="Roboto, sans-serif" font-size="40px" letter-spacing=".2em">
+  <g fill="#fff" font-family="Roboto, sans-serif" font-size="40px" letter-spacing=".2em">
     <path d="M 128 384 C 128 384, 256 512, 384 384" fill="transparent" id="curveBottom" />
     <text>
       <textPath alignment-baseline="middle" text-anchor="middle" startOffset="50%" xlink:href="#curveBottom">

@@ -1,7 +1,9 @@
 html {
-  background-color: #fff;
-  color: #333;
-  font: 300 24px / 1.4 Roboto, sans-serif;
+  background-color: #223;
+  color: #fff;
+  font: 300 24px / 1.5 Roboto, sans-serif;
+  letter-spacing: .05em;
+  text-align: center;
   text-rendering: optimizeLegibility;
 }
 
@@ -12,9 +14,18 @@ body {
   min-height: 100vh;
 }
 
+canvas {
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
 h1 {
-  font-size: inherit;
-  font-weight: 500;
+  font-size: 1.4em;
+  font-weight: inherit;
   margin: 0;
 }
 
@@ -36,23 +47,18 @@ a {
 header {
   align-items: center;
   display: flex;
-  flex: 1 0 auto;
-  margin: 0 auto;
-  max-width: 30rem;
-  padding: 10rem 0 5rem;
-  width: 100%;
+  justify-content: center;
+  height: 50vh;
+}
+
+header img {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
 }
 
 header div {
   margin-left: 1rem;
-}
-
-header h1 {
-  font-size: 1.3rem;
-}
-
-header p {
-  font-weight: 300;
 }
 
 nav {
@@ -60,7 +66,9 @@ nav {
 }
 
 nav ul {
+  align-items: center;
   display: flex;
+  height: 50vh;
   justify-content: space-between;
   margin: 0 auto 3rem;
   max-width: 30rem;
@@ -73,7 +81,6 @@ main {
 
 footer {
   font-size: .7rem;
-  font-weight: 300;
   margin: 1rem auto;
   max-width: 30rem;
 }
@@ -88,24 +95,16 @@ footer {
   }
 
   header {
-    display: flex;
+    height: 66vh;
+  }
+
+  nav ul {
     flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 0;
-    text-align: center;
+    height: 33vh;
+    justify-content: space-around;
   }
 
-  header div {
-    margin: 1rem 0 0;
-  }
-
-  nav {
-    margin: 1rem;
-  }
-
-  footer {
-    margin: 1rem;
-    text-align: center;
+  nav li {
+    margin: 0;
   }
 }
