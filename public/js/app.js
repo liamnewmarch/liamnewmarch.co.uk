@@ -11,7 +11,7 @@ class AbstractMethodBinderClass {
 
 class WaveCanvas extends AbstractMethodBinderClass {
   static get boundMethods() {
-    return ['_frame', '_getY', '_paint']
+    return ['_frame', '_getY', '_paint'];
   }
 
   constructor({ canvas }) {
