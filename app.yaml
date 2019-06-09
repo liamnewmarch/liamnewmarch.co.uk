@@ -36,8 +36,8 @@ handlers:
   secure: always
 
 skip_files:
-- ^\.git
-- ^\.gitignore$
-- ^node_modules
-- ^package.json$
-- ^README.md$
+- ^(.*/)?\..*$
+- ^(.*/)?node_modules/
+- ^(.*/)?package.json$
+- ^(.*/)?package-lock.json$
+- ^(.*/)?.*\.md$
