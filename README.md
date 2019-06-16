@@ -1,24 +1,23 @@
 # liamnewmarch.co.uk
 
-This repo contains the source for [liamnewmarch.co.uk][site].
+This repo contains the source for my [personal site][site].
 
 
-# Install dependencies
+## Run locally
 
-* `gcloud`.
-* `npm` or `yarn`.
-
-
-# Run locally
-
-* As above, then;
-* Run `yarn start` or `npm start`.
+```sh
+npm install && npm start
+```
 
 
-# Deploy
+## Deploy
 
-* As above, then;
-* Run `yarn run deploy` or `npm run deploy`.
+The site is deployed to Google App Engine by the [gcloud][gcloud] CLI.
+
+```sh
+npm run deploy
+```
 
 
-[site]: https://liamnewmarch.co.uk/
+[site]: https://liamnewmarch.co.uk
+[gcloud]: https://cloud.google.com/sdk/install
