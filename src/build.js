@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { cleanBuild, copyStatic, getPages, writePages } from './tasks.js';
 
 /**
@@ -6,6 +5,7 @@ import { cleanBuild, copyStatic, getPages, writePages } from './tasks.js';
  * and catches errors from the async stack.
  */
 async function main() {
+  /* eslint-disable no-console */
   try {
     console.log('Build started.');
 
@@ -25,7 +25,9 @@ async function main() {
   } catch (error) {
     console.log('Build stopped because an error occurred:\n');
     console.error(error);
+    process.exit(1);
   }
+  /* eslint-enable */
 }
 
 main();

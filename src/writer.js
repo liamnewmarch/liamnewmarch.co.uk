@@ -18,7 +18,6 @@ export default async function writer(pages, subpages = pages, ...path) {
       }
     }
   } catch (error) {
-    console.log(error);
     throw error;
   }
 }
