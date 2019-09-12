@@ -1,8 +1,0 @@
-{
-  "execMap": {
-		"js": "node --experimental-modules --no-warnings"
-  },
-	"ext": "html,js,md",
-  "ignore": [".git", "build", "node_modules"],
-  "watch": ["pages", "templates"]
-}

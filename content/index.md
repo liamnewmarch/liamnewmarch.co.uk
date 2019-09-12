@@ -1,5 +1,5 @@
 ---
-template: page.html
+layout: page
 links:
   - title: CodePen
     url: https://codepen.io/liamnewmarch/

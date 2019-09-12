@@ -1,10 +1,10 @@
-const version = '2.0.0';
+const version = '8.0.0';
 
 const files = [
   '/',
-  '/css/main.css',
-  '/img/logo.svg',
-  '/js/app.js',
+  '/static/css/main.css',
+  '/static/img/logo.svg',
+  '/static/js/app.js',
 ];
 
 class OfflineStrategy {

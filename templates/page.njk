@@ -1,17 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base.njk' %}
 
 {% block content %}
   <header>
     <img src="/img/logo.svg" height="96" width="96" alt="" aria-hidden="true">
     <div>
-      {{ page.body | markdown | safe }}
+      {{ content | safe }}
     </div>
   </header>
   <canvas></canvas>
-  {% if page.links %}
+  {% if links %}
     <nav role="mainmenu">
       <ul>
-        {% for link in page.links %}
+        {% for link in links %}
           <li>
             <a href="{{ link.url }}"> {{ link.title }} </a>
           </li>
