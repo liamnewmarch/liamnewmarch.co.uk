@@ -1,0 +1,10 @@
+{% extends 'includes/base.njk' %}
+
+{% block content %}
+  <article>
+    <h1> {{ title }} </h1>
+    <article-date datetime="{{ date.toString() }}"></article-date>
+    {{ content | safe }}
+  </article>
+  {% include 'includes/author.njk' %}
+{% endblock content%}

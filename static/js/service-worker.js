@@ -3,7 +3,6 @@ const version = '8.0.0';
 const files = [
   '/',
   '/static/css/main.css',
-  '/static/img/logo.svg',
   '/static/js/app.js',
 ];
 
@@ -29,14 +28,14 @@ class OfflineStrategy {
   }
 }
 
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(OfflineStrategy.activate(event));
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(OfflineStrategy.fetch(event));
 });
 
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(OfflineStrategy.install(event));
 });

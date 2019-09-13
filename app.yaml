@@ -4,9 +4,9 @@ threadsafe: true
 
 handlers:
 # Service worker.
-- url: /js/service-worker\.js
-  static_files: build/js/service-worker.js
-  upload: build/js/service-worker\.js
+- url: /static/js/service-worker\.js
+  static_files: build/static/js/service-worker.js
+  upload: build/static/js/service-worker\.js
   secure: always
   http_headers:
     Service-Worker-Allowed: /

@@ -1,10 +1,10 @@
 ---
-layout: page
+layout: home
 links:
   - title: CodePen
-    url: https://codepen.io/liamnewmarch/
+    url: https://codepen.io/liamnewmarch
   - title: GitHub
-    url: https://github.com/liamnewmarch?tab=repositories
+    url: https://github.com/liamnewmarch
   - title: Twitter
     url: https://twitter.com/liamnewmarch
   - title: Contact
@@ -13,4 +13,4 @@ links:
 
 # Liam Newmarch
 
-Web developer, living in London
+Front-end engineer
