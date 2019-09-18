@@ -1,17 +1,21 @@
+---
+sections:
+  - title: Portfolio
+    collections:
+      - project
+  - title: Music
+    collections:
+      - album
+      - song
+---
 {% extends 'includes/base.njk' %}
 
 {% block content %}
-  <main class="home-grid">
-    <span class="word-1">L</span><span class="word-1">i</span><span class="word-1">a</span><span class="word-1">m</span>
-    <span class="word-2">N</span><span class="word-2">e</span><span class="word-2">w</span><span class="word-2">m</span><span class="word-2">a</span><span class="word-2">r</span><span class="word-2">c</span><span class="word-2">h</span>
-    <span class="word-3">f</span><span class="word-3">r</span><span class="word-3">o</span><span class="word-3">n</span><span class="word-3">t</span><span class="word-3">e</span><span class="word-3">n</span><span class="word-3">d</span>
-    <span class="word-4">e</span><span class="word-4">n</span><span class="word-4">g</span><span class="word-4">i</span><span class="word-4">n</span><span class="word-4">e</span><span class="word-4">e</span><span class="word-4">r</span>
-    <noscript>
-      {{ content | safe }}
-    </noscript>
-  </main>
   <nav>
-    <h2> Latest articles </h2>
+    <h2> Portfolio </h2>
+  </nav>
+  <nav>
+    <h2> Music </h2>
     <ul>
       {% for article in collections.article %}
         <li>

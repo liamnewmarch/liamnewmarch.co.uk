@@ -10,7 +10,3 @@ links:
   - title: Contact
     url: https://docs.google.com/forms/d/1ci1gVQQUWsxmbobqGjQhmixGU0xueLBwNHUpPPeKFc8
 ---
-
-# Liam Newmarch
-
-Front-end engineer
