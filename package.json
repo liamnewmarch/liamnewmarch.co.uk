@@ -6,9 +6,12 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "deploy": "eleventy && npm run deploy:gcloud",
+    "env:dev": "NODE_ENV=\"${NODE_ENV:-development}\"",
+    "env:prod": "NODE_ENV=\"${NODE_ENV:-production}\"",
+    "deploy": "npm run env:prod npm run build && npm run deploy:gcloud",
     "deploy:gcloud": "gcloud app deploy --project=liamnewmarch-blog --version=live",
-    "start": "eleventy --serve"
+    "serve": "npm run build -- --serve",
+    "start": "npm run env:dev npm run serve"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.9.0",

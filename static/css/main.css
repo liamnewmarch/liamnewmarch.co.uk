@@ -17,8 +17,18 @@ a {
   color: inherit;
 }
 
-.page {
+.logo {
   margin: 0;
+}
+
+.logo__link {
+  text-decoration: none;
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 40em;
+  padding: 2em;
 }
 
 .page--home {
@@ -58,20 +68,21 @@ a {
   .home-grid .word-3 { color: yellow; }
 }
 
-.page--article {
-  margin: 2em auto;
-  max-width: 40em;
-  padding: 2em;
-}
-
 .page--article pre {
-  background-color: rgba(255, 255, 255, .1);
-  padding: 2em;
   overflow: auto;
+  padding: 2em;
 }
 
+.page--article pre,
 .page--article p code {
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(0, 0, 0, .05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .page--article pre,
+  .page--article p code {
+    background-color: rgba(255, 255, 255, .1);
+  }
 }
 
 .page--article iframe {
