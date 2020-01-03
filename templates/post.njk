@@ -9,7 +9,13 @@
       <header class="article-meta">
         <h1 class="article-title">{{ title }}</h1>
         <p class="article-date">
-          Published on
+          {% if original %}
+            Originally posted on <a href="{{ original.url }}">
+              {{ original.site }}
+            </a> on
+          {% else %}
+            Posted on
+          {% endif %}
           <time datetime="{{ published | date('iso') }}">
             {{ published | date('long') }}
           </time>

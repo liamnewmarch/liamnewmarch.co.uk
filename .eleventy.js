@@ -24,7 +24,6 @@ module.exports = function(config) {
         return new Intl.DateTimeFormat('en', {
           day: 'numeric',
           month: 'long',
-          weekday: 'long',
           year: 'numeric',
         }).format(date);
       case 'iso':
