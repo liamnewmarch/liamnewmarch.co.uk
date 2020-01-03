@@ -18,6 +18,21 @@ module.exports = function(config) {
     });
   });
 
+  config.addFilter('date', (date, format = 'iso') => {
+    switch (format) {
+      case 'long':
+        return new Intl.DateTimeFormat('en', {
+          day: 'numeric',
+          month: 'long',
+          weekday: 'long',
+          year: 'numeric',
+        }).format(date);
+      case 'iso':
+      default:
+        return date.toISOString().split('T')[0]
+    }
+  });
+
   // Change default dirs
   return {
     dir: {

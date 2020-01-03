@@ -1,0 +1,15 @@
+{% set cards = [] %}
+
+{% for post in collections.blog %}
+  {% set _ = cards.push({
+    title: post.data.title,
+    description: post.data.description,
+    buttons: [{
+      label: 'View article',
+      primary: true,
+      url: post.url
+    }]
+  }) %}
+{% endfor %}
+
+{% include '../components/cards.njk' %}

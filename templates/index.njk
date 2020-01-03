@@ -1,0 +1,7 @@
+{% extends 'base.njk' %}
+
+{% block content %}
+  {% for section in sections %}
+    {% include 'components/' ~ section.component ~ '.njk' %}
+  {% endfor %}
+{% endblock content%}
