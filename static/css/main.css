@@ -9,8 +9,11 @@ html {
   box-sizing: border-box;
   color: #fff;
   font: 300 100% / 1.5 Roboto, sans-serif;
-  letter-spacing: .05em;
+  font-feature-settings: 'liga';
+  min-height: 20rem;
+  min-width: 20rem;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: light) {
@@ -188,4 +191,106 @@ h1, h2, h3, h4, h5, h6 {
       transform: translateY(-2rem);
     }
   }
+}
+
+.article-content > pre[class*="language-"] {
+  background-color: #272832;
+  border-left: .2rem solid;
+  border-radius: .2rem;
+  margin: 2rem 0;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.article-content > pre[class*="language-"] code {
+  color: #9cdcfe;
+  line-height: 1.5;
+  tab-size: 4;
+}
+
+.article-content :not(pre) > code {
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: .2rem;
+  padding: .2rem .5rem;
+  white-space: normal;
+}
+
+@media (prefers-color-scheme: light) {
+  .article-content :not(pre) > code {
+    background-color: rgba(0, 0, 0, .05);
+  }
+}
+
+/* Syntax highlighting theme */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #608b4e;
+}
+.token.punctuation {
+  color: #ccc;
+}
+.token.tag,
+.token.namespace,
+.token.deleted {
+  color: #4ec9b0;
+}
+.token.attr-name {
+  color: #9cdcfe;
+}
+.token.function-name {
+  color: #6196cc;
+}
+.token.boolean {
+  color: #569cd6;
+}
+.token.number {
+  color: #B5cea8;
+}
+.token.function {
+  color: #dcdcaa;
+}
+.token.property,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+.token.class-name {
+  color: #4ec9b0;
+}
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #c586c0;
+}
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #ce9169;
+}
+.token.operator {
+  color: #d4d4d4;
+}
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+.token.inserted {
+  color: #0f0;
 }
