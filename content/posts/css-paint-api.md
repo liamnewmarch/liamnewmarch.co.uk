@@ -37,7 +37,7 @@ Here’s a very simple example where we use a paint worklet to paint the backgro
 </style>
 <div class="hello-world"></div>
 <script>
-  CSS.paintWorklet.addModule(’hello-world.js’);
+  CSS.paintWorklet.addModule('hello-world.js');
 </script>
 ```
 
@@ -72,7 +72,7 @@ div.attributeStyleMap.set('margin-top', CSS.px(20));
 Similarly, you can `get` properties like so:
 
 ```js
-const property = div.attributeStyleMap.get(’margin-top’);
+const property = div.attributeStyleMap.get('margin-top');
 property.value === 20; // true
 property.unit === 'px'; // true
 ```
@@ -83,34 +83,40 @@ Lets define two new properties for our `hello-world` example using the new `CSS.
 
 ```html
 <!DOCTYPE html>
-<style>
-  .hello-world {
-    --background-color: red;
-    --background-padding: 1em;
-    background-image: paint(hello-world);
-    border: 1px solid black;
-    height: 200px;
-    width: 300px;
-  }
-</style>
-<div class="hello-world"></div>
-<script>
-  CSS.registerProperty({
-    name: '--background-color',
-    syntax: '<color>',
-    initialValue: 'blue',
-    inherits: false,
-  });
+<html>
+  <head>
+    <style>
+      .hello-world {
+        --background-color: red;
+        --background-padding: 1em;
+        background-image: paint(hello-world);
+        border: 1px solid black;
+        height: 200px;
+        width: 300px;
+      }
+    </style>
+    <script>
+      CSS.registerProperty({
+        name: '--background-color',
+        syntax: '<color>',
+        initialValue: 'blue',
+        inherits: false,
+      });
 
-  CSS.registerProperty({
-    name: '--background-padding',
-    syntax: '<length>',
-    initialValue: 0,
-    inherits: false,
-  });
+      CSS.registerProperty({
+        name: '--background-padding',
+        syntax: '<length>',
+        initialValue: 0,
+        inherits: false,
+      });
 
-  CSS.paintWorklet.addModule('hello-world.js');
-</script>
+      CSS.paintWorklet.addModule('hello-world.js');
+    </script>
+  </head>
+  <body>
+    <div class="hello-world"></div>
+  </body>
+</html>
 ```
 
 There are a few options you can pass to `registerProperty()`. You can add an `initialValue` to specify a default in the event that the property is missing (or invalid), and the `inherits` boolean tells the parser whether or not values are inherited from the element’s parent. The `syntax` key is the most complicated however, and is used to tell the parser which CSS type(s) should be accepted as valid — [see the spec](https://www.w3.org/TR/css-properties-values-api-1/#supported-syntax-strings) for a full list of supported syntax strings.
@@ -119,7 +125,6 @@ In our worklet we need to make some modifications so the Paint API knows that we
 
 ```js
 class HelloWorld {
-
   static get inputProperties() {
     return [
       '--background-color',
