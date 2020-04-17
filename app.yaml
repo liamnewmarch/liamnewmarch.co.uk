@@ -1,39 +1,27 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: nodejs10
 
 handlers:
-# Service worker.
-- url: /js/service-worker\.js
-  static_files: build/js/service-worker.js
-  upload: build/js/service-worker\.js
-  secure: always
-  http_headers:
-    Service-Worker-Allowed: /
+  # Service worker.
+  - url: /js/service-worker\.js
+    static_files: build/js/service-worker.js
+    upload: build/js/service-worker\.js
+    secure: always
+    http_headers:
+      Service-Worker-Allowed: /
 
-# Handle folder indexes.
-- url: /(.*)/
-  static_files: build/\1/index.html
-  upload: build/(.*)/index\.html
-  secure: always
+  # Handle folder indexes.
+  - url: /(.*)/
+    static_files: build/\1/index.html
+    upload: build/(.*)/index\.html
+    secure: always
 
-# Handle root index.
-- url: /
-  static_files: build/index.html
-  upload: build/index\.html
-  secure: always
+  # Handle root index.
+  - url: /
+    static_files: build/index.html
+    upload: build/index\.html
+    secure: always
 
-# Serve build folder.
-- url: /
-  static_dir: build/
-  secure: always
-
-skip_files:
-- ^(.*/)?\..*$
-- ^node_modules/
-- ^package.json$
-- ^package-lock.json$
-- ^pages/
-- ^src/
-- ^templates/
-- ^README\.md$
+  # Serve build folder.
+  - url: /
+    static_dir: build/
+    secure: always

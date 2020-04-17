@@ -5,15 +5,15 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "deploy": "eleventy && npm run deploy:gcloud",
-    "deploy:gcloud": "gcloud app deploy --project=liamnewmarch-blog --version=live",
     "start": "eleventy --serve"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-google": "^0.14.0",
     "html-minifier": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
