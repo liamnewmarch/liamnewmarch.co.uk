@@ -1,24 +1,17 @@
 options:
   env:
     - NODE_ENV=production
-
 steps:
-  # Install dependencies
-  - name: node
+  - name: gcr.io/cloud-builders/npm:current
     entrypoint: npm
     args:
       - ci
-
-  # Build
-  - name: node
+  - name: gcr.io/cloud-builders/npm:current
     entrypoint: npm
     args:
       - run
       - build
-
-  # Deploy to App Engine
-  - name: gcr.io/cloud-builders/gcloud
+  - name: gcr.io/cloud-builders/gcloud:latest
     args:
       - app
       - deploy
-    timeout: 600s
