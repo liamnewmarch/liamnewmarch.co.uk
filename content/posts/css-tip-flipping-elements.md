@@ -7,7 +7,7 @@ description: Mirror the real world by flipping your icons with CSS rather than r
 original:
   site: Medium
   url: https://medium.com/@liamnewmarch/css-tip-flipping-elements-875742eb5186
-published: 2018-07-25
+date: 2018-07-25
 ---
 
 Sometimes when you’re building a web app there are icons and other bits of UI that are the same as other bits, but flipped.

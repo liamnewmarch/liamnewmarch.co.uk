@@ -1,6 +1,6 @@
 {% set cards = [] %}
 
-{% for post in collections.blog %}
+{% for post in collections.blog | reverse %}
   {% set _ = cards.push({
     title: post.data.title,
     description: post.data.description,

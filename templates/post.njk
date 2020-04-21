@@ -11,13 +11,13 @@
         <p class="article-date">
           {% if original %}
             Originally posted on <a href="{{ original.url }}">
-              {{ original.site }}
+              {{- original.site -}}
             </a> on
           {% else %}
             Posted on
           {% endif %}
-          <time datetime="{{ published | date('iso') }}">
-            {{ published | date('long') }}
+          <time datetime="{{ date | date('iso') }}">
+            {{ date | date('long') }}
           </time>
         </p>
       </header>
