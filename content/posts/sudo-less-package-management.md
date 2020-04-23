@@ -18,15 +18,15 @@ Homebrew doesn’t normally require sudo permissions, but installs to `/usr/loca
 
 Installing Homebrew for the current user is as easy as cloning the repository and adding it’s `bin` to your `$PATH`. I chose to install it in `~/homebrew`, to do the same fire up a new shell in your home directory (or type `cd`) and enter:
 
-
-    git clone https://github.com/Homebrew/homebrew
-
+```sh
+git clone https://github.com/Homebrew/homebrew
+```
 
 Next you need to add `~/homebrew/bin` to your `$PATH` so you can use the `brew` command, as well as anything else you choose to install with `brew install`. The simplest way to do this is to add this line to the end of your `~/.bashrc` or `~/.zshrc` file:
 
-
-    export PATH="${HOME}/homebrew/bin"
-
+```sh
+export PATH="${HOME}/homebrew/bin"
+```
 
 You will need to start a new terminal session for the changes to take effect. After which you can test that it works by running `brew update` and, for example, `brew install tree`.
 
@@ -35,22 +35,22 @@ You will need to start a new terminal session for the changes to take effect. Af
 
 npm is installed with Node.js, so if you followed the instructions to install Homebrew the easiest way to install both is:
 
-
-    brew install node
-
+```sh
+brew install node
+```
 
 This installs npm to `~/homebrew/bin/npm`, however npm will still try to install global packages to `/usr/local/bin`. You can change this behaviour by changing npm’s ‘prefix’ setting to a new folder in your home directory:
 
-
-    mkdir ~/npm-global
-    npm config set prefix "~/npm-global"
-
+```sh
+mkdir ~/npm-global
+npm config set prefix "~/npm-global"
+```
 
 As with Homebrew, you need to add `~/npm-global/bin` to your `$PATH` so any programs you install with `npm install --global` can be found. The simplest way to do this is to add this line to the end of your `~/.bashrc` or `~/.zshrc` file:
 
-
-    export PATH="${HOME}/npm-global/bin"
-
+```sh
+export PATH="${HOME}/npm-global/bin"
+```
 
 Again, you will need to start a new terminal session for the changes to take effect. Test if npm works without sudo by running, for example, `npm install -g vtop`.
 
@@ -59,15 +59,15 @@ Again, you will need to start a new terminal session for the changes to take eff
 
 Installing Ruby gems is easier because it’s supported out of the box. To install for the current user only, use the `--user-install` flag:
 
-
-    gem install jekyll --user-install
-
+```sh
+gem install jekyll --user-install
+```
 
 The gem command will warn you that the install directory in `~/.gem/ruby` is not in your `$PATH`. The exact path you need to add depends on the Ruby version you have installed, but you will need add something like this to your `~/.bashrc` or `~/.zshrc` file:
 
-
-    export PATH="${HOME}/.gem/ruby/2.0.0/bin"
-
+```sh
+export PATH="${HOME}/.gem/ruby/2.0.0/bin"
+```
 
 ## Desktop Applications
 

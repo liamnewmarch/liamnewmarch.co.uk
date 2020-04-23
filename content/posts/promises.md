@@ -39,19 +39,19 @@ Traditional JavaScript callbacks work very well up to a point, but we run into
 problems when we're waiting for multiple conditions to be met. Anyone who has
 used Node.js will be familiar with the concept of callback hell:
 
-
-    waitForConditionOne(function() {
-      waitForConditionTwo(function() {
-        waitForConditionThree(function() {
-          waitForConditionFour(function() {
-            waitForConditionFive(function() {
-              // All conditions are met, run my code now
-            });
-          });
+```js
+waitForConditionOne(function() {
+  waitForConditionTwo(function() {
+    waitForConditionThree(function() {
+      waitForConditionFour(function() {
+        waitForConditionFive(function() {
+          // All conditions are met, run my code now
         });
       });
     });
-
+  });
+});
+```
 
 The callback pyramid is ugly but at least it’s clear what’s happening. The
 ultimate goal is to maintain this level of readability without sacrificing good
@@ -70,11 +70,11 @@ them into Promise objects that can be chained together.
 
 A Promise object is created by running the following:
 
-
-    var myPromise = new Promise(function(resolve, reject) {
-      // Our condition here
-    });
-
+```js
+var myPromise = new Promise(function(resolve, reject) {
+  // Our condition here
+});
+```
 
 A Promise object can exist in one of three states; _pending_, _resolved_, or
 _rejected_. Since our Promise doesn’t do anything, `myPromise` is _pending_.
@@ -86,31 +86,31 @@ the asynchronous operation is complete. Let’s look at some code.
 In this example we’ll use `setTimeout` to wait three seconds before resolving
 `myPromise` with the string `'Hello, world!'`:
 
-
-    var myPromise = new Promise(function(resolve, reject) {
-      // Wait three seconds before resolving
-      setTimeout(function() {
-        resolve('Hello, world');
-      }, 3000)
-    });
-
+```js
+var myPromise = new Promise(function(resolve, reject) {
+  // Wait three seconds before resolving
+  setTimeout(function() {
+    resolve('Hello, world');
+  }, 3000)
+});
+```
 
 This works, but it doesn’t do very much. `myPromise` changes state but we
 need to specify what happens when the promise is resolved. To do this we pass
 a function to the `then` method of `myPromise`:
 
+```js
+var myPromise = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('Hello, world');
+  }, 3000)
+});
 
-    var myPromise = new Promise(function(resolve, reject) {
-      setTimeout(function() {
-        resolve('Hello, world');
-      }, 3000)
-    });
-
-    // Do something when the promise gets resolved
-    myPromise.then(function(value) {
-      console.log(value);
-    });
-
+// Do something when the promise gets resolved
+myPromise.then(function(value) {
+  console.log(value);
+});
+```
 
 The beauty of using Promises is that we can add multiple `then` methods, and
 at any point.
@@ -137,33 +137,33 @@ dynamically. In order to use the library we need to wait for it to load, which
 we can do by listening for it’s `load` event to fire. Here’s how that might
 look using Promises:
 
+```js
+function loadScript(url) {
+  var scriptPromise = new Promise(function(resolve, reject) {
+    // Create a new script tag
+    var script = document.createElement('script');
+    // Use the url argument as source attribute
+    script.src = url;
 
-    function loadScript(url) {
-      var scriptPromise = new Promise(function(resolve, reject) {
-        // Create a new script tag
-        var script = document.createElement('script');
-        // Use the url argument as source attribute
-        script.src = url;
+    // Call resolve when it’s loaded
+    script.addEventListener('load', function() {
+      resolve(url);
+    }, false);
 
-        // Call resolve when it’s loaded
-        script.addEventListener('load', function() {
-          resolve(url);
-        }, false);
+    // Add it to the body
+    document.body.appendChild(script);
+  });
 
-        // Add it to the body
-        document.body.appendChild(script);
-      });
+  // Return the Promise
+  return scriptPromise;
+}
 
-      // Return the Promise
-      return scriptPromise;
-    }
-
-    // Load a script
-    loadScript('/path/to/script.js').then(function(value) {
-      // Resolved
-      console.log('Script loaded from:', value);
-    });
-
+// Load a script
+loadScript('/path/to/script.js').then(function(value) {
+  // Resolved
+  console.log('Script loaded from:', value);
+});
+```
 
 This works, but it doesn’t handle the case where the script is not found. To
 do this we can call the `reject` function from the Promise callback, in
@@ -173,40 +173,40 @@ Finally, we can add a second anonymous function argument to the `then`
 method to specify what we do in the event of a rejection. Here’s the
 updated code:
 
+```js
+function loadScript(url, success, failure) {
+  var scriptPromise = new Promise(function(resolve, reject) {
+    // Create a new script tag
+    var script = document.createElement('script');
+    // Use the url argument as source attribute
+    script.src = url;
 
-    function loadScript(url, success, failure) {
-      var scriptPromise = new Promise(function(resolve, reject) {
-        // Create a new script tag
-        var script = document.createElement('script');
-        // Use the url argument as source attribute
-        script.src = url;
+    // Call resolve when it’s loaded
+    script.addEventListener('load', function() {
+      resolve(url);
+    }, false);
 
-        // Call resolve when it’s loaded
-        script.addEventListener('load', function() {
-          resolve(url);
-        }, false);
+    // Reject the promise if there’s an error
+    script.addEventListener('error', function() {
+      reject(url);
+    }, false);
 
-        // Reject the promise if there’s an error
-        script.addEventListener('error', function() {
-          reject(url);
-        }, false);
+    // Add it to the body
+    document.body.appendChild(script);
+  });
 
-        // Add it to the body
-        document.body.appendChild(script);
-      });
+  scriptPromise
+}
 
-      scriptPromise
-    }
-
-    // Load a script
-    loadScript('/path/to/script.js').then(function(value) {
-      // Resolved
-      console.log('Script loaded from:', value);
-    }, function(value) {
-      // Rejected
-      console.error('Script not found:', value)
-    });
-
+// Load a script
+loadScript('/path/to/script.js').then(function(value) {
+  // Resolved
+  console.log('Script loaded from:', value);
+}, function(value) {
+  // Rejected
+  console.error('Script not found:', value)
+});
+```
 
 There is a `catch` method which works similarly to the `then` method except
 only takes a single `rejected` callback. Use of this method is not recommended
@@ -227,17 +227,17 @@ conditions to be specified in series.
 
 Using the `loadScript` function we defined above, we can do the following:
 
-
-    loadScript('/path/to/script-1.js').then(function() {
-      return loadScript('/path/to/script-2.js');
-    }).then(function() {
-      return loadScript('/path/to/script-3.js');
-    }).then(function() {
-      return loadScript('/path/to/script-4.js');
-    }).then(function() {
-      console.log('Loaded!');
-    });
-
+```
+loadScript('/path/to/script-1.js').then(function() {
+  return loadScript('/path/to/script-2.js');
+}).then(function() {
+  return loadScript('/path/to/script-3.js');
+}).then(function() {
+  return loadScript('/path/to/script-4.js');
+}).then(function() {
+  console.log('Loaded!');
+});
+```
 
 This will load each script followed by our final callback, all without
 resorting to callback hell. If the scripts have to be loaded in strict
@@ -263,47 +263,47 @@ Since we want to wait till all of our scripts have loaded, we need to use
 accommodate this change. For reusability I’ve chosen to rewrite it as a
 reusable `ScriptLoader` object.
 
+```js
+function ScriptLoader() {
 
-    function ScriptLoader() {
+  var promises = [];
 
-      var promises = [];
+  this.add = function(url) {
+    var promise = new Promise(function(resolve, reject) {
 
-      this.add = function(url) {
-        var promise = new Promise(function(resolve, reject) {
+      var script = document.createElement('script');
+      script.src = url;
 
-          var script = document.createElement('script');
-          script.src = url;
+      script.addEventListener('load', function() {
+        resolve(script);
+      }, false);
 
-          script.addEventListener('load', function() {
-            resolve(script);
-          }, false);
+      script.addEventListener('error', function() {
+        reject(script);
+      }, false);
 
-          script.addEventListener('error', function() {
-            reject(script);
-          }, false);
-
-          document.body.appendChild(script);
-        });
-
-        promises.push(promise);
-      };
-
-      this.loaded = function(callback) {
-        Promise.all(promises).then(callback);
-      };
-    }
-
-    var loader = new ScriptLoader();
-
-    loader.add('/path/to/script-1.js');
-    loader.add('/path/to/script-2.js');
-    loader.add('/path/to/script-3.js');
-    loader.add('/path/to/script-4.js');
-
-    loader.loaded(function(returned) {
-      console.log('Loaded!');
+      document.body.appendChild(script);
     });
 
+    promises.push(promise);
+  };
+
+  this.loaded = function(callback) {
+    Promise.all(promises).then(callback);
+  };
+}
+
+var loader = new ScriptLoader();
+
+loader.add('/path/to/script-1.js');
+loader.add('/path/to/script-2.js');
+loader.add('/path/to/script-3.js');
+loader.add('/path/to/script-4.js');
+
+loader.loaded(function(returned) {
+  console.log('Loaded!');
+});
+```
 
 ## Wrapping up
 

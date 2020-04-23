@@ -15,23 +15,23 @@ The default VNC location file icon for OS X is a bit dull. Fortunately, OS X has
 
 The folder can be located here; hit ⌘⇧G in Finder and paste to jump right to it:
 
-
-    /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources
-
+```
+/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources
+```
 
 ## Creating a VNC shortcut file
 
 In order to access VNC locations from the Dock, we can create a `.vncloc` file. Use a text editor to paste the following into a file and save it with a name ending in `.vncloc`, e.g. `user-hostname.vncloc`:
 
-
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>URL</key>
-        <string>vnc://user@hostname.lan</string>
-      </dict>
-    </plist>
-
+```xml
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>URL</key>
+    <string>vnc://user@hostname.lan</string>
+  </dict>
+</plist>
+```
 
 _Note: you’ll need to change the `vnc://user@hostname.lan` to the remote host’s details._
 
