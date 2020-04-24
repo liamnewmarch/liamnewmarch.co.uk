@@ -13,13 +13,13 @@ The problem was, with version < 2.6.1, npm would upgrade itself to a cutting edg
 
 The process for detecting outdated packages hasn’t changed, and can be useful if you don’t want to update everything at once:
 
-```sh
+```shell
 npm -g outdated --depth=0
 ```
 
 From there you can update a single package by reinstalling it:
 
-```sh
+```shell
 npm -g install package-name
 ```
 

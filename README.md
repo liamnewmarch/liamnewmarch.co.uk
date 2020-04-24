@@ -6,13 +6,13 @@ This repository contains the source files for my [personal site](site). Page con
 
 To run the site locally first install the dependencies.
 
-```sh
+```shell
 npm install
 ```
 
 Next, use the __start__ task to run Eleventy. This will watch for changes and rebuild as necessary.
 
-```sh
+```shell
 npm start
 ```
 
@@ -26,7 +26,7 @@ Because Cloud Build is triggered when code hits master I have adopted the strate
 
 Manual deployments to App Engine are possible using the [gcloud][gcloud] CLI. This mimics the steps in [`cloudbuild.yaml`][pipeline].
 
-```sh
+```shell
 npm run build
 gcloud app deploy
 ```
