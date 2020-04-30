@@ -227,7 +227,7 @@ conditions to be specified in series.
 
 Using the `loadScript` function we defined above, we can do the following:
 
-```
+```js
 loadScript('/path/to/script-1.js').then(function() {
   return loadScript('/path/to/script-2.js');
 }).then(function() {
