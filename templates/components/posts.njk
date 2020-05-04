@@ -1,9 +1,9 @@
 {% set cards = [] %}
 
-{% for post in collections.blog | reverse %}
+{% for post in global.collections.blog | keysort('-date') %}
   {% set _ = cards.push({
-    title: post.data.title,
-    description: post.data.description,
+    title: post.title,
+    description: post.description,
     buttons: [{
       label: 'View article',
       primary: true,

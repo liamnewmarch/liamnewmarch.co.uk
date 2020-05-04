@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.njk
 
 tags: blog
 title: Using range inputs with AngularJS

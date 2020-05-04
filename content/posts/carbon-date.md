@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.njk
 
 tags: blog
 title: Carbon Date for jQuery

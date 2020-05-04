@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.njk
 
 tags: blog
 title: Pimp your macOS shortcuts with system icons
@@ -11,11 +11,11 @@ I use VNC (aka Screen Share) a lot, so I keep a folder of frequently accessed ma
 
 The default VNC location file icon for OS X is a bit dull. Fortunately, OS X has a folder of system icons we can use instead. Even better, this folder contains icons for all recent Macbook, iMac and Mac Pro models.
 
-![VNC Icons][vnc-icons-image]
+<!-- ![VNC Icons][vnc-icons-image] -->
 
 The folder can be located here; hit ⌘⇧G in Finder and paste to jump right to it:
 
-```
+```plaintext
 /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources
 ```
 
@@ -45,4 +45,4 @@ First choose an icon from the folder above. These are `.icns` files, a wrapper f
 Next, with the `.vncloc` file we created above, right click and choose “Get info”. There is a small icon preview top-left; click to select it and hit ⌘V and it should paste the new icon. You can drag the location file to the right of your Dock for quick access.
 
 
-[vnc-icons-image]: /static/img/vnc-icons-screenshot.png
+[vnc-icons-image]: /img/vnc-icons-screenshot.png

@@ -1,5 +1,5 @@
 ---
-layout: index
+template: index.njk
 
 sections:
 - component: hero

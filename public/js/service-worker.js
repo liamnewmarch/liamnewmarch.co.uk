@@ -2,8 +2,8 @@ const version = '8.0.0';
 
 const files = [
   '/',
-  '/static/css/main.css',
-  '/static/js/app.js',
+  '/css/main.css',
+  '/js/app.js',
 ];
 
 class OfflineStrategy {

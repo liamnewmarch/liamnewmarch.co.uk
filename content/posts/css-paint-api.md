@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.njk
 
 tags: blog
 title: The world is but a canvas to the CSS Paint API

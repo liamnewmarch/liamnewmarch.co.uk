@@ -1,5 +1,5 @@
 ---
-layout: post
+template: post.njk
 
 tags: blog
 title: Making Promises – Building a script loader with ES6 Promises
