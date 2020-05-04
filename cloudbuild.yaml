@@ -2,11 +2,11 @@ options:
   env:
     - NODE_ENV=production
 steps:
-  - name: gcr.io/cloud-builders/npm:current
+  - name: node:14-alpine
     entrypoint: npm
     args:
       - ci
-  - name: gcr.io/cloud-builders/npm:current
+  - name: node:14-alpine
     entrypoint: npm
     args:
       - run
