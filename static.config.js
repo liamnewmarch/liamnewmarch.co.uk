@@ -3,6 +3,7 @@ import keysort from './filters/keysort.js';
 import markdown from './filters/markdown.js';
 import minifier from '@liamnewmarch/static-plugin-html-minifier';
 import nunjucks from '@liamnewmarch/static-plugin-nunjucks';
+import { env } from 'process';
 
 export default {
   dirs: {
@@ -11,8 +12,8 @@ export default {
     output: 'build',
   },
   options: {
-    extensions: ['html', 'md', 'yaml'],
-    port: 4000,
+    host: '0.0.0.0',
+    port: env.PORT || 4000,
   },
   plugins: [
     nunjucks({
