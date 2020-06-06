@@ -11,8 +11,8 @@ steps:
     args:
       - run
       - build
-  - name: google/cloud-sdk:alpine
-    entrypoint: gcloud
+  - name: node:14-alpine
+    entrypoint: npx
     args:
-      - app
+      - firebase-tools
       - deploy
