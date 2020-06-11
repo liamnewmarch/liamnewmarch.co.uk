@@ -7,6 +7,9 @@
     <title>{% if title %}{{ title }} |{% endif %} Liam Newmarch</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:300,500&amp;display=swap&amp;subset=latin">
     <link rel="stylesheet" href="/css/main.css">
+    {% if original and original.url %}
+      <link rel="canonical" href="{{ original.url }}">
+    {% endif %}
     {% block head %}{% endblock head %}
   </head>
   <body>
