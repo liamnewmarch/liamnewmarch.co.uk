@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1">
     <meta name="description" content="Software engineer for the web working at Potato London.">
     <title>{% if title %}{{ title }} |{% endif %} Liam Newmarch</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:300,500&amp;display=swap&amp;subset=latin">
+    {% include "components/fonts.html" %}
     <link rel="stylesheet" href="/css/main.css">
     <link rel="icon" href="/img/icon-512.png" sizes="512x512" type="image/png">
     {% if original and original.url %}
