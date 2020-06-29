@@ -4,11 +4,12 @@
   <link href="/css/code-theme.css" rel="stylesheet">
 {% endblock %}
 
+{% block nav %}
+  <a href="/" class="nav-link icon-before" data-icon="arrow_back" title="Back" aria-label="Back"></a>
+{% endblock nav %}
+
 {% block content %}
   <div class="container">
-    <nav class="nav">
-      <a aria-label="Back" class="nav-link icon-before" data-icon="arrow_back" href="/" title="Back"></a>
-    </nav>
     <article class="article">
       <header class="article-meta">
         <h1 class="article-title">{{ title }}</h1>
