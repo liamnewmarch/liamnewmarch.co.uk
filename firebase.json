@@ -1,5 +1,16 @@
 {
   "hosting": {
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "x-static",
+            "value": "Hello, human :)"
+          }
+        ]
+      }
+    ],
     "public": "build",
     "ignore": [
       "firebase.json",
