@@ -8,9 +8,6 @@
     {% include "components/fonts.html" %}
     <link rel="stylesheet" href="/css/main.css">
     <link rel="icon" href="/img/icon-512.png" sizes="512x512" type="image/png">
-    {% if original and original.url %}
-      <link rel="canonical" href="{{ original.url }}">
-    {% endif %}
     <link rel="author" href="/humans.txt">
     {% block head %}{% endblock head %}
   </head>
